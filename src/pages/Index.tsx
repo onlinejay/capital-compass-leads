@@ -34,47 +34,53 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <div id="quick-capital-form" className="py-20 md:py-24 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
-        {/* Enhanced background elements */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-blue-600/10 z-0"></div>
-        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-primary/15 filter blur-3xl z-0 animate-pulse"></div>
-        <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] rounded-full bg-blue-400/15 filter blur-3xl z-0"></div>
+      <div id="quick-capital-form" className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-br from-primary/15 via-blue-100 to-primary/20">
+        {/* Enhanced dramatic background elements */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-600/20 z-0"></div>
+        <div className="absolute -top-32 -right-32 w-[800px] h-[800px] rounded-full bg-primary/20 filter blur-3xl z-0 animate-pulse"></div>
+        <div className="absolute -bottom-32 -left-32 w-[800px] h-[800px] rounded-full bg-blue-400/20 filter blur-3xl z-0"></div>
         
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary/60 to-blue-500/60 z-10"></div>
-        <div className="absolute top-10 left-10 w-20 h-20 bg-primary/5 rounded-full backdrop-blur-sm z-0"></div>
-        <div className="absolute bottom-10 right-10 w-16 h-16 bg-blue-500/5 rounded-full backdrop-blur-sm z-0"></div>
+        <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-primary/80 to-blue-500/80 z-10"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full backdrop-blur-sm z-0 animate-pulse-glow"></div>
+        <div className="absolute bottom-10 right-10 w-24 h-24 bg-blue-500/10 rounded-full backdrop-blur-sm z-0 animate-pulse-glow"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12 reveal-on-scroll">
-            <div className="inline-flex items-center gap-2 bg-primary/15 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-bold mb-6 text-primary shadow-md animate-pulse">
-              <span className="animate-pulse">🔥 Act Fast - Limited Time Financing</span>
+          <div className="text-center mb-16 reveal-on-scroll">
+            <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm px-8 py-3 rounded-full text-base font-bold mb-8 text-primary shadow-lg animate-pulse">
+              <span className="animate-pulse text-lg">🔥 Act Fast - Limited Time Financing</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-800 font-heading drop-shadow-sm">
+            <h2 className="text-6xl md:text-7xl font-bold mb-8 text-gray-800 font-heading drop-shadow-md">
               Fast <span className="text-gradient bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Financing</span> For Your Real Estate Goals
             </h2>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-medium">
+            <p className="text-2xl md:text-3xl text-gray-700 max-w-4xl mx-auto font-medium">
               Get quick access to capital for your next real estate investment project with our streamlined application process.
             </p>
           </div>
           
-          <div className="w-full max-w-5xl mx-auto reveal-on-scroll transform hover:scale-[1.01] transition-transform duration-300">
-            <QuickCapitalRequestForm />
+          {/* Highlighted box with glow effect */}
+          <div className="relative w-full max-w-6xl mx-auto mb-8">
+            {/* Animated glow border effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-2xl blur-md opacity-75 animate-pulse-glow"></div>
+            
+            <div className="relative w-full scale-105 reveal-on-scroll transform hover:scale-[1.02] transition-transform duration-500 z-10">
+              <QuickCapitalRequestForm />
+            </div>
           </div>
           
           {/* Enhanced trust indicators */}
-          <div className="mt-12 flex flex-wrap justify-center gap-6 reveal-on-scroll">
-            <div className="flex items-center gap-3 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-lg shadow-md border border-primary/10 hover:border-primary/30 transition-colors">
-              <div className="w-4 h-4 rounded-full bg-emerald-500"></div>
-              <span className="text-base font-semibold text-gray-700">24-Hour Approval</span>
+          <div className="mt-16 flex flex-wrap justify-center gap-8 reveal-on-scroll">
+            <div className="flex items-center gap-4 bg-white/90 backdrop-blur-sm px-8 py-4 rounded-lg shadow-lg border-2 border-primary/20 hover:border-primary/50 transition-colors">
+              <div className="w-6 h-6 rounded-full bg-emerald-500 animate-pulse"></div>
+              <span className="text-lg font-semibold text-gray-700">24-Hour Approval</span>
             </div>
-            <div className="flex items-center gap-3 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-lg shadow-md border border-primary/10 hover:border-primary/30 transition-colors">
-              <div className="w-4 h-4 rounded-full bg-emerald-500"></div>
-              <span className="text-base font-semibold text-gray-700">Competitive Rates</span>
+            <div className="flex items-center gap-4 bg-white/90 backdrop-blur-sm px-8 py-4 rounded-lg shadow-lg border-2 border-primary/20 hover:border-primary/50 transition-colors">
+              <div className="w-6 h-6 rounded-full bg-emerald-500 animate-pulse"></div>
+              <span className="text-lg font-semibold text-gray-700">Competitive Rates</span>
             </div>
-            <div className="flex items-center gap-3 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-lg shadow-md border border-primary/10 hover:border-primary/30 transition-colors">
-              <div className="w-4 h-4 rounded-full bg-emerald-500"></div>
-              <span className="text-base font-semibold text-gray-700">Expert Support</span>
+            <div className="flex items-center gap-4 bg-white/90 backdrop-blur-sm px-8 py-4 rounded-lg shadow-lg border-2 border-primary/20 hover:border-primary/50 transition-colors">
+              <div className="w-6 h-6 rounded-full bg-emerald-500 animate-pulse"></div>
+              <span className="text-lg font-semibold text-gray-700">Expert Support</span>
             </div>
           </div>
         </div>
