@@ -3,7 +3,7 @@ import React from 'react';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { CreditCard, Home, User, FileText, Bank } from 'lucide-react';
+import { CreditCard, Home, User, FileText, Building } from 'lucide-react';
 
 type SurveyData = {
   propertyInfo: {
@@ -102,7 +102,7 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ data, updateFields }) => {
             <span>Property</span>
           </TabsTrigger>
           <TabsTrigger value="loan" className="data-tab flex items-center justify-center gap-2">
-            <Bank className="w-4 h-4" />
+            <Building className="w-4 h-4" />
             <span>Financing</span>
           </TabsTrigger>
           <TabsTrigger value="personal" className="data-tab flex items-center justify-center gap-2">
