@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { CreditCard, Home, User, FileText, Bank } from 'lucide-react';
 
 type SurveyData = {
   propertyInfo: {
@@ -86,7 +88,7 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ data, updateFields }) => {
 
   const renderField = (label: string, value: string) => (
     <div className="mb-3">
-      <span className="text-gray-500 text-sm">{label}:</span>
+      <span className="text-gray-500 text-sm data-label">{label}:</span>
       <p className="font-medium text-gray-800">{value || "Not provided"}</p>
     </div>
   );
@@ -94,15 +96,27 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ data, updateFields }) => {
   return (
     <div className="space-y-6">
       <Tabs defaultValue="property" className="w-full">
-        <TabsList className="grid grid-cols-3 mb-4">
-          <TabsTrigger value="property">Property</TabsTrigger>
-          <TabsTrigger value="loan">Loan</TabsTrigger>
-          <TabsTrigger value="personal">Personal</TabsTrigger>
+        <TabsList className="grid grid-cols-3 mb-4 bg-secondary">
+          <TabsTrigger value="property" className="data-tab flex items-center justify-center gap-2">
+            <Home className="w-4 h-4" />
+            <span>Property</span>
+          </TabsTrigger>
+          <TabsTrigger value="loan" className="data-tab flex items-center justify-center gap-2">
+            <Bank className="w-4 h-4" />
+            <span>Financing</span>
+          </TabsTrigger>
+          <TabsTrigger value="personal" className="data-tab flex items-center justify-center gap-2">
+            <User className="w-4 h-4" />
+            <span>Applicant</span>
+          </TabsTrigger>
         </TabsList>
         
-        <TabsContent value="property" className="space-y-2 border rounded-lg p-4 bg-white">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="font-bold text-gray-800">Property Details</h3>
+        <TabsContent value="property" className="space-y-2 border rounded-lg p-4 bg-white shadow-sm">
+          <div className="flex items-center justify-between mb-3 pb-2 border-b">
+            <h3 className="font-bold text-gray-800 flex items-center gap-2">
+              <Home className="w-5 h-5 text-primary" />
+              Property Details
+            </h3>
           </div>
           
           {renderField("Property Type", formatPropertyType(propertyInfo.propertyType))}
@@ -111,9 +125,12 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ data, updateFields }) => {
           {renderField("Property Condition", formatCondition(propertyInfo.propertyCondition))}
         </TabsContent>
         
-        <TabsContent value="loan" className="space-y-2 border rounded-lg p-4 bg-white">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="font-bold text-gray-800">Loan Details</h3>
+        <TabsContent value="loan" className="space-y-2 border rounded-lg p-4 bg-white shadow-sm">
+          <div className="flex items-center justify-between mb-3 pb-2 border-b">
+            <h3 className="font-bold text-gray-800 flex items-center gap-2">
+              <CreditCard className="w-5 h-5 text-primary" />
+              Financing Details
+            </h3>
           </div>
           
           {renderField("Loan Type", formatLoanType(loanDetails.loanType))}
@@ -122,9 +139,12 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ data, updateFields }) => {
           {renderField("Exit Strategy", formatExitStrategy(loanDetails.exitStrategy))}
         </TabsContent>
         
-        <TabsContent value="personal" className="space-y-2 border rounded-lg p-4 bg-white">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="font-bold text-gray-800">Personal Information</h3>
+        <TabsContent value="personal" className="space-y-2 border rounded-lg p-4 bg-white shadow-sm">
+          <div className="flex items-center justify-between mb-3 pb-2 border-b">
+            <h3 className="font-bold text-gray-800 flex items-center gap-2">
+              <FileText className="w-5 h-5 text-primary" />
+              Applicant Information
+            </h3>
           </div>
           
           {renderField("Name", personalInfo.name)}
@@ -145,6 +165,7 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ data, updateFields }) => {
                 updateFields('agreement', { agreement: checked });
               }
             }}
+            className="mt-1 data-checkbox"
           />
           <div className="grid gap-1.5 leading-none">
             <Label
@@ -155,7 +176,7 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ data, updateFields }) => {
             </Label>
             <p className="text-xs text-muted-foreground">
               By submitting this form, I agree to be contacted about real estate investment funding options. 
-              I understand that my information will be kept confidential and secure.
+              I understand that my information will be kept confidential and secure according to our privacy policy.
             </p>
           </div>
         </div>

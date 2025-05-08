@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
+    --background: 220 33% 98%;
     --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
@@ -15,17 +15,17 @@
 
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-
-    --primary: 203 80% 36%;
+    
+    --primary: 224 76% 48%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 202 79% 92%;
-    --secondary-foreground: 203 80% 36%;
+    --secondary: 224 30% 95%;
+    --secondary-foreground: 224 76% 48%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 224 100% 94%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 203 80% 36%;
+    --ring: 224 76% 48%;
 
     --radius: 0.5rem;
   }
@@ -81,8 +81,8 @@
   transition-delay: 500ms;
 }
 
-/* Modern Real Estate UI Additions */
-.property-card {
+/* Fintech UI Additions */
+.fintech-card {
   @apply bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-navy-500;
 }
 
 .btn-primary {
@@ -102,20 +102,20 @@
   @apply border border-primary text-primary hover:bg-primary/10 font-medium transition-colors;
 }
 
-/* Real estate investor specific classes */
-.property-card {
+/* Fintech specific classes */
+.financial-card {
   @apply transition-all duration-300 rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg;
 }
 
-.investment-stat {
+.fintech-stat {
   @apply flex items-center justify-between p-3 bg-secondary rounded-lg;
 }
 
-.roi-positive {
+.value-positive {
   @apply text-emerald-600 font-bold;
 }
 
-.roi-negative {
+.value-negative {
   @apply text-red-500 font-bold;
 }
 
@@ -130,7 +130,7 @@
 }
 
 .progress-bar-fill {
-  @apply h-full bg-gradient-to-r from-blue-400 to-primary transition-all duration-1000;
+  @apply h-full bg-gradient-to-r from-primary/80 to-primary transition-all duration-1000;
 }
 
 /* Button styles */
@@ -140,23 +140,6 @@
 
 .button-secondary {
   @apply bg-secondary hover:bg-secondary/90 text-primary font-semibold shadow-sm;
-}
-
-/* Property listing styling */
-.property-stat {
-  @apply flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm;
-}
-
-.property-stat-icon {
-  @apply text-primary mb-2;
-}
-
-.property-stat-value {
-  @apply text-2xl font-bold text-gray-900;
-}
-
-.property-stat-label {
-  @apply text-xs text-gray-600 uppercase tracking-wider;
 }
 
 /* Loan program styling */
@@ -178,4 +161,33 @@
 
 .loan-point-icon {
   @apply text-primary;
+}
+
+/* Fintech UI Elements */
+.glass-card {
+  @apply bg-white/90 backdrop-blur-sm border border-gray-100 shadow-sm rounded-xl;
+}
+
+.data-card {
+  @apply bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all;
+}
+
+.data-label {
+  @apply text-xs uppercase tracking-wider text-gray-500 font-semibold;
+}
+
+.data-value {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+.chart-container {
+  @apply bg-white p-4 rounded-xl border border-gray-100 shadow-sm;
+}
+
+.fintech-gradient-bg {
+  @apply bg-gradient-to-br from-navy-800 to-navy-700;
+}
+
+.fintech-gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-navy-600;
 }

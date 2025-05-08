@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -120,15 +121,17 @@ const MultiStepSurveyForm = () => {
   if (isComplete) {
     return (
       <div className="text-center py-10">
-        <CheckCircle className="w-16 h-16 text-emerald-500 mx-auto mb-6" />
+        <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <CheckCircle className="w-10 h-10 text-emerald-500" />
+        </div>
         <h3 className="text-2xl font-bold text-gray-800 mb-2">Application Submitted!</h3>
         <p className="text-gray-600 mb-8">
           Thank you for your application. One of our funding specialists will review your details
-          and contact you within 24 hours with personalized funding options.
+          and contact you within 24 hours with personalized financing options.
         </p>
         <Button 
           variant="outline" 
-          className="mx-auto"
+          className="mx-auto border-primary text-primary hover:bg-primary/5"
           onClick={() => {
             setData(INITIAL_DATA);
             setCurrentStep(0);
@@ -223,7 +226,7 @@ const MultiStepSurveyForm = () => {
           ) : (
             <Button 
               type="submit" 
-              className="bg-primary hover:bg-primary/90 text-white"
+              className="bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white"
               disabled={isSubmitting || !data.agreement}
             >
               {isSubmitting ? "Submitting..." : "Submit Application"}
