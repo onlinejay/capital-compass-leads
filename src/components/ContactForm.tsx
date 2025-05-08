@@ -20,6 +20,14 @@ const ContactForm = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handleApplyNowClick = () => {
+    // Scroll to the form section
+    const formSection = document.querySelector('#quick-capital-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-white border-t border-gray-100">
       <div className="container mx-auto px-4">
@@ -62,6 +70,7 @@ const ContactForm = () => {
             <Button 
               className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-6 h-auto text-lg"
               size="lg"
+              onClick={handleApplyNowClick}
             >
               Apply Now
             </Button>

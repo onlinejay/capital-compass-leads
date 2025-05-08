@@ -16,6 +16,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleApplyNowClick = () => {
+    // Scroll to the form section
+    const formSection = document.querySelector('#quick-capital-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
@@ -44,7 +52,10 @@ const Navbar = () => {
             <a href="#contact" className="text-gray-700 hover:text-primary font-medium transition-colors">
               Contact
             </a>
-            <Button className="bg-primary hover:bg-primary/90 text-white ml-4">
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-white ml-4"
+              onClick={handleApplyNowClick}
+            >
               Get Pre-Approved
             </Button>
           </nav>
@@ -97,7 +108,16 @@ const Navbar = () => {
             >
               Contact
             </a>
-            <Button className="bg-primary hover:bg-primary/90 text-white w-full">
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-white w-full"
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                const formSection = document.querySelector('#quick-capital-form');
+                if (formSection) {
+                  formSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               Get Pre-Approved
             </Button>
           </nav>

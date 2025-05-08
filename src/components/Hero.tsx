@@ -15,6 +15,22 @@ const Hero = () => {
     });
   }, []);
 
+  const handleApplyNowClick = () => {
+    // Scroll to the form section
+    const formSection = document.querySelector('#quick-capital-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleViewLoanOptionsClick = () => {
+    // Scroll to the loan programs section
+    const loanProgramsSection = document.querySelector('#programs');
+    if (loanProgramsSection) {
+      loanProgramsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-[calc(100vh-80px)] flex items-center bg-white overflow-hidden">
       {/* Fintech Background Elements */}
@@ -82,6 +98,7 @@ const Hero = () => {
               <Button 
                 className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl px-8 py-7 shadow-md hover:shadow-lg transition-all"
                 size="lg"
+                onClick={handleApplyNowClick}
               >
                 Get Pre-Approved Now
                 <ArrowUpRight className="ml-2 h-5 w-5" />
@@ -90,6 +107,7 @@ const Hero = () => {
                 variant="outline" 
                 className="border-2 border-primary text-primary hover:bg-primary/5 font-semibold rounded-xl px-8"
                 size="lg"
+                onClick={handleViewLoanOptionsClick}
               >
                 View Loan Options
               </Button>
