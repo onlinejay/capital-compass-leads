@@ -1,299 +1,135 @@
+import React from 'react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Progress } from '@/components/ui/progress';
-import { ArrowRight, ArrowLeft, CheckCircle } from 'lucide-react';
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
-} from '@/components/ui/select';
-import { toast } from '@/hooks/use-toast';
-
-type FormStep = 'loanAmount' | 'loanType' | 'contactInfo';
-
-interface LeadCaptureFormProps {
-  variant?: 'primary' | 'secondary';
-}
-
-const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }) => {
-  const [currentStep, setCurrentStep] = useState<FormStep>('loanAmount');
-  const [formData, setFormData] = useState({
-    loanAmount: '',
-    loanType: '',
-    name: '',
-    email: '',
-    phone: ''
-  });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleLoanTypeChange = (value: string) => {
-    setFormData(prev => ({ ...prev, loanType: value }));
-  };
-  
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-  
-  const moveToNextStep = () => {
-    if (currentStep === 'loanAmount') {
-      if (!formData.loanAmount) {
-        toast({
-          title: "Please enter a loan amount",
-          variant: "destructive"
-        });
-        return;
-      }
-      setCurrentStep('loanType');
-    } else if (currentStep === 'loanType') {
-      if (!formData.loanType) {
-        toast({
-          title: "Please select a loan type",
-          variant: "destructive"
-        });
-        return;
-      }
-      setCurrentStep('contactInfo');
+const Footer = () => {
+  // Scroll to form function
+  const scrollToForm = () => {
+    const formSection = document.querySelector('#quick-capital-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-  
-  const moveToPreviousStep = () => {
-    if (currentStep === 'loanType') {
-      setCurrentStep('loanAmount');
-    } else if (currentStep === 'contactInfo') {
-      setCurrentStep('loanType');
-    }
-  };
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Check if all required fields are filled
-    if (!formData.name || !formData.email || !formData.phone) {
-      toast({
-        title: "Please fill all required fields",
-        variant: "destructive"
-      });
-      return;
-    }
-    
-    setIsSubmitting(true);
-    
-    // Simulate form submission with a delay
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Request Submitted",
-        description: "We'll be in touch with you shortly!"
-      });
-      
-      // Reset form
-      setFormData({
-        loanAmount: '',
-        loanType: '',
-        name: '',
-        email: '',
-        phone: ''
-      });
-      setCurrentStep('loanAmount');
-    }, 1500);
-  };
-  
-  const getProgressValue = () => {
-    if (currentStep === 'loanAmount') return 33;
-    if (currentStep === 'loanType') return 66;
-    return 100;
-  };
-
-  // Improved step indicator display
-  const renderStepIndicator = () => {
-    return (
-      <div className="flex justify-between mb-1">
-        <div className="flex items-center space-x-1.5">
-          <div className={`w-5 h-5 rounded-full flex items-center justify-center ${currentStep === 'loanAmount' ? 'bg-primary text-white' : 'loanAmount' !== currentStep ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400'}`}>
-            {currentStep !== 'loanAmount' ? <CheckCircle className="w-3 h-3" /> : <span className="text-xs">1</span>}
-          </div>
-          <div className={`text-xs font-medium ${currentStep === 'loanAmount' ? 'text-primary' : 'loanAmount' !== currentStep ? 'text-emerald-500' : 'text-gray-400'}`}>
-            Amount
-          </div>
-        </div>
-        
-        <div className="flex items-center space-x-1.5">
-          <div className={`w-5 h-5 rounded-full flex items-center justify-center ${currentStep === 'loanType' ? 'bg-primary text-white' : currentStep === 'contactInfo' ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400'}`}>
-            {currentStep === 'contactInfo' ? <CheckCircle className="w-3 h-3" /> : <span className="text-xs">2</span>}
-          </div>
-          <div className={`text-xs font-medium ${currentStep === 'loanType' ? 'text-primary' : currentStep === 'contactInfo' ? 'text-emerald-500' : 'text-gray-400'}`}>
-            Type
-          </div>
-        </div>
-        
-        <div className="flex items-center space-x-1.5">
-          <div className={`w-5 h-5 rounded-full flex items-center justify-center ${currentStep === 'contactInfo' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-400'}`}>
-            <span className="text-xs">3</span>
-          </div>
-          <div className={`text-xs font-medium ${currentStep === 'contactInfo' ? 'text-primary' : 'text-gray-400'}`}>
-            Contact
-          </div>
-        </div>
-      </div>
-    );
   };
 
   return (
-    <div className={`${variant === 'primary' ? 'bg-white/80 backdrop-blur-md' : 'bg-white'} p-5 rounded-xl shadow-md border border-gray-100`}>
-      <div className="mb-6">
-        {renderStepIndicator()}
-        <Progress value={getProgressValue()} className="h-1.5 mt-2" />
+    <footer className="bg-navy-900 text-white">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          {/* Company Info */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-white">Capital Compass</h3>
+            <p className="text-white/90 mb-4">
+              Private lending solutions for real estate investors. Fast funding for your investment opportunities.
+            </p>
+            <div className="flex space-x-4">
+              {/* Social media links will open in a new tab if they existed */}
+              {/* Since we're removing placeholders, we'll keep only one example */}
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-white hover:text-gold-400 transition-colors"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-bold mb-4 text-white">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#programs" className="text-white/90 hover:text-white transition-colors">Loan Programs</a>
+              </li>
+              <li>
+                <a href="#why-us" className="text-white/90 hover:text-white transition-colors">Why Choose Us</a>
+              </li>
+              <li>
+                <a href="#process" className="text-white/90 hover:text-white transition-colors">Application Process</a>
+              </li>
+              <li>
+                <a 
+                  href="#quick-capital-form" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToForm();
+                  }}
+                  className="text-white/90 hover:text-white transition-colors"
+                >
+                  Apply Now
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Loan Programs */}
+          <div>
+            <h3 className="text-lg font-bold mb-4 text-white">Loan Programs</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#programs" className="text-white/90 hover:text-white transition-colors">Fix-and-Flip</a>
+              </li>
+              <li>
+                <a href="#programs" className="text-white/90 hover:text-white transition-colors">New Construction</a>
+              </li>
+              <li>
+                <a href="#programs" className="text-white/90 hover:text-white transition-colors">DSCR Rental</a>
+              </li>
+              <li>
+                <a href="#programs" className="text-white/90 hover:text-white transition-colors">Rental Portfolio</a>
+              </li>
+              <li>
+                <a href="#programs" className="text-white/90 hover:text-white transition-colors">Commercial Bridge</a>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-lg font-bold mb-4 text-white">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex">
+                <MapPin className="w-5 h-5 text-white/60 mr-3 flex-shrink-0" />
+                <span className="text-white/90">
+                  123 Finance Street, Suite 400<br />
+                  Los Angeles, CA 90017
+                </span>
+              </li>
+              <li className="flex">
+                <Phone className="w-5 h-5 text-white/60 mr-3 flex-shrink-0" />
+                <a 
+                  href="tel:+18005559000" 
+                  className="text-white/90 hover:text-white transition-colors"
+                >
+                  (800) 555-9000
+                </a>
+              </li>
+              <li className="flex">
+                <Mail className="w-5 h-5 text-white/60 mr-3 flex-shrink-0" />
+                <a 
+                  href="mailto:loans@capitalcompass.com" 
+                  className="text-white/90 hover:text-white transition-colors"
+                >
+                  loans@capitalcompass.com
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+        
+        <div className="mt-12 pt-8 border-t border-white/20 text-center text-white/80 text-sm">
+          <p>
+            &copy; {new Date().getFullYear()} Capital Compass. All rights reserved.
+          </p>
+        </div>
       </div>
-      
-      <form onSubmit={handleSubmit} className="space-y-5">
-        {currentStep === 'loanAmount' && (
-          <div className="space-y-5">
-            <div>
-              <label htmlFor="loanAmount" className="block text-sm font-medium text-gray-700 mb-1.5">
-                How much funding do you need?
-              </label>
-              <Input
-                id="loanAmount"
-                name="loanAmount"
-                value={formData.loanAmount}
-                onChange={handleInputChange}
-                placeholder="e.g. $250,000"
-                className="w-full border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary"
-                required
-              />
-            </div>
-            
-            <Button 
-              type="button" 
-              onClick={moveToNextStep}
-              className="w-full bg-primary hover:bg-primary/90 text-white font-medium rounded-lg py-2.5"
-            >
-              Continue <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        )}
-        
-        {currentStep === 'loanType' && (
-          <div className="space-y-5">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                What type of loan are you looking for?
-              </label>
-              <Select 
-                value={formData.loanType} 
-                onValueChange={handleLoanTypeChange}
-              >
-                <SelectTrigger className="w-full border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary">
-                  <SelectValue placeholder="Choose loan type" />
-                </SelectTrigger>
-                <SelectContent className="bg-white border border-gray-100 shadow-lg">
-                  <SelectItem value="fix-and-flip">Fix and Flip</SelectItem>
-                  <SelectItem value="new-construction">New Construction</SelectItem>
-                  <SelectItem value="dscr-rental">DSCR Rental</SelectItem>
-                  <SelectItem value="rental-portfolio">Rental Portfolio</SelectItem>
-                  <SelectItem value="commercial-bridge">Commercial Bridge</SelectItem>
-                  <SelectItem value="multifamily">Multifamily</SelectItem>
-                  <SelectItem value="land-lot">Land and Lot Loans</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            
-            <div className="flex justify-between pt-2 gap-3">
-              <Button 
-                type="button" 
-                variant="outline" 
-                onClick={moveToPreviousStep}
-                className="flex-1 border-gray-200 hover:bg-gray-50"
-              >
-                <ArrowLeft className="mr-2 h-4 w-4" /> Back
-              </Button>
-              <Button 
-                type="button" 
-                onClick={moveToNextStep}
-                className="flex-1 bg-primary hover:bg-primary/90 text-white font-medium"
-              >
-                Continue <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        )}
-        
-        {currentStep === 'contactInfo' && (
-          <div className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
-                Full Name
-              </label>
-              <Input
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                placeholder="Enter your name"
-                className="border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary"
-                required
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
-                Email
-              </label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="Enter your email"
-                className="border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary"
-                required
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">
-                Phone
-              </label>
-              <Input
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleInputChange}
-                placeholder="Enter your phone number"
-                className="border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary"
-                required
-              />
-            </div>
-            
-            <div className="flex justify-between pt-2 gap-3">
-              <Button 
-                type="button" 
-                variant="outline" 
-                onClick={moveToPreviousStep}
-                className="flex-1 border-gray-200 hover:bg-gray-50"
-              >
-                <ArrowLeft className="mr-2 h-4 w-4" /> Back
-              </Button>
-              <Button 
-                type="submit" 
-                disabled={isSubmitting}
-                className="flex-1 bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white font-medium"
-              >
-                {isSubmitting ? "Processing..." : "Get Pre-Approved"}
-              </Button>
-            </div>
-          </div>
-        )}
-      </form>
-    </div>
+    </footer>
   );
 };
 
-export default LeadCaptureForm;
+export default Footer;
