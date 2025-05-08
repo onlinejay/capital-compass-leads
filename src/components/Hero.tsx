@@ -85,9 +85,9 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Right column - ENHANCED for more prominence */}
-          <div className="md:col-span-7 reveal delay-200">
-            <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 relative transform hover:scale-[1.01] transition-all duration-300 z-20">
+          {/* Right column - ADJUSTED WIDTH AND ENHANCED */}
+          <div className="md:col-span-7 reveal delay-200 flex justify-center">
+            <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 relative transform hover:scale-[1.01] transition-all duration-300 z-20 max-w-lg w-full">
               {/* Enhanced decorative elements */}
               <div className="absolute -top-6 -right-6 w-12 h-12 bg-accent rounded-full flex items-center justify-center z-10 animate-pulse">
                 <div className="w-6 h-6 bg-primary rounded-full"></div>
@@ -109,7 +109,7 @@ const Hero = () => {
               <p className="text-gray-700 font-medium mb-6">Get approved today, funded tomorrow</p>
               
               {/* Enhanced form styling with subtle animation */}
-              <div className="transform scale-105 origin-top hover:scale-[1.07] transition-all duration-300"> 
+              <div className="transform hover:scale-[1.02] transition-all duration-300"> 
                 <LeadCaptureForm variant="secondary" />
               </div>
             </div>
