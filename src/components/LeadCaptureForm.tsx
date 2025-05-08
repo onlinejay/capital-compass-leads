@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -115,10 +114,10 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }
     return (
       <div className="flex justify-between mb-1">
         <div className="flex items-center space-x-1.5">
-          <div className={`w-5 h-5 rounded-full flex items-center justify-center ${currentStep === 'loanAmount' ? 'bg-primary text-white' : 'loanAmount' !== currentStep ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400'}`}>
+          <div className={`w-5 h-5 rounded-full flex items-center justify-center ${currentStep === 'loanAmount' ? 'bg-primary text-white' : currentStep !== 'loanAmount' ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400'}`}>
             {currentStep !== 'loanAmount' ? <CheckCircle className="w-3 h-3" /> : <span className="text-xs">1</span>}
           </div>
-          <div className={`text-xs font-medium ${currentStep === 'loanAmount' ? 'text-primary' : 'loanAmount' !== currentStep ? 'text-emerald-500' : 'text-gray-400'}`}>
+          <div className={`text-xs font-medium ${currentStep === 'loanAmount' ? 'text-primary' : currentStep !== 'loanAmount' ? 'text-emerald-500' : 'text-gray-400'}`}>
             Amount
           </div>
         </div>
