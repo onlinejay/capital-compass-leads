@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Progress } from '@/components/ui/progress';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { ArrowRight, ArrowLeft, CheckCircle } from 'lucide-react';
 import { 
   Select, 
   SelectContent, 
@@ -110,24 +110,52 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }
     return 100;
   };
 
-  return (
-    <div className={`${variant === 'primary' ? 'bg-white/80 backdrop-blur-md' : 'bg-white'} p-4 rounded-xl shadow-md`}>
-      <div className="mb-4">
-        <div className="flex justify-between text-sm mb-1">
-          <span className="font-medium">
-            {currentStep === 'loanAmount' ? 'Loan Amount' : 
-             currentStep === 'loanType' ? 'Loan Type' : 'Contact Information'}
-          </span>
-          <span className="text-gray-500">Step {currentStep === 'loanAmount' ? '1' : currentStep === 'loanType' ? '2' : '3'} of 3</span>
+  // Improved step indicator display
+  const renderStepIndicator = () => {
+    return (
+      <div className="flex justify-between mb-1">
+        <div className="flex items-center space-x-1.5">
+          <div className={`w-5 h-5 rounded-full flex items-center justify-center ${currentStep === 'loanAmount' ? 'bg-primary text-white' : currentStep !== 'loanAmount' ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400'}`}>
+            {currentStep !== 'loanAmount' ? <CheckCircle className="w-3 h-3" /> : <span className="text-xs">1</span>}
+          </div>
+          <div className={`text-xs font-medium ${currentStep === 'loanAmount' ? 'text-primary' : currentStep !== 'loanAmount' ? 'text-emerald-500' : 'text-gray-400'}`}>
+            Amount
+          </div>
         </div>
-        <Progress value={getProgressValue()} className="h-2" />
+        
+        <div className="flex items-center space-x-1.5">
+          <div className={`w-5 h-5 rounded-full flex items-center justify-center ${currentStep === 'loanType' ? 'bg-primary text-white' : currentStep === 'contactInfo' ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400'}`}>
+            {currentStep === 'contactInfo' ? <CheckCircle className="w-3 h-3" /> : <span className="text-xs">2</span>}
+          </div>
+          <div className={`text-xs font-medium ${currentStep === 'loanType' ? 'text-primary' : currentStep === 'contactInfo' ? 'text-emerald-500' : 'text-gray-400'}`}>
+            Type
+          </div>
+        </div>
+        
+        <div className="flex items-center space-x-1.5">
+          <div className={`w-5 h-5 rounded-full flex items-center justify-center ${currentStep === 'contactInfo' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-400'}`}>
+            <span className="text-xs">3</span>
+          </div>
+          <div className={`text-xs font-medium ${currentStep === 'contactInfo' ? 'text-primary' : 'text-gray-400'}`}>
+            Contact
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div className={`${variant === 'primary' ? 'bg-white/80 backdrop-blur-md' : 'bg-white'} p-5 rounded-xl shadow-md border border-gray-100`}>
+      <div className="mb-6">
+        {renderStepIndicator()}
+        <Progress value={getProgressValue()} className="h-1.5 mt-2" />
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-5">
         {currentStep === 'loanAmount' && (
-          <div className="space-y-4">
+          <div className="space-y-5">
             <div>
-              <label htmlFor="loanAmount" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="loanAmount" className="block text-sm font-medium text-gray-700 mb-1.5">
                 How much funding do you need?
               </label>
               <Input
@@ -136,7 +164,7 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }
                 value={formData.loanAmount}
                 onChange={handleInputChange}
                 placeholder="e.g. $250,000"
-                className="w-full"
+                className="w-full border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary"
                 required
               />
             </div>
@@ -144,27 +172,27 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }
             <Button 
               type="button" 
               onClick={moveToNextStep}
-              className="w-full bg-primary hover:bg-primary/90 text-white"
+              className="w-full bg-primary hover:bg-primary/90 text-white font-medium rounded-lg py-2.5"
             >
-              Next Step <ArrowRight className="ml-2 h-4 w-4" />
+              Continue <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         )}
         
         {currentStep === 'loanType' && (
-          <div className="space-y-4">
+          <div className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 What type of loan are you looking for?
               </label>
               <Select 
                 value={formData.loanType} 
                 onValueChange={handleLoanTypeChange}
               >
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary">
                   <SelectValue placeholder="Choose loan type" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white border border-gray-100 shadow-lg">
                   <SelectItem value="fix-and-flip">Fix and Flip</SelectItem>
                   <SelectItem value="new-construction">New Construction</SelectItem>
                   <SelectItem value="dscr-rental">DSCR Rental</SelectItem>
@@ -176,21 +204,21 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }
               </Select>
             </div>
             
-            <div className="flex justify-between pt-2">
+            <div className="flex justify-between pt-2 gap-3">
               <Button 
                 type="button" 
                 variant="outline" 
                 onClick={moveToPreviousStep}
-                className="flex-1 mr-2"
+                className="flex-1 border-gray-200 hover:bg-gray-50"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back
               </Button>
               <Button 
                 type="button" 
                 onClick={moveToNextStep}
-                className="flex-1 ml-2 bg-primary hover:bg-primary/90 text-white"
+                className="flex-1 bg-primary hover:bg-primary/90 text-white font-medium"
               >
-                Next <ArrowRight className="ml-2 h-4 w-4" />
+                Continue <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -199,7 +227,7 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }
         {currentStep === 'contactInfo' && (
           <div className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
                 Full Name
               </label>
               <Input
@@ -208,12 +236,13 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Enter your name"
+                className="border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary"
                 required
               />
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
                 Email
               </label>
               <Input
@@ -223,12 +252,13 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Enter your email"
+                className="border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary"
                 required
               />
             </div>
             
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">
                 Phone
               </label>
               <Input
@@ -237,23 +267,24 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }
                 value={formData.phone}
                 onChange={handleInputChange}
                 placeholder="Enter your phone number"
+                className="border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary"
                 required
               />
             </div>
             
-            <div className="flex justify-between pt-2">
+            <div className="flex justify-between pt-2 gap-3">
               <Button 
                 type="button" 
                 variant="outline" 
                 onClick={moveToPreviousStep}
-                className="flex-1 mr-2"
+                className="flex-1 border-gray-200 hover:bg-gray-50"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back
               </Button>
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="flex-1 ml-2 bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white"
+                className="flex-1 bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white font-medium"
               >
                 {isSubmitting ? "Processing..." : "Get Pre-Approved"}
               </Button>

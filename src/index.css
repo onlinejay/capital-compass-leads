@@ -50,7 +50,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
-    @apply text-gray-800;
+    @apply text-gray-800 tracking-tight;
   }
 
   /* Improve text contrast across the site */
@@ -66,6 +66,11 @@
   /* Better contrast for form labels */
   label {
     @apply text-gray-700 font-medium;
+  }
+  
+  /* Improved focus states for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary/50 ring-offset-2;
   }
 }
 
@@ -111,11 +116,11 @@
 }
 
 .btn-primary {
-  @apply bg-primary text-white font-semibold hover:bg-primary/90 transition-colors;
+  @apply bg-primary text-white font-semibold hover:bg-primary/90 transition-colors shadow-sm hover:shadow;
 }
 
 .btn-outline {
-  @apply border border-primary text-primary hover:bg-primary/10 font-medium transition-colors;
+  @apply border-2 border-primary text-primary hover:bg-primary/10 font-medium transition-colors;
 }
 
 /* Fintech specific classes */
@@ -124,7 +129,7 @@
 }
 
 .fintech-stat {
-  @apply flex items-center justify-between p-3 bg-secondary rounded-lg;
+  @apply flex items-center justify-between p-4 bg-white rounded-lg shadow-sm border border-gray-100;
 }
 
 /* Enhanced value indicators with better contrast */
@@ -161,7 +166,7 @@
 
 /* Button gradient style */
 .button-gradient {
-  @apply bg-gradient-to-r from-primary to-blue-600 text-white font-semibold hover:from-primary/90 hover:to-blue-700;
+  @apply bg-gradient-to-r from-primary to-blue-600 text-white font-semibold hover:from-primary/90 hover:to-blue-700 shadow-sm hover:shadow;
 }
 
 /* Action button style - new addition */
@@ -233,4 +238,54 @@
 
 .data-tab[data-state='active'] {
   @apply bg-white text-primary shadow-sm;
+}
+
+/* Enhanced form styling */
+.form-control {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-1.5;
+}
+
+.form-input {
+  @apply w-full border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary transition-all rounded-md px-4 py-2;
+}
+
+/* Enhanced step indicators */
+.step-indicator {
+  @apply flex items-center space-x-2;
+}
+
+.step-circle {
+  @apply w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300;
+}
+
+.step-circle.active {
+  @apply bg-primary text-white;
+}
+
+.step-circle.completed {
+  @apply bg-emerald-500 text-white;
+}
+
+.step-circle.inactive {
+  @apply bg-gray-200 text-gray-500;
+}
+
+.step-text {
+  @apply text-xs font-medium transition-all duration-300;
+}
+
+.step-text.active {
+  @apply text-primary;
+}
+
+.step-text.completed {
+  @apply text-emerald-500;
+}
+
+.step-text.inactive {
+  @apply text-gray-400;
 }
