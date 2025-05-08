@@ -87,6 +87,33 @@ export default {
 					800: '#5c4c1b',
 					900: '#2e260d',
 				},
+				teal: {
+					50: '#effcfa',
+					100: '#c7f9ea',
+					200: '#9eeedc',
+					300: '#6ddece',
+					400: '#44ccc3',
+					500: '#2bb3ae',
+					600: '#1d908f',
+					700: '#197271',
+					800: '#175b5a',
+					900: '#174a4a',
+				},
+				indigo: {
+					50: '#f0f4ff',
+					100: '#dde7fe',
+					200: '#c4d4fb',
+					300: '#a1bcf8',
+					400: '#789bf2',
+					500: '#5374ea',
+					600: '#3e51da',
+					700: '#3340c0',
+					800: '#2e369d',
+					900: '#2b347d',
+				},
+			},
+			fontFamily: {
+				sans: ['Space Grotesk', 'Inter', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -120,14 +147,22 @@ export default {
 						transform: 'translateY(0)'
 					}
 				},
+				'pulse-glow': {
+					'0%, 100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.8',
+						transform: 'scale(1.05)'
+					}
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out forwards',
-			},
-			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
+				'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
 			},
 		}
 	},

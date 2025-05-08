@@ -38,8 +38,8 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary', 
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: "Form Submitted Successfully",
-        description: "We'll reach out to you shortly!",
+        title: "Application Received",
+        description: "Our AI is analyzing your request. We'll reach out shortly!",
       });
       
       // Reset form
@@ -65,7 +65,7 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary', 
           value={formData.name}
           onChange={handleChange}
           required
-          className={isPrimary ? "bg-white/90" : ""}
+          className={`bg-white/10 border-white/20 focus-visible:ring-teal-400 text-white placeholder:text-white/50 ${isPrimary ? "" : ""}`}
         />
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -76,7 +76,7 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary', 
             value={formData.email}
             onChange={handleChange}
             required
-            className={isPrimary ? "bg-white/90" : ""}
+            className={`bg-white/10 border-white/20 focus-visible:ring-teal-400 text-white placeholder:text-white/50 ${isPrimary ? "" : ""}`}
           />
           
           <Input
@@ -86,16 +86,16 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary', 
             value={formData.phone}
             onChange={handleChange}
             required
-            className={isPrimary ? "bg-white/90" : ""}
+            className={`bg-white/10 border-white/20 focus-visible:ring-teal-400 text-white placeholder:text-white/50 ${isPrimary ? "" : ""}`}
           />
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Select onValueChange={handleLoanTypeChange} value={formData.loanType}>
-            <SelectTrigger className={isPrimary ? "bg-white/90" : ""}>
+            <SelectTrigger className={`bg-white/10 border-white/20 focus-visible:ring-teal-400 text-white ${isPrimary ? "" : ""}`}>
               <SelectValue placeholder="Loan Type" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-navy-800 border-white/20 text-white">
               <SelectItem value="fix-and-flip">Fix and Flip</SelectItem>
               <SelectItem value="new-construction">New Construction</SelectItem>
               <SelectItem value="dscr-rental">DSCR Rental</SelectItem>
@@ -113,22 +113,22 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary', 
             value={formData.amount}
             onChange={handleChange}
             required
-            className={isPrimary ? "bg-white/90" : ""}
+            className={`bg-white/10 border-white/20 focus-visible:ring-teal-400 text-white placeholder:text-white/50 ${isPrimary ? "" : ""}`}
           />
         </div>
         
         <Button 
           type="submit" 
           className={`w-full ${isPrimary 
-            ? "bg-gold-500 hover:bg-gold-600 text-navy-900"
-            : "bg-navy-700 hover:bg-navy-800 text-white"}`}
+            ? "bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600 text-white"
+            : "bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600 text-white"}`}
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Submitting..." : "Get Funded Fast"}
+          {isSubmitting ? "Processing..." : "Get Instant Pre-Approval"}
         </Button>
         
-        <p className={`text-xs text-center ${isPrimary ? "text-white/80" : "text-gray-500"}`}>
-          By submitting, you agree to our privacy policy and terms of service.
+        <p className={`text-xs text-center ${isPrimary ? "text-white/60" : "text-white/60"}`}>
+          Secure, encrypted application. Your data is protected by our AI-powered security system.
         </p>
       </div>
     </form>

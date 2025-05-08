@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -54,7 +54,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
   }
 }
 
@@ -83,4 +84,44 @@
 }
 .delay-500 {
   transition-delay: 500ms;
+}
+
+/* Fintech UI Additions */
+.glass-card {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-indigo-500;
+}
+
+.btn-gradient {
+  @apply bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600 text-white;
+}
+
+/* Subtle animation for a more dynamic feel */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.pulse-subtle {
+  animation: pulse-subtle 4s infinite;
+}
+
+/* Data visualization style elements */
+.data-point {
+  @apply h-1 w-1 bg-teal-400 rounded-full inline-block mx-0.5;
+}
+
+.data-line {
+  @apply h-px bg-gradient-to-r from-teal-400 to-indigo-500;
+}
+
+.data-bar {
+  @apply w-1 bg-teal-400 rounded-full;
 }
