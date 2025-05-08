@@ -125,3 +125,48 @@
 .data-bar {
   @apply w-1 bg-teal-400 rounded-full;
 }
+
+/* Card hover effects */
+.fintech-card {
+  @apply transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10 hover:border-teal-400/20;
+}
+
+/* Button pulse effect */
+.btn-pulse {
+  @apply relative;
+}
+
+.btn-pulse::after {
+  content: '';
+  @apply absolute inset-0 bg-current rounded-md opacity-50 animate-ping;
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Number ticker animation */
+@keyframes tickUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.number-ticker {
+  @apply overflow-hidden inline-block;
+}
+
+.number-ticker span {
+  animation: tickUp 0.5s ease-out forwards;
+}
+
+/* Progress indicators */
+.progress-bar {
+  @apply h-1 w-full overflow-hidden rounded-full bg-white/20;
+}
+
+.progress-bar-fill {
+  @apply h-full bg-gradient-to-r from-teal-400 to-indigo-500 transition-all duration-1000;
+}

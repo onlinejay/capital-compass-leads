@@ -32,7 +32,7 @@ const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, p
       </div>
     )}
     <CardHeader className="pb-4">
-      <div className="w-12 h-12 bg-gradient-to-br from-indigo-500/10 to-teal-400/10 rounded-full flex items-center justify-center text-teal-400 mb-4">
+      <div className="w-12 h-12 bg-gradient-to-br from-indigo-500/20 to-teal-400/20 rounded-full flex items-center justify-center text-teal-400 mb-4">
         {icon}
       </div>
       <CardTitle className="text-xl text-white">{title}</CardTitle>
@@ -46,13 +46,13 @@ const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, p
           </li>
         ))}
       </ul>
-      <div className="mt-4 bg-white/5 p-3 rounded-md">
-        <p className="text-sm text-white/60 font-medium">Typical Terms:</p>
-        <p className="text-sm text-white/80">{terms}</p>
+      <div className="mt-4 bg-white/10 rounded-md p-3 backdrop-blur-sm">
+        <p className="text-sm text-white/70 font-medium">Typical Terms:</p>
+        <p className="text-sm text-white/90">{terms}</p>
       </div>
     </CardContent>
     <CardFooter>
-      <Button className="w-full bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600 text-white border-none">
+      <Button className="w-full btn-gradient border-none">
         Apply Now
       </Button>
     </CardFooter>
@@ -84,7 +84,7 @@ const LoanPrograms = () => {
             Investment Solutions
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            Digital <span className="bg-gradient-to-r from-teal-400 to-indigo-500 bg-clip-text text-transparent">Lending</span> Programs
+            Digital <span className="text-gradient">Lending</span> Programs
           </h2>
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
             Algorithm-optimized financing solutions for all types of real estate investments,
@@ -192,8 +192,8 @@ const LoanPrograms = () => {
             />
           </div>
           
-          <div className="flex items-center justify-center h-full reveal-on-scroll reveal delay-300">
-            <div className="text-center p-6 border border-white/10 rounded-lg h-full flex flex-col items-center justify-center bg-white/5 backdrop-blur-sm shadow-sm">
+          <div className="reveal-on-scroll reveal delay-300">
+            <div className="glass-card h-full p-6 flex flex-col items-center justify-center">
               <DollarSign className="w-12 h-12 text-teal-400 mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-white">Custom Financing</h3>
               <p className="text-sm text-white/80 mb-4">
