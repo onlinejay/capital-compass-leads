@@ -6,7 +6,7 @@ import {
   Banknote, 
   DollarSign, 
   House, 
-  Buildings, 
+  Building2, 
   Map 
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -136,7 +136,7 @@ const LoanPrograms = () => {
           <div className="reveal-on-scroll reveal delay-300">
             <LoanProgram
               title="Rental Portfolio"
-              icon={<Buildings className="w-6 h-6" />}
+              icon={<Building2 className="w-6 h-6" />}
               points={[
                 "Bundle multiple properties",
                 "Single loan, simplified management",
@@ -164,7 +164,7 @@ const LoanPrograms = () => {
           <div className="reveal-on-scroll reveal delay-100">
             <LoanProgram
               title="Multifamily"
-              icon={<Buildings className="w-6 h-6" />}
+              icon={<Building className="w-6 h-6" />}
               points={[
                 "5+ unit residential properties",
                 "Acquisition and repositioning",
