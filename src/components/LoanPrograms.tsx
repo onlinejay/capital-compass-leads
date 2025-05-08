@@ -24,36 +24,36 @@ interface LoanProgramProps {
 
 const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, popular }) => (
   <Card className={cn(
-    "transition-all duration-300 h-full hover:shadow-xl border-white/20 bg-navy-800/95 backdrop-blur-sm",
-    popular ? "border-gold-500/70 shadow-lg shadow-gold-500/20" : "hover:border-gold-400/50"
+    "transition-all duration-300 h-full hover:shadow-xl",
+    popular ? "border-primary shadow-lg shadow-primary/10" : "hover:border-primary/50"
   )}>
     {popular && (
-      <div className="bg-gradient-to-r from-gold-500 to-gold-400 text-navy-900 text-xs font-bold px-3 py-1 rounded-t-md absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="bg-gradient-to-r from-primary to-blue-600 text-white text-xs font-bold px-3 py-1 rounded-t-md absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
         MOST POPULAR
       </div>
     )}
     <CardHeader className="pb-4">
-      <div className="w-12 h-12 bg-gradient-to-br from-gold-500/30 to-gold-400/30 rounded-full flex items-center justify-center text-gold-400 mb-4">
+      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-blue-400/20 rounded-full flex items-center justify-center text-primary mb-4">
         {icon}
       </div>
-      <CardTitle className="text-xl text-white font-bold">{title}</CardTitle>
+      <CardTitle className="text-xl font-bold">{title}</CardTitle>
     </CardHeader>
     <CardContent className="pb-4 pt-2">
       <ul className="space-y-2">
         {points.map((point, index) => (
           <li key={index} className="flex items-start">
-            <span className="text-gold-400 mr-2 font-bold">✓</span>
-            <span className="text-sm text-white font-bold">{point}</span>
+            <span className="text-primary mr-2 font-bold">✓</span>
+            <span className="text-sm text-gray-700 font-medium">{point}</span>
           </li>
         ))}
       </ul>
-      <div className="mt-4 bg-navy-700/90 rounded-md p-3">
-        <p className="text-sm text-gold-400 font-medium mb-1">Typical Terms:</p>
-        <p className="text-sm text-white font-bold">{terms}</p>
+      <div className="mt-4 bg-secondary/80 rounded-md p-3">
+        <p className="text-sm text-primary font-medium mb-1">Typical Terms:</p>
+        <p className="text-sm text-gray-800 font-bold">{terms}</p>
       </div>
     </CardContent>
     <CardFooter>
-      <Button className="w-full button-gradient border-none">
+      <Button className="w-full">
         Apply Now
       </Button>
     </CardFooter>
@@ -78,16 +78,16 @@ const LoanPrograms = () => {
   }, []);
 
   return (
-    <section id="programs" className="py-20 bg-gradient-to-b from-navy-900 to-navy-800">
+    <section id="programs" className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 reveal-on-scroll reveal">
-          <div className="inline-block bg-gradient-to-r from-gold-500/20 to-gold-400/20 text-gold-400 px-4 py-1 rounded-full text-sm font-bold mb-4">
+          <div className="inline-block bg-gradient-to-r from-primary/20 to-blue-400/20 text-primary px-4 py-1 rounded-full text-sm font-bold mb-4">
             Investment Solutions
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Property <span className="text-gradient">Investment</span> Programs
           </h2>
-          <p className="text-lg text-white font-medium max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 font-medium max-w-3xl mx-auto">
             Custom financing solutions for all types of real estate investments,
             with flexible terms designed for today's property investors.
           </p>
@@ -194,13 +194,13 @@ const LoanPrograms = () => {
           </div>
           
           <div className="reveal-on-scroll reveal delay-300">
-            <div className="bg-navy-800/95 border border-white/20 h-full p-6 flex flex-col items-center justify-center rounded-lg">
-              <Key className="w-12 h-12 text-gold-400 mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-white">Custom Financing</h3>
-              <p className="text-sm text-white font-bold mb-4">
+            <div className="bg-secondary/40 border border-secondary h-full p-6 flex flex-col items-center justify-center rounded-lg">
+              <Key className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Custom Financing</h3>
+              <p className="text-sm text-gray-700 font-medium mb-4">
                 Don't see what you need? We create custom financing solutions for unique investment opportunities.
               </p>
-              <Button variant="outline" className="border-gold-400/50 text-gold-400 hover:bg-gold-400/10">
+              <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10">
                 Contact Us
               </Button>
             </div>
