@@ -51,6 +51,22 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
+    @apply text-gray-800;
+  }
+
+  /* Improve text contrast across the site */
+  p, span, div {
+    @apply text-gray-700;
+  }
+
+  /* Ensure links have good contrast */
+  a:not([class]) {
+    @apply text-primary hover:text-primary/90 font-medium;
+  }
+
+  /* Better contrast for form labels */
+  label {
+    @apply text-gray-700 font-medium;
   }
 }
 
@@ -90,8 +106,9 @@
   @apply bg-white rounded-lg border border-gray-100 p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-all;
 }
 
+/* Improved text gradient with better contrast */
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-navy-500;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-blue-700;
 }
 
 .btn-primary {
@@ -111,6 +128,7 @@
   @apply flex items-center justify-between p-3 bg-secondary rounded-lg;
 }
 
+/* Enhanced value indicators with better contrast */
 .value-positive {
   @apply text-emerald-600 font-bold;
 }
@@ -133,7 +151,7 @@
   @apply h-full bg-gradient-to-r from-primary/80 to-primary transition-all duration-1000;
 }
 
-/* Button styles */
+/* Button styles with improved contrast */
 .button-primary {
   @apply bg-primary hover:bg-primary/90 text-white font-semibold shadow-sm;
 }
@@ -163,7 +181,7 @@
   @apply text-primary;
 }
 
-/* Fintech UI Elements */
+/* Fintech UI Elements with improved visibility */
 .glass-card {
   @apply bg-white/90 backdrop-blur-sm border border-gray-100 shadow-sm rounded-xl;
 }
@@ -172,8 +190,9 @@
   @apply bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all;
 }
 
+/* Improved data labels & values */
 .data-label {
-  @apply text-xs uppercase tracking-wider text-gray-500 font-semibold;
+  @apply text-xs uppercase tracking-wider text-gray-600 font-semibold;
 }
 
 .data-value {
@@ -184,10 +203,20 @@
   @apply bg-white p-4 rounded-xl border border-gray-100 shadow-sm;
 }
 
+/* Enhanced gradient backgrounds with better text visibility */
 .fintech-gradient-bg {
   @apply bg-gradient-to-br from-navy-800 to-navy-700;
 }
 
 .fintech-gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-navy-600;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-navy-600 font-bold;
+}
+
+/* Tab control improvements for better visibility */
+.data-tab {
+  @apply font-medium;
+}
+
+.data-tab[data-state='active'] {
+  @apply bg-white text-primary shadow-sm;
 }
