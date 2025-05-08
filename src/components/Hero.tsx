@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import LeadCaptureForm from './LeadCaptureForm';
-import { CreditCard, Clock, BarChart3, CheckCircle, Wallet, Shield, ArrowUpRight } from 'lucide-react';
+import { CreditCard, Clock, CheckCircle, Wallet, Shield, ArrowUpRight } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Hero = () => {
@@ -33,19 +33,23 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[calc(100vh-80px)] flex items-center bg-white overflow-hidden">
-      {/* Fintech Background Elements */}
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 to-navy-400/10"></div>
         </div>
         <div className="absolute -top-64 -right-64 w-[500px] h-[500px] rounded-full bg-secondary/80 filter blur-3xl"></div>
         <div className="absolute -bottom-64 -left-64 w-[500px] h-[500px] rounded-full bg-accent/50 filter blur-3xl"></div>
+        
+        {/* Added decorative elements */}
+        <div className="absolute top-1/3 left-1/4 w-8 h-8 bg-primary/10 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-12 h-12 bg-secondary/30 rounded-full animate-pulse"></div>
       </div>
 
       <div className="container mx-auto px-4 z-10 py-16 md:py-24">
         <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left column - NOW SMALLER (5 cols instead of 7) */}
+          {/* Left column - OPTIMIZED for better balance */}
           <div className="md:col-span-5 reveal">
             <div className="inline-flex items-center gap-2 bg-secondary px-4 py-1.5 rounded-full text-sm font-bold mb-6 text-primary shadow-sm">
               <Wallet className="w-4 h-4" />
@@ -55,7 +59,7 @@ const Hero = () => {
               Instant <span className="fintech-gradient-text">Financing</span> for Your Next Investment Property
             </h1>
             <p className="text-base md:text-lg text-gray-700 mb-6 max-w-xl leading-relaxed">
-              Access fast, reliable funding while traditional banks are still processing paperwork. Close on properties quickly and grow your real estate portfolio with our tech-enabled lending platform.
+              Access fast, reliable funding while traditional banks are still processing paperwork. Close on properties quickly and grow your real estate portfolio.
             </p>
             
             <div className="flex flex-wrap gap-4 mb-6">
@@ -81,17 +85,17 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Right column - NOW LARGER (7 cols instead of 5) with enhanced styling */}
+          {/* Right column - ENHANCED for more prominence */}
           <div className="md:col-span-7 reveal delay-200">
             <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 relative transform hover:scale-[1.01] transition-all duration-300 z-20">
-              {/* Decorative Elements to make form stand out */}
+              {/* Enhanced decorative elements */}
               <div className="absolute -top-6 -right-6 w-12 h-12 bg-accent rounded-full flex items-center justify-center z-10 animate-pulse">
                 <div className="w-6 h-6 bg-primary rounded-full"></div>
               </div>
               <div className="absolute -bottom-3 -left-3 w-6 h-6 bg-primary rounded-full z-10"></div>
               
-              {/* Halo effect behind the form */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl -z-10 opacity-70"></div>
+              {/* Enhanced halo effect behind the form */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/30 to-secondary/20 rounded-3xl blur-xl -z-10 opacity-80"></div>
               
               <div className="absolute -top-3 left-6 bg-accent px-4 py-1 rounded-full text-xs font-medium text-primary shadow-sm">
                 <span className="animate-pulse">Priority Application</span>
@@ -104,8 +108,8 @@ const Hero = () => {
               </div>
               <p className="text-gray-700 font-medium mb-6">Get approved today, funded tomorrow</p>
               
-              {/* Enhanced form styling */}
-              <div className="transform scale-105 origin-top"> 
+              {/* Enhanced form styling with subtle animation */}
+              <div className="transform scale-105 origin-top hover:scale-[1.07] transition-all duration-300"> 
                 <LeadCaptureForm variant="secondary" />
               </div>
             </div>
