@@ -71,6 +71,10 @@ const Hero = () => {
                 <CreditCard className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
                 <span className="font-medium">Flexible Terms</span>
               </div>
+              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
+                <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                <span className="font-medium">Fast Closing</span>
+              </div>
             </div>
             
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
@@ -79,7 +83,7 @@ const Hero = () => {
                 size="lg"
                 onClick={handleApplyNowClick}
               >
-                Get Pre-Approved Now
+                View Loan Options
                 <ArrowUpRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
