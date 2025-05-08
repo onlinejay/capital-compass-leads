@@ -50,29 +50,29 @@ const Hero = () => {
             <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
               Smart <span className="text-gradient">Capital</span> for Tomorrow's Investors
             </h1>
-            <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">
+            <p className="text-lg md:text-xl text-white mb-8 max-w-2xl">
               Algorithmic lending precision with human expertise. Access capital for your real estate investments through our AI-enhanced approval system.
             </p>
             
             <div className="flex flex-wrap gap-4 mb-6">
               <div className="glass-card p-3 rounded-lg flex items-center reveal delay-100 shadow-lg">
                 <span className="text-3xl font-bold text-gradient mr-2">24hr</span>
-                <span className="text-sm text-white">AI-Powered <br/>Approvals</span>
+                <span className="text-sm text-white font-medium">AI-Powered <br/>Approvals</span>
               </div>
               <div className="glass-card p-3 rounded-lg flex items-center reveal delay-200 shadow-lg">
                 <span className="text-3xl font-bold text-gradient mr-2">7-14</span>
-                <span className="text-sm text-white">Days to<br/>Closing</span>
+                <span className="text-sm text-white font-medium">Days to<br/>Closing</span>
               </div>
               <div className="glass-card p-3 rounded-lg flex items-center reveal delay-300 shadow-lg">
                 <span className="text-3xl font-bold text-gradient mr-2">90%</span>
-                <span className="text-sm text-white">ARV <br/>Financing</span>
+                <span className="text-sm text-white font-medium">ARV <br/>Financing</span>
               </div>
             </div>
           </div>
           
           {/* Right column */}
           <div className="md:col-span-5 reveal delay-200">
-            <div className="glass-card p-6 rounded-2xl shadow-xl">
+            <div className="bg-navy-800/90 border border-white/20 p-6 rounded-2xl shadow-xl">
               <div className="mb-4 flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-white">Apply Now</h2>
                 <div className="bg-gradient-to-r from-teal-400 to-indigo-500 p-2 rounded-full">
@@ -83,7 +83,7 @@ const Hero = () => {
                   </svg>
                 </div>
               </div>
-              <p className="text-white mb-6">Complete this form for AI-powered pre-approval</p>
+              <p className="text-white font-medium mb-6">Complete this form for AI-powered pre-approval</p>
               <LeadCaptureForm variant="primary" />
             </div>
           </div>

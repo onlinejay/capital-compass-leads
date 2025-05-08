@@ -23,8 +23,8 @@ interface LoanProgramProps {
 
 const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, popular }) => (
   <Card className={cn(
-    "transition-all duration-300 h-full hover:shadow-xl border-white/10 bg-gradient-to-b from-white/10 to-transparent backdrop-blur-sm",
-    popular ? "border-indigo-500/50 shadow-lg shadow-indigo-500/10" : "hover:border-teal-300/30"
+    "transition-all duration-300 h-full hover:shadow-xl border-white/20 bg-navy-800/90 backdrop-blur-sm",
+    popular ? "border-indigo-500/70 shadow-lg shadow-indigo-500/20" : "hover:border-teal-300/50"
   )}>
     {popular && (
       <div className="bg-gradient-to-r from-teal-400 to-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-t-md absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -32,23 +32,23 @@ const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, p
       </div>
     )}
     <CardHeader className="pb-4">
-      <div className="w-12 h-12 bg-gradient-to-br from-indigo-500/20 to-teal-400/20 rounded-full flex items-center justify-center text-teal-400 mb-4">
+      <div className="w-12 h-12 bg-gradient-to-br from-indigo-500/30 to-teal-400/30 rounded-full flex items-center justify-center text-teal-400 mb-4">
         {icon}
       </div>
-      <CardTitle className="text-xl text-white">{title}</CardTitle>
+      <CardTitle className="text-xl text-white font-bold">{title}</CardTitle>
     </CardHeader>
     <CardContent className="pb-4 pt-2">
       <ul className="space-y-2">
         {points.map((point, index) => (
           <li key={index} className="flex items-start">
-            <span className="text-teal-400 mr-2">✓</span>
+            <span className="text-teal-400 mr-2 font-bold">✓</span>
             <span className="text-sm text-white font-medium">{point}</span>
           </li>
         ))}
       </ul>
-      <div className="mt-4 bg-white/15 rounded-md p-3 backdrop-blur-sm">
-        <p className="text-sm text-white font-medium">Typical Terms:</p>
-        <p className="text-sm text-white">{terms}</p>
+      <div className="mt-4 bg-navy-700/90 rounded-md p-3">
+        <p className="text-sm text-teal-400 font-medium mb-1">Typical Terms:</p>
+        <p className="text-sm text-white font-medium">{terms}</p>
       </div>
     </CardContent>
     <CardFooter>
@@ -86,7 +86,7 @@ const LoanPrograms = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Digital <span className="text-gradient">Lending</span> Programs
           </h2>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto">
+          <p className="text-lg text-white max-w-3xl mx-auto">
             Algorithm-optimized financing solutions for all types of real estate investments,
             with flexible terms designed for modern investors.
           </p>
@@ -193,10 +193,10 @@ const LoanPrograms = () => {
           </div>
           
           <div className="reveal-on-scroll reveal delay-300">
-            <div className="glass-card h-full p-6 flex flex-col items-center justify-center">
+            <div className="bg-navy-800/90 border border-white/20 h-full p-6 flex flex-col items-center justify-center rounded-lg">
               <DollarSign className="w-12 h-12 text-teal-400 mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-white">Custom Financing</h3>
-              <p className="text-sm text-white/80 mb-4">
+              <p className="text-sm text-white mb-4 font-medium">
                 Don't see what you need? We create custom AI-optimized solutions for unique investment opportunities.
               </p>
               <Button variant="outline" className="border-teal-400/50 text-teal-400 hover:bg-teal-400/10">
