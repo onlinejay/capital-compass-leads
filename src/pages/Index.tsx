@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import LoanPrograms from '@/components/LoanPrograms';
 import WhyChooseUs from '@/components/WhyChooseUs';
-import ApplicationProcess from '@/components/ApplicationProcess';
+import CustomApplicationProcess from '@/components/CustomApplicationProcess';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 
@@ -32,7 +32,7 @@ const Index = () => {
       <Hero />
       <LoanPrograms />
       <WhyChooseUs />
-      <ApplicationProcess />
+      <CustomApplicationProcess />
       <ContactForm />
       <Footer />
     </div>
