@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -68,11 +69,20 @@ const MultiStepSurveyForm = () => {
     { name: 'Review', description: 'Submit Application' }
   ];
 
-  const updateFields = (stepKey: keyof SurveyData, fields: Partial<SurveyData[keyof SurveyData] | { agreement: boolean }>) => {
+  // Fixed TypeScript error here
+  const updateFields = (
+    stepKey: keyof SurveyData, 
+    fields: stepKey extends 'agreement' 
+      ? { agreement: boolean } 
+      : Partial<SurveyData[keyof SurveyData]>
+  ) => {
     setData(prev => {
       if (stepKey === 'agreement') {
-        return { ...prev, agreement: fields.agreement as boolean };
+        // Handle agreement field separately
+        return { ...prev, agreement: (fields as { agreement: boolean }).agreement };
       }
+      
+      // Handle object fields
       return { 
         ...prev, 
         [stepKey]: { ...prev[stepKey], ...(fields as any) }
@@ -114,7 +124,7 @@ const MultiStepSurveyForm = () => {
     return (
       <div className="text-center py-10">
         <CheckCircle className="w-16 h-16 text-emerald-500 mx-auto mb-6" />
-        <h3 className="text-2xl font-bold text-navy-800 mb-2">Application Submitted!</h3>
+        <h3 className="text-2xl font-bold text-gray-800 mb-2">Application Submitted!</h3>
         <p className="text-gray-600 mb-8">
           Thank you for your application. One of our funding specialists will review your details
           and contact you within 24 hours with personalized funding options.
@@ -149,13 +159,13 @@ const MultiStepSurveyForm = () => {
           {steps.map((step, index) => (
             <div 
               key={step.name} 
-              className={`flex flex-col items-center ${index <= currentStep ? 'text-gold-500' : 'text-gray-400'}`}
+              className={`flex flex-col items-center ${index <= currentStep ? 'text-primary' : 'text-gray-400'}`}
               style={{ width: `${100 / steps.length}%` }}
             >
               <div 
                 className={`flex items-center justify-center w-8 h-8 rounded-full border-2 
-                ${index < currentStep ? 'bg-gold-500 border-gold-500 text-white' : 
-                  index === currentStep ? 'border-gold-500 text-gold-500' : 
+                ${index < currentStep ? 'bg-primary border-primary text-white' : 
+                  index === currentStep ? 'border-primary text-primary' : 
                   'border-gray-300 text-gray-300'}`}
               >
                 {index < currentStep ? '✓' : index + 1}
@@ -209,14 +219,14 @@ const MultiStepSurveyForm = () => {
             <Button 
               type="button" 
               onClick={nextStep}
-              className="bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600"
+              className="bg-primary hover:bg-primary/90 text-white"
             >
               Continue <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           ) : (
             <Button 
               type="submit" 
-              className="bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-500 hover:to-gold-700"
+              className="bg-primary hover:bg-primary/90 text-white"
               disabled={isSubmitting || !data.agreement}
             >
               {isSubmitting ? "Submitting..." : "Submit Application"}

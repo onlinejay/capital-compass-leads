@@ -27,9 +27,15 @@ type SurveyData = {
   agreement: boolean;
 };
 
+// This is the fixed type definition that will correctly handle the agreement field
 type ReviewStepProps = {
   data: SurveyData;
-  updateFields: (key: keyof SurveyData, fields: Partial<SurveyData[keyof SurveyData] | { agreement: boolean }>) => void;
+  updateFields: (
+    stepKey: keyof SurveyData, 
+    fields: stepKey extends 'agreement' 
+      ? { agreement: boolean } 
+      : Partial<SurveyData[keyof SurveyData]>
+  ) => void;
 };
 
 const formatPropertyType = (type: string): string => {
@@ -84,7 +90,7 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ data, updateFields }) => {
   const renderField = (label: string, value: string) => (
     <div className="mb-3">
       <span className="text-gray-500 text-sm">{label}:</span>
-      <p className="font-medium text-navy-800">{value || "Not provided"}</p>
+      <p className="font-medium text-gray-800">{value || "Not provided"}</p>
     </div>
   );
 
@@ -97,9 +103,9 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ data, updateFields }) => {
           <TabsTrigger value="personal">Personal</TabsTrigger>
         </TabsList>
         
-        <TabsContent value="property" className="space-y-2 border rounded-lg p-4">
+        <TabsContent value="property" className="space-y-2 border rounded-lg p-4 bg-white">
           <div className="flex items-center justify-between mb-2">
-            <h3 className="font-bold text-navy-800">Property Details</h3>
+            <h3 className="font-bold text-gray-800">Property Details</h3>
           </div>
           
           {renderField("Property Type", formatPropertyType(propertyInfo.propertyType))}
@@ -108,9 +114,9 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ data, updateFields }) => {
           {renderField("Property Condition", formatCondition(propertyInfo.propertyCondition))}
         </TabsContent>
         
-        <TabsContent value="loan" className="space-y-2 border rounded-lg p-4">
+        <TabsContent value="loan" className="space-y-2 border rounded-lg p-4 bg-white">
           <div className="flex items-center justify-between mb-2">
-            <h3 className="font-bold text-navy-800">Loan Details</h3>
+            <h3 className="font-bold text-gray-800">Loan Details</h3>
           </div>
           
           {renderField("Loan Type", formatLoanType(loanDetails.loanType))}
@@ -119,9 +125,9 @@ const ReviewStep: React.FC<ReviewStepProps> = ({ data, updateFields }) => {
           {renderField("Exit Strategy", formatExitStrategy(loanDetails.exitStrategy))}
         </TabsContent>
         
-        <TabsContent value="personal" className="space-y-2 border rounded-lg p-4">
+        <TabsContent value="personal" className="space-y-2 border rounded-lg p-4 bg-white">
           <div className="flex items-center justify-between mb-2">
-            <h3 className="font-bold text-navy-800">Personal Information</h3>
+            <h3 className="font-bold text-gray-800">Personal Information</h3>
           </div>
           
           {renderField("Name", personalInfo.name)}

@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,20 +7,20 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 220 48% 33%;
+    --primary: 203 80% 36%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 43 73% 57%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 202 79% 92%;
+    --secondary-foreground: 203 80% 36%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -33,18 +33,9 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 203 80% 36%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -55,7 +46,11 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
   }
 }
 
@@ -86,53 +81,34 @@
   transition-delay: 500ms;
 }
 
-/* Fintech UI Additions */
-.glass-card {
-  @apply bg-navy-800/95 backdrop-blur-md border border-white/30 rounded-xl shadow-lg;
+/* Modern Real Estate UI Additions */
+.property-card {
+  @apply bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300;
+}
+
+.stat-card {
+  @apply bg-white rounded-lg border border-gray-100 p-4 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-all;
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-500 to-gold-400;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500;
 }
 
-.btn-gradient {
-  @apply bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-900 font-bold shadow-md;
+.btn-primary {
+  @apply bg-primary text-white font-semibold hover:bg-primary/90 transition-colors;
 }
 
-/* Subtle animation for a more dynamic feel */
-@keyframes pulse-subtle {
-  0%, 100% {
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.pulse-subtle {
-  animation: pulse-subtle 4s infinite;
-}
-
-/* Data visualization style elements */
-.data-point {
-  @apply h-1 w-1 bg-gold-500 rounded-full inline-block mx-0.5;
-}
-
-.data-line {
-  @apply h-px bg-gradient-to-r from-gold-400 to-gold-600;
-}
-
-.data-bar {
-  @apply w-1 bg-gold-500 rounded-full;
+.btn-outline {
+  @apply border border-primary text-primary hover:bg-primary/10 font-medium transition-colors;
 }
 
 /* Real estate investor specific classes */
 .property-card {
-  @apply transition-all duration-300 rounded-xl overflow-hidden border border-navy-300/20 hover:shadow-2xl hover:border-gold-500/30;
+  @apply transition-all duration-300 rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg;
 }
 
 .investment-stat {
-  @apply flex items-center justify-between p-3 bg-navy-50 rounded-lg border border-navy-200;
+  @apply flex items-center justify-between p-3 bg-secondary rounded-lg;
 }
 
 .roi-positive {
@@ -143,102 +119,53 @@
   @apply text-red-500 font-bold;
 }
 
-/* Card hover effects */
-.fintech-card {
-  @apply transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/20 hover:border-gold-400/30;
-}
-
-/* Button pulse effect */
-.btn-pulse {
-  @apply relative;
-}
-
-.btn-pulse::after {
-  content: '';
-  @apply absolute inset-0 bg-current rounded-md opacity-50 animate-ping;
-  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-/* Number ticker animation */
-@keyframes tickUp {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.number-ticker {
-  @apply overflow-hidden inline-block;
-}
-
-.number-ticker span {
-  animation: tickUp 0.5s ease-out forwards;
+/* Form elements */
+.form-input {
+  @apply bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-800 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all;
 }
 
 /* Progress indicators */
 .progress-bar {
-  @apply h-1 w-full overflow-hidden rounded-full bg-navy-200;
+  @apply h-1 w-full overflow-hidden rounded-full bg-gray-200;
 }
 
 .progress-bar-fill {
-  @apply h-full bg-gradient-to-r from-gold-400 to-gold-600 transition-all duration-1000;
+  @apply h-full bg-gradient-to-r from-blue-400 to-primary transition-all duration-1000;
 }
 
-/* Ensure text visibility */
-.text-visible-light {
-  @apply text-navy-900 font-medium;
+/* Button styles */
+.button-primary {
+  @apply bg-primary hover:bg-primary/90 text-white font-semibold shadow-sm;
 }
 
-.text-visible-dark {
-  @apply text-white font-bold;
+.button-secondary {
+  @apply bg-secondary hover:bg-secondary/90 text-primary font-semibold shadow-sm;
 }
 
-/* Enhance contrast for glass backgrounds */
-.glass-content {
-  @apply text-white font-bold;
-}
-
-/* Better form input visibility */
-.form-input-dark {
-  @apply bg-navy-800/90 border-white/40 text-white font-medium placeholder:text-white/80;
-}
-
-.form-input-light {
-  @apply bg-white border-navy-300 text-navy-800 font-medium placeholder:text-navy-500;
-}
-
-/* Button styles with better visibility */
-.button-gradient {
-  @apply bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-500 hover:to-gold-700 text-navy-900 font-bold shadow-lg;
-}
-
-/* Real estate specific styling */
+/* Property listing styling */
 .property-stat {
-  @apply flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-md;
+  @apply flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm;
 }
 
 .property-stat-icon {
-  @apply text-gold-600 mb-2;
+  @apply text-primary mb-2;
 }
 
 .property-stat-value {
-  @apply text-2xl font-bold text-navy-900;
+  @apply text-2xl font-bold text-gray-900;
 }
 
 .property-stat-label {
-  @apply text-xs text-navy-600 uppercase tracking-wider;
+  @apply text-xs text-gray-600 uppercase tracking-wider;
 }
 
+/* Loan program styling */
 .loan-program-card {
-  @apply bg-navy-800 border border-navy-700 text-white rounded-xl overflow-hidden shadow-xl;
+  @apply bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all;
 }
 
 .loan-program-header {
-  @apply bg-navy-700 px-4 py-3 border-b border-navy-600;
+  @apply bg-secondary px-4 py-3;
 }
 
 .loan-program-content {
@@ -246,9 +173,9 @@
 }
 
 .loan-point {
-  @apply flex items-center space-x-2 text-white;
+  @apply flex items-center space-x-2 text-gray-700;
 }
 
 .loan-point-icon {
-  @apply text-gold-500;
+  @apply text-primary;
 }

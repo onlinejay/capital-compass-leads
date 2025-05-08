@@ -20,17 +20,17 @@ const ContactForm = () => {
   }, []);
 
   return (
-    <section id="contact" className="py-20 bg-navy-50">
+    <section id="contact" className="py-20 bg-secondary/50">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto reveal-on-scroll reveal">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy-800 text-center">
-            Ready to <span className="text-gold-500">Get Funded?</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 text-center font-heading">
+            Ready to <span className="text-primary">Get Funded?</span>
           </h2>
           <p className="text-lg text-gray-600 mb-8 text-center">
             Complete our quick survey to receive your personalized funding options within 24 hours.
           </p>
           
-          <div className="bg-white rounded-lg shadow-xl p-6 md:p-8">
+          <div className="bg-white rounded-lg shadow-md p-6 md:p-8 border border-gray-100">
             <MultiStepSurveyForm />
           </div>
         </div>
