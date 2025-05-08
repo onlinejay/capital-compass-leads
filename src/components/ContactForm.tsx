@@ -25,11 +25,11 @@ const ContactForm = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center reveal-on-scroll reveal">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800 font-heading">
-            Ready to Start Your Next Investment Project?
+            Fast Financing For Your Real Estate Goals
           </h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Apply now and get pre-approved within 24 hours. Our team of investment specialists is ready to help you 
-            find the perfect funding solution and secure the capital you need.
+            Get funding approval in as little as 24 hours. Our experienced team is here to guide you 
+            through the process and help you secure the best financing options for your investment properties.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
