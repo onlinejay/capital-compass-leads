@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { 
   Select, 
   SelectContent, 
@@ -12,12 +12,6 @@ import {
 } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/hooks/use-toast';
-import { 
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
 
 type FormStep = 'loanType' | 'projectDetails' | 'contact';
 
@@ -33,17 +27,6 @@ const QuickCapitalRequestForm = () => {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const loanTypes = [
-    { value: "fix-and-flip", label: "Fix and Flip" },
-    { value: "new-construction", label: "New Construction" },
-    { value: "dscr-rental", label: "DSCR Rental" },
-    { value: "rental-portfolio", label: "Rental Portfolio" },
-    { value: "commercial-bridge", label: "Commercial Bridge" },
-    { value: "multifamily", label: "Multifamily" },
-    { value: "land-lot", label: "Land and Lot Loans" },
-  ];
 
   const handleLoanTypeChange = (value: string) => {
     setFormData(prev => ({ ...prev, loanType: value }));
@@ -125,18 +108,6 @@ const QuickCapitalRequestForm = () => {
     return 100;
   };
 
-  // Function to find and return the selected loan type label
-  const getSelectedLoanTypeLabel = () => {
-    const selected = loanTypes.find(type => type.value === formData.loanType);
-    return selected ? selected.label : "Choose loan type";
-  };
-
-  // For the inline dropdown used in the hero section
-  const handleQuickLoanTypeSelect = (value: string) => {
-    setFormData(prev => ({ ...prev, loanType: value }));
-    setIsDropdownOpen(false);
-  };
-
   return (
     <div className="bg-white rounded-xl shadow-lg p-6 max-w-md mx-auto">
       <h3 className="text-2xl font-semibold mb-6 text-center text-gray-800">Quick Capital Request</h3>
@@ -166,11 +137,13 @@ const QuickCapitalRequestForm = () => {
                 <SelectValue placeholder="Choose loan type" />
               </SelectTrigger>
               <SelectContent>
-                {loanTypes.map((type) => (
-                  <SelectItem key={type.value} value={type.value}>
-                    {type.label}
-                  </SelectItem>
-                ))}
+                <SelectItem value="fix-and-flip">Fix and Flip</SelectItem>
+                <SelectItem value="new-construction">New Construction</SelectItem>
+                <SelectItem value="dscr-rental">DSCR Rental</SelectItem>
+                <SelectItem value="rental-portfolio">Rental Portfolio</SelectItem>
+                <SelectItem value="commercial-bridge">Commercial Bridge</SelectItem>
+                <SelectItem value="multifamily">Multifamily</SelectItem>
+                <SelectItem value="land-lot">Land and Lot Loans</SelectItem>
               </SelectContent>
             </Select>
             
@@ -306,31 +279,6 @@ const QuickCapitalRequestForm = () => {
           </div>
         )}
       </form>
-
-      {/* This export method allows the Hero component to use this dropdown */}
-      <div className="hidden">
-        <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="w-full justify-between text-left font-normal">
-              <div className="flex items-center">
-                <span>{getSelectedLoanTypeLabel()}</span>
-              </div>
-              <ChevronDown className="h-4 w-4 opacity-50" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="start" className="w-full min-w-[200px] bg-white">
-            {loanTypes.map((type) => (
-              <DropdownMenuItem
-                key={type.value}
-                onClick={() => handleQuickLoanTypeSelect(type.value)}
-                className="cursor-pointer"
-              >
-                {type.label}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
     </div>
   );
 };
