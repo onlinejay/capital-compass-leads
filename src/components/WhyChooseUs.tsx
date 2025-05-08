@@ -137,12 +137,12 @@ const WhyChooseUs = () => {
                 </div>
               </div>
               
-              {/* Right content - visual element */}
+              {/* Right content - visual element - Improved visibility of circles */}
               <div className="hidden md:block md:w-1/3 bg-gradient-to-br from-blue-400/20 to-primary/10 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-10 right-10 w-32 h-32 rounded-full border-4 border-white/30"></div>
-                  <div className="absolute bottom-10 left-10 w-20 h-20 rounded-full border-4 border-white/20"></div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border-4 border-white/40"></div>
+                <div className="absolute inset-0">
+                  <div className="absolute top-10 right-10 w-32 h-32 rounded-full border-4 border-white/60"></div>
+                  <div className="absolute bottom-10 left-10 w-20 h-20 rounded-full border-4 border-white/50"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border-4 border-white/70"></div>
                 </div>
               </div>
             </div>
@@ -154,3 +154,4 @@ const WhyChooseUs = () => {
 };
 
 export default WhyChooseUs;
+
