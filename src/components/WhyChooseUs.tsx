@@ -10,7 +10,8 @@ import {
   Building,
   Zap,
   TrendingUp,
-  ArrowRight
+  ArrowRight,
+  Home
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -137,12 +138,17 @@ const WhyChooseUs = () => {
                 </div>
               </div>
               
-              {/* Right content - visual element - Improved visibility of circles */}
+              {/* Right content - visual element with house outline added */}
               <div className="hidden md:block md:w-1/3 bg-gradient-to-br from-blue-400/20 to-primary/10 relative overflow-hidden">
                 <div className="absolute inset-0">
                   <div className="absolute top-10 right-10 w-32 h-32 rounded-full border-4 border-white/60"></div>
                   <div className="absolute bottom-10 left-10 w-20 h-20 rounded-full border-4 border-white/50"></div>
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border-4 border-white/70"></div>
+                  
+                  {/* Added house outline */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <Home className="w-24 h-24 text-white/80 stroke-[1.5]" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -154,4 +160,3 @@ const WhyChooseUs = () => {
 };
 
 export default WhyChooseUs;
-
