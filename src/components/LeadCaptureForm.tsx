@@ -2,163 +2,267 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { toast } from '@/components/ui/use-toast';
-import { CreditCard, DollarSign, Lock } from 'lucide-react';
+import { Progress } from '@/components/ui/progress';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { 
+  Select, 
+  SelectContent, 
+  SelectItem, 
+  SelectTrigger, 
+  SelectValue 
+} from '@/components/ui/select';
+import { toast } from '@/hooks/use-toast';
+
+type FormStep = 'loanAmount' | 'loanType' | 'contactInfo';
 
 interface LeadCaptureFormProps {
   variant?: 'primary' | 'secondary';
-  className?: string;
 }
 
-const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary', className = '' }) => {
+const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }) => {
+  const [currentStep, setCurrentStep] = useState<FormStep>('loanAmount');
   const [formData, setFormData] = useState({
+    loanAmount: '',
+    loanType: '',
     name: '',
     email: '',
-    phone: '',
-    loanType: '',
-    amount: '',
+    phone: ''
   });
-
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
 
   const handleLoanTypeChange = (value: string) => {
     setFormData(prev => ({ ...prev, loanType: value }));
   };
-
+  
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+  
+  const moveToNextStep = () => {
+    if (currentStep === 'loanAmount') {
+      if (!formData.loanAmount) {
+        toast({
+          title: "Please enter a loan amount",
+          variant: "destructive"
+        });
+        return;
+      }
+      setCurrentStep('loanType');
+    } else if (currentStep === 'loanType') {
+      if (!formData.loanType) {
+        toast({
+          title: "Please select a loan type",
+          variant: "destructive"
+        });
+        return;
+      }
+      setCurrentStep('contactInfo');
+    }
+  };
+  
+  const moveToPreviousStep = () => {
+    if (currentStep === 'loanType') {
+      setCurrentStep('loanAmount');
+    } else if (currentStep === 'contactInfo') {
+      setCurrentStep('loanType');
+    }
+  };
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Check if all required fields are filled
+    if (!formData.name || !formData.email || !formData.phone) {
+      toast({
+        title: "Please fill all required fields",
+        variant: "destructive"
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Simulate form submission with a delay
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: "Application Received",
-        description: "Our AI is analyzing your request. We'll reach out shortly!",
+        title: "Request Submitted",
+        description: "We'll be in touch with you shortly!"
       });
       
       // Reset form
       setFormData({
+        loanAmount: '',
+        loanType: '',
         name: '',
         email: '',
-        phone: '',
-        loanType: '',
-        amount: '',
+        phone: ''
       });
-    }, 1000);
+      setCurrentStep('loanAmount');
+    }, 1500);
+  };
+  
+  const getProgressValue = () => {
+    if (currentStep === 'loanAmount') return 33;
+    if (currentStep === 'loanType') return 66;
+    return 100;
   };
 
-  // Use different styling based on variant
-  const isPrimary = variant === 'primary';
-  const inputClasses = isPrimary
-    ? "bg-white/20 border-white/30 text-white font-medium focus-visible:ring-navy-400 placeholder:text-white/70"
-    : "bg-white border-gray-300 text-gray-800 font-medium focus-visible:ring-primary/30 placeholder:text-gray-500";
-  
-  const buttonClasses = isPrimary
-    ? "bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white font-bold shadow-lg shadow-primary/20"
-    : "bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white font-bold shadow-md shadow-primary/10";
-
   return (
-    <form onSubmit={handleSubmit} className={className}>
-      <div className="space-y-4">
-        <div className="relative">
-          <Input
-            type="text"
-            placeholder="Full Name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className={`${inputClasses} pl-10`}
-          />
-          <User className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+    <div className={`${variant === 'primary' ? 'bg-white/80 backdrop-blur-md' : 'bg-white'} p-4 rounded-xl shadow-md`}>
+      <div className="mb-4">
+        <div className="flex justify-between text-sm mb-1">
+          <span className="font-medium">
+            {currentStep === 'loanAmount' ? 'Loan Amount' : 
+             currentStep === 'loanType' ? 'Loan Type' : 'Contact Information'}
+          </span>
+          <span className="text-gray-500">Step {currentStep === 'loanAmount' ? '1' : currentStep === 'loanType' ? '2' : '3'} of 3</span>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="relative">
-            <Input
-              type="email"
-              placeholder="Email Address"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className={`${inputClasses} pl-10`}
-            />
-            <Mail className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          </div>
-          
-          <div className="relative">
-            <Input
-              type="tel"
-              placeholder="Phone Number"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className={`${inputClasses} pl-10`}
-            />
-            <Phone className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="relative">
-            <Select onValueChange={handleLoanTypeChange} value={formData.loanType}>
-              <SelectTrigger className={`${isPrimary ? "bg-white/20 border-white/30 text-white" : "bg-white text-gray-800 border-gray-300"} font-medium pl-10`}>
-                <SelectValue placeholder="Loan Type" />
-              </SelectTrigger>
-              <SelectContent className={isPrimary ? "bg-navy-800 border-white/20 text-white" : "bg-white text-gray-800 border-gray-300"}>
-                <SelectItem value="fix-and-flip" className="hover:bg-white/10">Fix and Flip</SelectItem>
-                <SelectItem value="new-construction" className="hover:bg-white/10">New Construction</SelectItem>
-                <SelectItem value="dscr-rental" className="hover:bg-white/10">DSCR Rental</SelectItem>
-                <SelectItem value="rental-portfolio" className="hover:bg-white/10">Rental Portfolio</SelectItem>
-                <SelectItem value="commercial-bridge" className="hover:bg-white/10">Commercial Bridge</SelectItem>
-                <SelectItem value="multifamily" className="hover:bg-white/10">Multifamily</SelectItem>
-                <SelectItem value="land-lot" className="hover:bg-white/10">Land and Lot Loans</SelectItem>
-              </SelectContent>
-            </Select>
-            <CreditCard className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 z-10" />
-          </div>
-          
-          <div className="relative">
-            <Input
-              type="text"
-              placeholder="Loan Amount"
-              name="amount"
-              value={formData.amount}
-              onChange={handleChange}
-              required
-              className={`${inputClasses} pl-10`}
-            />
-            <DollarSign className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          </div>
-        </div>
-        
-        <Button 
-          type="submit" 
-          className={`w-full ${buttonClasses} rounded-md`}
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? "Processing..." : "Get Instant Pre-Approval"}
-        </Button>
-        
-        <p className={`text-xs text-center flex items-center justify-center gap-1 ${isPrimary ? "text-white/80 font-medium" : "text-gray-600 font-medium"}`}>
-          <Lock className="w-3 h-3" />
-          Secure, encrypted application with bank-level security
-        </p>
+        <Progress value={getProgressValue()} className="h-2" />
       </div>
-    </form>
+      
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {currentStep === 'loanAmount' && (
+          <div className="space-y-4">
+            <div>
+              <label htmlFor="loanAmount" className="block text-sm font-medium text-gray-700 mb-1">
+                How much funding do you need?
+              </label>
+              <Input
+                id="loanAmount"
+                name="loanAmount"
+                value={formData.loanAmount}
+                onChange={handleInputChange}
+                placeholder="e.g. $250,000"
+                className="w-full"
+                required
+              />
+            </div>
+            
+            <Button 
+              type="button" 
+              onClick={moveToNextStep}
+              className="w-full bg-primary hover:bg-primary/90 text-white"
+            >
+              Next Step <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        )}
+        
+        {currentStep === 'loanType' && (
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                What type of loan are you looking for?
+              </label>
+              <Select 
+                value={formData.loanType} 
+                onValueChange={handleLoanTypeChange}
+              >
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Choose loan type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="fix-and-flip">Fix and Flip</SelectItem>
+                  <SelectItem value="new-construction">New Construction</SelectItem>
+                  <SelectItem value="dscr-rental">DSCR Rental</SelectItem>
+                  <SelectItem value="rental-portfolio">Rental Portfolio</SelectItem>
+                  <SelectItem value="commercial-bridge">Commercial Bridge</SelectItem>
+                  <SelectItem value="multifamily">Multifamily</SelectItem>
+                  <SelectItem value="land-lot">Land and Lot Loans</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            
+            <div className="flex justify-between pt-2">
+              <Button 
+                type="button" 
+                variant="outline" 
+                onClick={moveToPreviousStep}
+                className="flex-1 mr-2"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" /> Back
+              </Button>
+              <Button 
+                type="button" 
+                onClick={moveToNextStep}
+                className="flex-1 ml-2 bg-primary hover:bg-primary/90 text-white"
+              >
+                Next <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        )}
+        
+        {currentStep === 'contactInfo' && (
+          <div className="space-y-4">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                Full Name
+              </label>
+              <Input
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                Email
+              </label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                Phone
+              </label>
+              <Input
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+            
+            <div className="flex justify-between pt-2">
+              <Button 
+                type="button" 
+                variant="outline" 
+                onClick={moveToPreviousStep}
+                className="flex-1 mr-2"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" /> Back
+              </Button>
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="flex-1 ml-2 bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white"
+              >
+                {isSubmitting ? "Processing..." : "Get Pre-Approved"}
+              </Button>
+            </div>
+          </div>
+        )}
+      </form>
+    </div>
   );
 };
-
-// Import the needed Lucide icons
-import { User, Mail, Phone } from 'lucide-react';
 
 export default LeadCaptureForm;
