@@ -109,31 +109,31 @@ const QuickCapitalRequestForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 max-w-md mx-auto">
-      <h3 className="text-2xl font-semibold mb-6 text-center text-gray-800">Quick Capital Request</h3>
+    <div className="bg-white rounded-xl shadow-lg p-8 md:p-10 w-full max-w-4xl mx-auto">
+      <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center text-gray-800">Quick Capital Request</h3>
       
-      <div className="mb-6">
-        <div className="flex justify-between text-sm mb-1">
+      <div className="mb-8">
+        <div className="flex justify-between text-sm md:text-base mb-1">
           <span className="font-medium">
             {currentStep === 'loanType' ? 'Loan Type' : 
              currentStep === 'projectDetails' ? 'Project Details' : 'Contact Information'}
           </span>
           <span className="text-gray-500">Step {currentStep === 'loanType' ? '1' : currentStep === 'projectDetails' ? '2' : '3'} of 3</span>
         </div>
-        <Progress value={getProgressValue()} className="h-2" />
+        <Progress value={getProgressValue()} className="h-2.5" />
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
         {currentStep === 'loanType' && (
-          <div className="space-y-4">
-            <label className="block text-sm font-medium text-gray-700">
+          <div className="space-y-6">
+            <label className="block text-lg font-medium text-gray-700">
               Select Loan Type
             </label>
             <Select 
               value={formData.loanType} 
               onValueChange={handleLoanTypeChange}
             >
-              <SelectTrigger className="w-full">
+              <SelectTrigger className="w-full h-14 text-base">
                 <SelectValue placeholder="Choose loan type" />
               </SelectTrigger>
               <SelectContent>
@@ -147,22 +147,22 @@ const QuickCapitalRequestForm = () => {
               </SelectContent>
             </Select>
             
-            <div className="pt-4">
+            <div className="pt-6">
               <Button 
                 type="button" 
                 onClick={moveToNextStep}
-                className="w-full bg-primary hover:bg-primary/90 text-white"
+                className="w-full h-12 text-lg bg-primary hover:bg-primary/90 text-white"
               >
-                Next Step <ArrowRight className="ml-2 h-4 w-4" />
+                Next Step <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>
         )}
         
         {currentStep === 'projectDetails' && (
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div>
-              <label htmlFor="projectAddress" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="projectAddress" className="block text-lg font-medium text-gray-700">
                 Property Address
               </label>
               <Input
@@ -171,13 +171,13 @@ const QuickCapitalRequestForm = () => {
                 value={formData.projectAddress}
                 onChange={handleInputChange}
                 placeholder="Enter property address"
-                className="mt-1"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
             
             <div>
-              <label htmlFor="loanAmount" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="loanAmount" className="block text-lg font-medium text-gray-700">
                 Loan Amount
               </label>
               <Input
@@ -186,35 +186,35 @@ const QuickCapitalRequestForm = () => {
                 value={formData.loanAmount}
                 onChange={handleInputChange}
                 placeholder="e.g. $250,000"
-                className="mt-1"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
             
-            <div className="flex justify-between pt-4">
+            <div className="flex justify-between pt-6">
               <Button 
                 type="button" 
                 variant="outline" 
                 onClick={moveToPreviousStep}
-                className="flex-1 mr-2"
+                className="flex-1 mr-3 h-12 text-base"
               >
-                <ArrowLeft className="mr-2 h-4 w-4" /> Back
+                <ArrowLeft className="mr-2 h-5 w-5" /> Back
               </Button>
               <Button 
                 type="button" 
                 onClick={moveToNextStep}
-                className="flex-1 ml-2 bg-primary hover:bg-primary/90 text-white"
+                className="flex-1 ml-3 h-12 text-base bg-primary hover:bg-primary/90 text-white"
               >
-                Next <ArrowRight className="ml-2 h-4 w-4" />
+                Next <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>
         )}
         
         {currentStep === 'contact' && (
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="name" className="block text-lg font-medium text-gray-700">
                 Full Name
               </label>
               <Input
@@ -223,13 +223,13 @@ const QuickCapitalRequestForm = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Enter your name"
-                className="mt-1"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-lg font-medium text-gray-700">
                 Email
               </label>
               <Input
@@ -239,13 +239,13 @@ const QuickCapitalRequestForm = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Enter your email"
-                className="mt-1"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
             
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="phone" className="block text-lg font-medium text-gray-700">
                 Phone
               </label>
               <Input
@@ -254,24 +254,24 @@ const QuickCapitalRequestForm = () => {
                 value={formData.phone}
                 onChange={handleInputChange}
                 placeholder="Enter your phone number"
-                className="mt-1"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
             
-            <div className="flex justify-between pt-4">
+            <div className="flex justify-between pt-6">
               <Button 
                 type="button" 
                 variant="outline" 
                 onClick={moveToPreviousStep}
-                className="flex-1 mr-2"
+                className="flex-1 mr-3 h-12 text-base"
               >
-                <ArrowLeft className="mr-2 h-4 w-4" /> Back
+                <ArrowLeft className="mr-2 h-5 w-5" /> Back
               </Button>
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="flex-1 ml-2 bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white"
+                className="flex-1 ml-3 h-12 text-base bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white"
               >
                 {isSubmitting ? "Processing..." : "Submit Request"}
               </Button>

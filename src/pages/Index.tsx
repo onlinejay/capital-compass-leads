@@ -37,7 +37,7 @@ const Index = () => {
       <LoanPrograms />
       <WhyChooseUs />
       <CustomApplicationProcess />
-      <div id="quick-capital-form" className="py-24 relative overflow-hidden">
+      <div id="quick-capital-form" className="py-28 md:py-32 relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-blue-600/5 z-0"></div>
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-primary/10 filter blur-3xl z-0"></div>
@@ -47,7 +47,7 @@ const Index = () => {
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/40 to-blue-500/40 z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12 reveal-on-scroll">
+          <div className="text-center mb-16 reveal-on-scroll">
             <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-bold mb-4 text-primary shadow-sm">
               <span>Act Fast - Limited Time Financing</span>
             </div>
@@ -59,7 +59,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="max-w-3xl mx-auto glass-card bg-white/80 backdrop-blur-sm rounded-xl shadow-xl border border-gray-100 p-6 md:p-8 reveal-on-scroll">
+          <div className="w-full mx-auto reveal-on-scroll">
             <QuickCapitalRequestForm />
           </div>
           
