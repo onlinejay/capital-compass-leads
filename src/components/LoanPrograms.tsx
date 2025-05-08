@@ -85,7 +85,7 @@ const LoanPrograms = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             We offer specialized financing solutions for all types of real estate investments,
-            with competitive rates and flexible terms designed for investors.
+            with flexible terms designed for investors.
           </p>
         </div>
         
@@ -100,7 +100,7 @@ const LoanPrograms = () => {
                 "No prepayment penalties",
                 "Interest-only payments",
               ]}
-              terms="6-24 month terms, rates from 8.99%"
+              terms="6-24 month terms"
               popular={true}
             />
           </div>
@@ -115,7 +115,7 @@ const LoanPrograms = () => {
                 "Interest reserve available",
                 "Construction oversight services",
               ]}
-              terms="12-24 month terms, rates from 9.5%"
+              terms="12-24 month terms"
             />
           </div>
           
@@ -129,7 +129,7 @@ const LoanPrograms = () => {
                 "Long-term financing options",
                 "Portfolio loans available",
               ]}
-              terms="30-year terms, rates from 7.25%"
+              terms="30-year terms"
             />
           </div>
           
@@ -143,7 +143,7 @@ const LoanPrograms = () => {
                 "Cross-collateralization benefits",
                 "Scale your portfolio efficiently",
               ]}
-              terms="30-year terms, rates from 7.5%"
+              terms="30-year terms"
             />
           </div>
           
@@ -157,7 +157,7 @@ const LoanPrograms = () => {
                 "Quick closing timeline",
                 "Flexible exit strategies",
               ]}
-              terms="12-36 month terms, rates from 8.75%"
+              terms="12-36 month terms"
             />
           </div>
           
@@ -171,7 +171,7 @@ const LoanPrograms = () => {
                 "Renovation funding available",
                 "Cash-out refinance options",
               ]}
-              terms="Terms up to 30 years, rates from 7.99%"
+              terms="Terms up to 30 years"
             />
           </div>
           
@@ -185,7 +185,7 @@ const LoanPrograms = () => {
                 "Horizontal development",
                 "Flexible terms for developers",
               ]}
-              terms="6-24 month terms, rates from 10.5%"
+              terms="6-24 month terms"
             />
           </div>
           

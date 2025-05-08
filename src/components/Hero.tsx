@@ -49,20 +49,6 @@ const Hero = () => {
                 <span className="text-sm">ARV <br/>Financing</span>
               </div>
             </div>
-            
-            <div className="hidden md:block">
-              <p className="font-semibold mb-2">Trusted by investors nationwide:</p>
-              <div className="flex gap-6 opacity-60">
-                <div className="text-sm">
-                  ★★★★★<br/>
-                  <span className="text-xs">250+ Reviews</span>
-                </div>
-                <div className="h-8 border-l border-white/30"></div>
-                <div>500+ Properties Funded</div>
-                <div className="h-8 border-l border-white/30"></div>
-                <div>$100M+ Loan Volume</div>
-              </div>
-            </div>
           </div>
           
           {/* Right column */}
