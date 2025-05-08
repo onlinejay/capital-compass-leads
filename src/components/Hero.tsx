@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import LeadCaptureForm from './LeadCaptureForm';
 import { CreditCard, Clock, BarChart3, CheckCircle, Wallet, Shield, ArrowUpRight } from 'lucide-react';
@@ -126,7 +127,7 @@ const Hero = () => {
                 </div>
               </div>
               <p className="text-gray-700 font-medium mb-6">Get approved today, funded tomorrow</p>
-              <LeadCaptureForm />
+              <LeadCaptureForm variant="secondary" />
             </div>
             
             <div className="mt-4 p-3 bg-secondary/50 rounded-lg flex items-center justify-center gap-2 text-sm text-gray-600 border border-gray-100">
