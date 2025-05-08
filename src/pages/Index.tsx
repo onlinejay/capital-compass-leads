@@ -33,34 +33,46 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <Hero />
-      <LoanPrograms />
-      <WhyChooseUs />
-      <CustomApplicationProcess />
-      <div id="quick-capital-form" className="py-28 md:py-32 relative overflow-hidden">
-        {/* Background elements */}
+      
+      {/* New prominent Quick Capital Request section above the fold */}
+      <div id="quick-capital-form" className="pt-24 md:pt-28 pb-16 md:pb-24 relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50">
+        {/* Enhanced background elements */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-blue-600/5 z-0"></div>
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-primary/10 filter blur-3xl z-0"></div>
-        <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full bg-blue-400/10 filter blur-3xl z-0"></div>
+        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-primary/10 filter blur-3xl animate-pulse-glow z-0"></div>
+        <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] rounded-full bg-blue-400/10 filter blur-3xl animate-pulse-glow z-0" style={{animationDelay: '2s'}}></div>
         
-        {/* Diagonal decorative line */}
+        {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/40 to-blue-500/40 z-0"></div>
+        <div className="absolute top-20 left-1/4 w-8 h-8 rounded-full bg-blue-200/30 backdrop-blur-sm z-0"></div>
+        <div className="absolute bottom-20 right-1/4 w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16 reveal-on-scroll">
+          <div className="text-center mb-10 md:mb-14 reveal-on-scroll">
             <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-bold mb-4 text-primary shadow-sm">
-              <span>Act Fast - Limited Time Financing</span>
+              <span className="animate-pulse">Act Fast - Limited Time Financing</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-5 text-gray-800 font-heading">
+            <h2 className="text-4xl md:text-6xl font-bold mb-5 text-gray-800 font-heading">
               Fast <span className="text-gradient bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Financing</span> For Your Real Estate Goals
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-medium">
+            <p className="text-lg md:text-2xl text-gray-600 max-w-3xl mx-auto font-medium">
               Get quick access to capital for your next real estate investment project with our streamlined application process.
             </p>
           </div>
           
-          <div className="w-full mx-auto reveal-on-scroll">
-            <QuickCapitalRequestForm />
+          <div className="max-w-5xl mx-auto reveal-on-scroll">
+            <div className="relative">
+              {/* Highlight glow behind the form */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-blue-600/20 rounded-2xl blur-lg z-0"></div>
+              <div className="relative z-10">
+                <QuickCapitalRequestForm />
+              </div>
+              
+              {/* Security badge */}
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md flex items-center gap-2 border border-gray-100">
+                <div className="w-4 h-4 bg-emerald-500 rounded-full"></div>
+                <span className="text-sm font-medium whitespace-nowrap">Secure Application - 256-bit encryption</span>
+              </div>
+            </div>
           </div>
           
           {/* Trust indicators */}
@@ -80,6 +92,11 @@ const Index = () => {
           </div>
         </div>
       </div>
+      
+      <Hero />
+      <LoanPrograms />
+      <WhyChooseUs />
+      <CustomApplicationProcess />
       <ContactForm />
       <Footer />
     </div>
