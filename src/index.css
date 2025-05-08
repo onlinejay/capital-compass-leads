@@ -164,6 +164,16 @@
   @apply bg-gradient-to-r from-primary to-blue-600 text-white font-semibold hover:from-primary/90 hover:to-blue-700;
 }
 
+/* Action button style - new addition */
+.button-action {
+  @apply bg-white text-primary hover:bg-white/90 font-bold shadow-md transition-all duration-300;
+}
+
+/* Action outline button style - new addition */
+.button-action-outline {
+  @apply border-2 border-white text-white hover:bg-white/10 font-bold transition-all duration-300;
+}
+
 /* Loan program styling */
 .loan-program-card {
   @apply bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all;

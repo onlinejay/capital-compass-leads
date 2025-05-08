@@ -9,8 +9,10 @@ import {
   DollarSign,
   Building,
   Zap,
-  TrendingUp
+  TrendingUp,
+  ArrowRight
 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface FeatureProps {
   icon: React.ReactNode;
@@ -109,19 +111,37 @@ const WhyChooseUs = () => {
           </div>
         </div>
         
-        <div className="mt-16 p-8 bg-navy-800 rounded-xl text-white text-center reveal-on-scroll reveal">
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Ready to Take Action on Your Next Deal?</h3>
-            <p className="mb-6 font-medium">
-              Don't miss out on your next investment opportunity because of slow financing. 
-              Our streamlined process gets you funded when others can't.
-            </p>
-            <a 
-              href="#contact" 
-              className="inline-block bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-md px-6 py-3 transition-colors transform hover:scale-105"
-            >
-              Get Funded Now
-            </a>
+        {/* Redesigned "Ready to Take Action" section */}
+        <div className="mt-16 reveal-on-scroll reveal">
+          <div className="bg-gradient-to-r from-primary to-blue-600 rounded-2xl overflow-hidden shadow-xl">
+            <div className="flex flex-col md:flex-row">
+              {/* Left content */}
+              <div className="md:w-2/3 p-8 md:p-10">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Take Action on Your Next Deal?</h3>
+                <p className="text-white/90 text-lg mb-6 font-medium max-w-2xl">
+                  Don't miss out on your next investment opportunity because of slow financing. 
+                  Our streamlined process gets you funded when others can't.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold rounded-lg px-8">
+                    Get Funded Now
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg px-8">
+                    Schedule Consultation
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Right content - visual element */}
+              <div className="hidden md:block md:w-1/3 bg-gradient-to-br from-blue-400/20 to-primary/10 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-10 right-10 w-32 h-32 rounded-full border-4 border-white/30"></div>
+                  <div className="absolute bottom-10 left-10 w-20 h-20 rounded-full border-4 border-white/20"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border-4 border-white/40"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
