@@ -127,7 +127,11 @@ const WhyChooseUs = () => {
                     Get Funded Now
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
-                  <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg px-8">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="border-2 border-white text-white bg-blue-600/40 hover:bg-white/20 font-bold rounded-lg px-8"
+                  >
                     Schedule Consultation
                   </Button>
                 </div>
