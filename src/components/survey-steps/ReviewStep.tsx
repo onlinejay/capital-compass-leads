@@ -2,8 +2,6 @@
 import React from 'react';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
-import { Pencil } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 type SurveyData = {
@@ -31,7 +29,7 @@ type SurveyData = {
 
 type ReviewStepProps = {
   data: SurveyData;
-  updateFields: (key: keyof SurveyData, fields: Partial<SurveyData[keyof SurveyData]>) => void;
+  updateFields: (key: keyof SurveyData, fields: Partial<SurveyData[keyof SurveyData] | { agreement: boolean }>) => void;
 };
 
 const formatPropertyType = (type: string): string => {

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -69,11 +68,16 @@ const MultiStepSurveyForm = () => {
     { name: 'Review', description: 'Submit Application' }
   ];
 
-  const updateFields = (stepKey: keyof SurveyData, fields: Partial<SurveyData[keyof SurveyData]>) => {
-    setData(prev => ({ 
-      ...prev, 
-      [stepKey]: { ...prev[stepKey], ...fields as any }
-    }));
+  const updateFields = (stepKey: keyof SurveyData, fields: Partial<SurveyData[keyof SurveyData] | { agreement: boolean }>) => {
+    setData(prev => {
+      if (stepKey === 'agreement') {
+        return { ...prev, agreement: fields.agreement as boolean };
+      }
+      return { 
+        ...prev, 
+        [stepKey]: { ...prev[stepKey], ...(fields as any) }
+      };
+    });
   };
   
   const nextStep = () => {
@@ -187,7 +191,7 @@ const MultiStepSurveyForm = () => {
         {currentStep === 3 && (
           <ReviewStep 
             data={data} 
-            updateFields={(key, fields) => updateFields(key, fields)}
+            updateFields={updateFields}
           />
         )}
 
@@ -213,7 +217,7 @@ const MultiStepSurveyForm = () => {
             <Button 
               type="submit" 
               className="bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-500 hover:to-gold-700"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !data.agreement}
             >
               {isSubmitting ? "Submitting..." : "Submit Application"}
             </Button>
