@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { ArrowLeft, ArrowRight, Sparkles, Star } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { 
   Select, 
   SelectContent, 
@@ -109,46 +109,41 @@ const QuickCapitalRequestForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10 w-full mx-auto border border-primary/20 backdrop-blur-sm transition-all hover:shadow-2xl hover:border-primary/30">
-      <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800 flex items-center justify-center gap-3">
-        <Sparkles className="text-primary h-8 w-8" />
-        <span>Quick Capital Request</span>
-        <Sparkles className="text-primary h-8 w-8" />
-      </h3>
+    <div className="bg-white rounded-xl shadow-lg p-8 md:p-10 w-full max-w-4xl mx-auto">
+      <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center text-gray-800">Quick Capital Request</h3>
       
-      <div className="mb-10">
-        <div className="flex justify-between text-base mb-2">
-          <span className="font-medium text-primary">
+      <div className="mb-8">
+        <div className="flex justify-between text-sm md:text-base mb-1">
+          <span className="font-medium">
             {currentStep === 'loanType' ? 'Loan Type' : 
              currentStep === 'projectDetails' ? 'Project Details' : 'Contact Information'}
           </span>
-          <span className="text-gray-500 font-semibold">Step {currentStep === 'loanType' ? '1' : currentStep === 'projectDetails' ? '2' : '3'} of 3</span>
+          <span className="text-gray-500">Step {currentStep === 'loanType' ? '1' : currentStep === 'projectDetails' ? '2' : '3'} of 3</span>
         </div>
-        <Progress value={getProgressValue()} className="h-3 bg-gray-100" />
+        <Progress value={getProgressValue()} className="h-2.5" />
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-8">
+      <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
         {currentStep === 'loanType' && (
-          <div className="space-y-8">
-            <label className="block text-xl font-medium text-gray-700">
+          <div className="space-y-6">
+            <label className="block text-lg font-medium text-gray-700">
               Select Loan Type
-              <span className="ml-1 text-primary">*</span>
             </label>
             <Select 
               value={formData.loanType} 
               onValueChange={handleLoanTypeChange}
             >
-              <SelectTrigger className="w-full h-16 text-lg border-2 hover:border-primary focus:border-primary transition-colors">
+              <SelectTrigger className="w-full h-14 text-base">
                 <SelectValue placeholder="Choose loan type" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="fix-and-flip" className="text-base py-3">Fix and Flip</SelectItem>
-                <SelectItem value="new-construction" className="text-base py-3">New Construction</SelectItem>
-                <SelectItem value="dscr-rental" className="text-base py-3">DSCR Rental</SelectItem>
-                <SelectItem value="rental-portfolio" className="text-base py-3">Rental Portfolio</SelectItem>
-                <SelectItem value="commercial-bridge" className="text-base py-3">Commercial Bridge</SelectItem>
-                <SelectItem value="multifamily" className="text-base py-3">Multifamily</SelectItem>
-                <SelectItem value="land-lot" className="text-base py-3">Land and Lot Loans</SelectItem>
+                <SelectItem value="fix-and-flip">Fix and Flip</SelectItem>
+                <SelectItem value="new-construction">New Construction</SelectItem>
+                <SelectItem value="dscr-rental">DSCR Rental</SelectItem>
+                <SelectItem value="rental-portfolio">Rental Portfolio</SelectItem>
+                <SelectItem value="commercial-bridge">Commercial Bridge</SelectItem>
+                <SelectItem value="multifamily">Multifamily</SelectItem>
+                <SelectItem value="land-lot">Land and Lot Loans</SelectItem>
               </SelectContent>
             </Select>
             
@@ -156,7 +151,7 @@ const QuickCapitalRequestForm = () => {
               <Button 
                 type="button" 
                 onClick={moveToNextStep}
-                className="w-full h-14 text-lg bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-700 text-white font-semibold"
+                className="w-full h-12 text-lg bg-primary hover:bg-primary/90 text-white"
               >
                 Next Step <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -165,11 +160,10 @@ const QuickCapitalRequestForm = () => {
         )}
         
         {currentStep === 'projectDetails' && (
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div>
-              <label htmlFor="projectAddress" className="block text-xl font-medium text-gray-700">
+              <label htmlFor="projectAddress" className="block text-lg font-medium text-gray-700">
                 Property Address
-                <span className="ml-1 text-primary">*</span>
               </label>
               <Input
                 id="projectAddress"
@@ -177,15 +171,14 @@ const QuickCapitalRequestForm = () => {
                 value={formData.projectAddress}
                 onChange={handleInputChange}
                 placeholder="Enter property address"
-                className="mt-2 h-16 text-lg border-2 focus:border-primary transition-colors"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
             
             <div>
-              <label htmlFor="loanAmount" className="block text-xl font-medium text-gray-700">
+              <label htmlFor="loanAmount" className="block text-lg font-medium text-gray-700">
                 Loan Amount
-                <span className="ml-1 text-primary">*</span>
               </label>
               <Input
                 id="loanAmount"
@@ -193,7 +186,7 @@ const QuickCapitalRequestForm = () => {
                 value={formData.loanAmount}
                 onChange={handleInputChange}
                 placeholder="e.g. $250,000"
-                className="mt-2 h-16 text-lg border-2 focus:border-primary transition-colors"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
@@ -203,14 +196,14 @@ const QuickCapitalRequestForm = () => {
                 type="button" 
                 variant="outline" 
                 onClick={moveToPreviousStep}
-                className="flex-1 mr-3 h-14 text-lg border-2"
+                className="flex-1 mr-3 h-12 text-base"
               >
                 <ArrowLeft className="mr-2 h-5 w-5" /> Back
               </Button>
               <Button 
                 type="button" 
                 onClick={moveToNextStep}
-                className="flex-1 ml-3 h-14 text-lg bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-700 text-white font-semibold"
+                className="flex-1 ml-3 h-12 text-base bg-primary hover:bg-primary/90 text-white"
               >
                 Next <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -219,11 +212,10 @@ const QuickCapitalRequestForm = () => {
         )}
         
         {currentStep === 'contact' && (
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-xl font-medium text-gray-700">
+              <label htmlFor="name" className="block text-lg font-medium text-gray-700">
                 Full Name
-                <span className="ml-1 text-primary">*</span>
               </label>
               <Input
                 id="name"
@@ -231,15 +223,14 @@ const QuickCapitalRequestForm = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Enter your name"
-                className="mt-2 h-16 text-lg border-2 focus:border-primary transition-colors"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-xl font-medium text-gray-700">
+              <label htmlFor="email" className="block text-lg font-medium text-gray-700">
                 Email
-                <span className="ml-1 text-primary">*</span>
               </label>
               <Input
                 id="email"
@@ -248,15 +239,14 @@ const QuickCapitalRequestForm = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Enter your email"
-                className="mt-2 h-16 text-lg border-2 focus:border-primary transition-colors"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
             
             <div>
-              <label htmlFor="phone" className="block text-xl font-medium text-gray-700">
+              <label htmlFor="phone" className="block text-lg font-medium text-gray-700">
                 Phone
-                <span className="ml-1 text-primary">*</span>
               </label>
               <Input
                 id="phone"
@@ -264,7 +254,7 @@ const QuickCapitalRequestForm = () => {
                 value={formData.phone}
                 onChange={handleInputChange}
                 placeholder="Enter your phone number"
-                className="mt-2 h-16 text-lg border-2 focus:border-primary transition-colors"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
@@ -274,30 +264,17 @@ const QuickCapitalRequestForm = () => {
                 type="button" 
                 variant="outline" 
                 onClick={moveToPreviousStep}
-                className="flex-1 mr-3 h-14 text-lg border-2"
+                className="flex-1 mr-3 h-12 text-base"
               >
                 <ArrowLeft className="mr-2 h-5 w-5" /> Back
               </Button>
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="flex-1 ml-3 h-14 text-lg bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-700 text-white font-semibold"
+                className="flex-1 ml-3 h-12 text-base bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white"
               >
-                {isSubmitting ? "Processing..." : (
-                  <>
-                    Submit Request <Star className="ml-2 h-5 w-5" />
-                  </>
-                )}
+                {isSubmitting ? "Processing..." : "Submit Request"}
               </Button>
-            </div>
-            
-            {/* Added security badge */}
-            <div className="flex items-center justify-center gap-2 text-sm text-gray-500 border-t border-gray-100 pt-4 mt-2">
-              <svg className="w-4 h-4 text-green-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>SSL Encrypted & Secure</span>
             </div>
           </div>
         )}
