@@ -109,31 +109,31 @@ const QuickCapitalRequestForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10 w-full max-w-4xl mx-auto border border-gray-100">
-      <h3 className="text-3xl md:text-4xl font-bold mb-8 text-center text-gray-800 font-heading">Quick Capital Request</h3>
+    <div className="bg-white rounded-xl shadow-lg p-8 md:p-10 w-full max-w-4xl mx-auto">
+      <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center text-gray-800">Quick Capital Request</h3>
       
       <div className="mb-8">
-        <div className="flex justify-between text-sm md:text-base mb-2">
-          <span className="font-semibold">
+        <div className="flex justify-between text-sm md:text-base mb-1">
+          <span className="font-medium">
             {currentStep === 'loanType' ? 'Loan Type' : 
              currentStep === 'projectDetails' ? 'Project Details' : 'Contact Information'}
           </span>
           <span className="text-gray-500">Step {currentStep === 'loanType' ? '1' : currentStep === 'projectDetails' ? '2' : '3'} of 3</span>
         </div>
-        <Progress value={getProgressValue()} className="h-3 bg-gray-100" />
+        <Progress value={getProgressValue()} className="h-2.5" />
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-7 md:space-y-8">
+      <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
         {currentStep === 'loanType' && (
           <div className="space-y-6">
-            <label className="block text-xl font-medium text-gray-700">
+            <label className="block text-lg font-medium text-gray-700">
               Select Loan Type
             </label>
             <Select 
               value={formData.loanType} 
               onValueChange={handleLoanTypeChange}
             >
-              <SelectTrigger className="w-full h-16 text-lg">
+              <SelectTrigger className="w-full h-14 text-base">
                 <SelectValue placeholder="Choose loan type" />
               </SelectTrigger>
               <SelectContent>
@@ -151,7 +151,7 @@ const QuickCapitalRequestForm = () => {
               <Button 
                 type="button" 
                 onClick={moveToNextStep}
-                className="w-full h-14 text-lg bg-primary hover:bg-primary/90 text-white"
+                className="w-full h-12 text-lg bg-primary hover:bg-primary/90 text-white"
               >
                 Next Step <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -162,7 +162,7 @@ const QuickCapitalRequestForm = () => {
         {currentStep === 'projectDetails' && (
           <div className="space-y-6">
             <div>
-              <label htmlFor="projectAddress" className="block text-xl font-medium text-gray-700">
+              <label htmlFor="projectAddress" className="block text-lg font-medium text-gray-700">
                 Property Address
               </label>
               <Input
@@ -171,13 +171,13 @@ const QuickCapitalRequestForm = () => {
                 value={formData.projectAddress}
                 onChange={handleInputChange}
                 placeholder="Enter property address"
-                className="mt-2 h-16 text-lg"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
             
             <div>
-              <label htmlFor="loanAmount" className="block text-xl font-medium text-gray-700">
+              <label htmlFor="loanAmount" className="block text-lg font-medium text-gray-700">
                 Loan Amount
               </label>
               <Input
@@ -186,7 +186,7 @@ const QuickCapitalRequestForm = () => {
                 value={formData.loanAmount}
                 onChange={handleInputChange}
                 placeholder="e.g. $250,000"
-                className="mt-2 h-16 text-lg"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
@@ -196,14 +196,14 @@ const QuickCapitalRequestForm = () => {
                 type="button" 
                 variant="outline" 
                 onClick={moveToPreviousStep}
-                className="flex-1 mr-3 h-14 text-lg"
+                className="flex-1 mr-3 h-12 text-base"
               >
                 <ArrowLeft className="mr-2 h-5 w-5" /> Back
               </Button>
               <Button 
                 type="button" 
                 onClick={moveToNextStep}
-                className="flex-1 ml-3 h-14 text-lg bg-primary hover:bg-primary/90 text-white"
+                className="flex-1 ml-3 h-12 text-base bg-primary hover:bg-primary/90 text-white"
               >
                 Next <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -214,7 +214,7 @@ const QuickCapitalRequestForm = () => {
         {currentStep === 'contact' && (
           <div className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-xl font-medium text-gray-700">
+              <label htmlFor="name" className="block text-lg font-medium text-gray-700">
                 Full Name
               </label>
               <Input
@@ -223,13 +223,13 @@ const QuickCapitalRequestForm = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Enter your name"
-                className="mt-2 h-16 text-lg"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-xl font-medium text-gray-700">
+              <label htmlFor="email" className="block text-lg font-medium text-gray-700">
                 Email
               </label>
               <Input
@@ -239,13 +239,13 @@ const QuickCapitalRequestForm = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Enter your email"
-                className="mt-2 h-16 text-lg"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
             
             <div>
-              <label htmlFor="phone" className="block text-xl font-medium text-gray-700">
+              <label htmlFor="phone" className="block text-lg font-medium text-gray-700">
                 Phone
               </label>
               <Input
@@ -254,7 +254,7 @@ const QuickCapitalRequestForm = () => {
                 value={formData.phone}
                 onChange={handleInputChange}
                 placeholder="Enter your phone number"
-                className="mt-2 h-16 text-lg"
+                className="mt-2 h-14 text-base"
                 required
               />
             </div>
@@ -264,14 +264,14 @@ const QuickCapitalRequestForm = () => {
                 type="button" 
                 variant="outline" 
                 onClick={moveToPreviousStep}
-                className="flex-1 mr-3 h-14 text-lg"
+                className="flex-1 mr-3 h-12 text-base"
               >
                 <ArrowLeft className="mr-2 h-5 w-5" /> Back
               </Button>
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="flex-1 ml-3 h-14 text-lg bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white"
+                className="flex-1 ml-3 h-12 text-base bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white"
               >
                 {isSubmitting ? "Processing..." : "Submit Request"}
               </Button>
