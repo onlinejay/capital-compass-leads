@@ -7,7 +7,8 @@ import {
   DollarSign, 
   House, 
   Building2, 
-  Map 
+  Map,
+  Key
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -23,16 +24,16 @@ interface LoanProgramProps {
 
 const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, popular }) => (
   <Card className={cn(
-    "transition-all duration-300 h-full hover:shadow-xl border-white/20 bg-navy-800/90 backdrop-blur-sm",
-    popular ? "border-indigo-500/70 shadow-lg shadow-indigo-500/20" : "hover:border-teal-300/50"
+    "transition-all duration-300 h-full hover:shadow-xl border-white/20 bg-navy-800/95 backdrop-blur-sm",
+    popular ? "border-gold-500/70 shadow-lg shadow-gold-500/20" : "hover:border-gold-400/50"
   )}>
     {popular && (
-      <div className="bg-gradient-to-r from-teal-400 to-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-t-md absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="bg-gradient-to-r from-gold-500 to-gold-400 text-navy-900 text-xs font-bold px-3 py-1 rounded-t-md absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
         MOST POPULAR
       </div>
     )}
     <CardHeader className="pb-4">
-      <div className="w-12 h-12 bg-gradient-to-br from-indigo-500/30 to-teal-400/30 rounded-full flex items-center justify-center text-teal-400 mb-4">
+      <div className="w-12 h-12 bg-gradient-to-br from-gold-500/30 to-gold-400/30 rounded-full flex items-center justify-center text-gold-400 mb-4">
         {icon}
       </div>
       <CardTitle className="text-xl text-white font-bold">{title}</CardTitle>
@@ -41,18 +42,18 @@ const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, p
       <ul className="space-y-2">
         {points.map((point, index) => (
           <li key={index} className="flex items-start">
-            <span className="text-teal-400 mr-2 font-bold">✓</span>
-            <span className="text-sm text-white font-medium">{point}</span>
+            <span className="text-gold-400 mr-2 font-bold">✓</span>
+            <span className="text-sm text-white font-bold">{point}</span>
           </li>
         ))}
       </ul>
       <div className="mt-4 bg-navy-700/90 rounded-md p-3">
-        <p className="text-sm text-teal-400 font-medium mb-1">Typical Terms:</p>
-        <p className="text-sm text-white font-medium">{terms}</p>
+        <p className="text-sm text-gold-400 font-medium mb-1">Typical Terms:</p>
+        <p className="text-sm text-white font-bold">{terms}</p>
       </div>
     </CardContent>
     <CardFooter>
-      <Button className="w-full btn-gradient border-none">
+      <Button className="w-full button-gradient border-none">
         Apply Now
       </Button>
     </CardFooter>
@@ -80,15 +81,15 @@ const LoanPrograms = () => {
     <section id="programs" className="py-20 bg-gradient-to-b from-navy-900 to-navy-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 reveal-on-scroll reveal">
-          <div className="inline-block bg-gradient-to-r from-indigo-500/20 to-teal-400/20 text-teal-400 px-4 py-1 rounded-full text-sm font-medium mb-4">
+          <div className="inline-block bg-gradient-to-r from-gold-500/20 to-gold-400/20 text-gold-400 px-4 py-1 rounded-full text-sm font-bold mb-4">
             Investment Solutions
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            Digital <span className="text-gradient">Lending</span> Programs
+            Property <span className="text-gradient">Investment</span> Programs
           </h2>
-          <p className="text-lg text-white max-w-3xl mx-auto">
-            Algorithm-optimized financing solutions for all types of real estate investments,
-            with flexible terms designed for modern investors.
+          <p className="text-lg text-white font-medium max-w-3xl mx-auto">
+            Custom financing solutions for all types of real estate investments,
+            with flexible terms designed for today's property investors.
           </p>
         </div>
         
@@ -193,13 +194,13 @@ const LoanPrograms = () => {
           </div>
           
           <div className="reveal-on-scroll reveal delay-300">
-            <div className="bg-navy-800/90 border border-white/20 h-full p-6 flex flex-col items-center justify-center rounded-lg">
-              <DollarSign className="w-12 h-12 text-teal-400 mb-4" />
+            <div className="bg-navy-800/95 border border-white/20 h-full p-6 flex flex-col items-center justify-center rounded-lg">
+              <Key className="w-12 h-12 text-gold-400 mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-white">Custom Financing</h3>
-              <p className="text-sm text-white mb-4 font-medium">
-                Don't see what you need? We create custom AI-optimized solutions for unique investment opportunities.
+              <p className="text-sm text-white font-bold mb-4">
+                Don't see what you need? We create custom financing solutions for unique investment opportunities.
               </p>
-              <Button variant="outline" className="border-teal-400/50 text-teal-400 hover:bg-teal-400/10">
+              <Button variant="outline" className="border-gold-400/50 text-gold-400 hover:bg-gold-400/10">
                 Contact Us
               </Button>
             </div>
