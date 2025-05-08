@@ -27,17 +27,21 @@ const Footer = () => {
       </div>
       
       <div className="container mx-auto px-4 pb-16 pt-12">
-        {/* Top section with CTA */}
+        {/* Top section with CTA - Enhanced styling */}
         <div className="mb-16">
-          <div className="bg-gradient-to-r from-blue-600/20 to-primary/20 rounded-2xl p-8 border border-white/10 backdrop-blur-sm">
+          <div className="bg-gradient-to-r from-blue-600/30 to-primary/30 rounded-2xl p-8 border border-white/20 backdrop-blur-sm shadow-lg">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="text-center md:text-left">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">Ready to fund your next property?</h3>
-                <p className="text-white/80">Get pre-approved in minutes and close within days.</p>
+                <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white drop-shadow-md">
+                  <span className="text-gradient-primary bg-gradient-to-r from-white via-white to-blue-200 bg-clip-text text-transparent">
+                    Ready to fund your next property?
+                  </span>
+                </h3>
+                <p className="text-blue-200 text-lg font-medium">Get pre-approved in minutes and close within days.</p>
               </div>
               <Button 
                 onClick={() => handleSmoothScroll('quick-capital-form')}
-                className="bg-white hover:bg-white/90 text-primary rounded-full px-8 group"
+                className="bg-white hover:bg-white/90 text-primary rounded-full px-8 py-6 group shadow-md transform hover:scale-105 transition-all duration-300"
               >
                 Apply Now 
                 <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" />
