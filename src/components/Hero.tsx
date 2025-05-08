@@ -113,11 +113,6 @@ const Hero = () => {
                 <LeadCaptureForm variant="secondary" />
               </div>
             </div>
-            
-            <div className="mt-4 p-3 bg-secondary/70 rounded-lg flex items-center justify-center gap-2 text-sm text-gray-600 border border-gray-100">
-              <CheckCircle className="w-4 h-4 text-emerald-600" />
-              <span>Trusted by over 10,000+ real estate investors</span>
-            </div>
           </div>
           
         </div>
