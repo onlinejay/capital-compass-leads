@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
@@ -27,14 +26,12 @@ type SurveyData = {
   agreement: boolean;
 };
 
-// This is the fixed type definition that will correctly handle the agreement field
+// Fixed type definition to remove conditional types
 type ReviewStepProps = {
   data: SurveyData;
   updateFields: (
     stepKey: keyof SurveyData, 
-    fields: stepKey extends 'agreement' 
-      ? { agreement: boolean } 
-      : Partial<SurveyData[keyof SurveyData]>
+    fields: Partial<SurveyData[keyof SurveyData]> | { agreement: boolean }
   ) => void;
 };
 

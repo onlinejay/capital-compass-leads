@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -69,12 +68,10 @@ const MultiStepSurveyForm = () => {
     { name: 'Review', description: 'Submit Application' }
   ];
 
-  // Fixed TypeScript error here
+  // Fixed TypeScript error here by removing the conditional type
   const updateFields = (
     stepKey: keyof SurveyData, 
-    fields: stepKey extends 'agreement' 
-      ? { agreement: boolean } 
-      : Partial<SurveyData[keyof SurveyData]>
+    fields: Partial<SurveyData[keyof SurveyData]> | { agreement: boolean }
   ) => {
     setData(prev => {
       if (stepKey === 'agreement') {
