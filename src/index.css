@@ -96,7 +96,7 @@
 }
 
 .btn-gradient {
-  @apply bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600 text-white;
+  @apply bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600 text-white font-bold;
 }
 
 /* Subtle animation for a more dynamic feel */
@@ -173,7 +173,7 @@
 
 /* Ensure text visibility */
 .text-visible-light {
-  @apply text-navy-900;
+  @apply text-navy-900 font-medium;
 }
 
 .text-visible-dark {
@@ -183,4 +183,18 @@
 /* Enhance contrast for glass backgrounds */
 .glass-content {
   @apply text-white font-medium;
+}
+
+/* Better form input visibility */
+.form-input-dark {
+  @apply bg-white/20 border-white/30 text-white font-medium placeholder:text-white/70;
+}
+
+.form-input-light {
+  @apply bg-white border-gray-300 text-navy-800 font-medium placeholder:text-gray-500;
+}
+
+/* Button styles with better visibility */
+.button-gradient {
+  @apply bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600 text-white font-bold shadow-lg;
 }

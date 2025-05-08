@@ -53,7 +53,15 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary', 
     }, 1000);
   };
 
+  // Use different styling based on variant
   const isPrimary = variant === 'primary';
+  const inputClasses = isPrimary
+    ? "bg-white/20 border-white/30 text-white font-medium focus-visible:ring-teal-400 placeholder:text-white/70"
+    : "bg-white border-gray-300 text-navy-800 font-medium focus-visible:ring-teal-400 placeholder:text-gray-500";
+  
+  const buttonClasses = isPrimary
+    ? "bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600 text-white font-bold shadow-lg shadow-indigo-500/30"
+    : "bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600 text-white font-bold shadow-lg shadow-indigo-500/10";
 
   return (
     <form onSubmit={handleSubmit} className={className}>
@@ -65,7 +73,7 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary', 
           value={formData.name}
           onChange={handleChange}
           required
-          className={`bg-white/10 border-white/20 focus-visible:ring-teal-400 text-white placeholder:text-white/50 ${isPrimary ? "" : ""}`}
+          className={inputClasses}
         />
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -76,7 +84,7 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary', 
             value={formData.email}
             onChange={handleChange}
             required
-            className={`bg-white/10 border-white/20 focus-visible:ring-teal-400 text-white placeholder:text-white/50 ${isPrimary ? "" : ""}`}
+            className={inputClasses}
           />
           
           <Input
@@ -86,23 +94,23 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary', 
             value={formData.phone}
             onChange={handleChange}
             required
-            className={`bg-white/10 border-white/20 focus-visible:ring-teal-400 text-white placeholder:text-white/50 ${isPrimary ? "" : ""}`}
+            className={inputClasses}
           />
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Select onValueChange={handleLoanTypeChange} value={formData.loanType}>
-            <SelectTrigger className={`bg-white/10 border-white/20 focus-visible:ring-teal-400 text-white ${isPrimary ? "" : ""}`}>
+            <SelectTrigger className={`${isPrimary ? "bg-white/20 border-white/30 text-white" : "bg-white text-navy-800 border-gray-300"} font-medium`}>
               <SelectValue placeholder="Loan Type" />
             </SelectTrigger>
-            <SelectContent className="bg-navy-800 border-white/20 text-white">
-              <SelectItem value="fix-and-flip">Fix and Flip</SelectItem>
-              <SelectItem value="new-construction">New Construction</SelectItem>
-              <SelectItem value="dscr-rental">DSCR Rental</SelectItem>
-              <SelectItem value="rental-portfolio">Rental Portfolio</SelectItem>
-              <SelectItem value="commercial-bridge">Commercial Bridge</SelectItem>
-              <SelectItem value="multifamily">Multifamily</SelectItem>
-              <SelectItem value="land-lot">Land and Lot Loans</SelectItem>
+            <SelectContent className={isPrimary ? "bg-navy-800 border-white/20 text-white" : "bg-white text-navy-800 border-gray-300"}>
+              <SelectItem value="fix-and-flip" className="hover:bg-white/10">Fix and Flip</SelectItem>
+              <SelectItem value="new-construction" className="hover:bg-white/10">New Construction</SelectItem>
+              <SelectItem value="dscr-rental" className="hover:bg-white/10">DSCR Rental</SelectItem>
+              <SelectItem value="rental-portfolio" className="hover:bg-white/10">Rental Portfolio</SelectItem>
+              <SelectItem value="commercial-bridge" className="hover:bg-white/10">Commercial Bridge</SelectItem>
+              <SelectItem value="multifamily" className="hover:bg-white/10">Multifamily</SelectItem>
+              <SelectItem value="land-lot" className="hover:bg-white/10">Land and Lot Loans</SelectItem>
             </SelectContent>
           </Select>
           
@@ -113,21 +121,19 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary', 
             value={formData.amount}
             onChange={handleChange}
             required
-            className={`bg-white/10 border-white/20 focus-visible:ring-teal-400 text-white placeholder:text-white/50 ${isPrimary ? "" : ""}`}
+            className={inputClasses}
           />
         </div>
         
         <Button 
           type="submit" 
-          className={`w-full ${isPrimary 
-            ? "bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600 text-white"
-            : "bg-gradient-to-r from-teal-400 to-indigo-500 hover:from-teal-500 hover:to-indigo-600 text-white"}`}
+          className={`w-full ${buttonClasses}`}
           disabled={isSubmitting}
         >
           {isSubmitting ? "Processing..." : "Get Instant Pre-Approval"}
         </Button>
         
-        <p className={`text-xs text-center ${isPrimary ? "text-white/60" : "text-white/60"}`}>
+        <p className={`text-xs text-center ${isPrimary ? "text-white/80 font-medium" : "text-navy-800/80 font-medium"}`}>
           Secure, encrypted application. Your data is protected by our AI-powered security system.
         </p>
       </div>

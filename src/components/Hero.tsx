@@ -36,7 +36,7 @@ const Hero = () => {
             ))}
           </div>
         </div>
-        <div className="absolute inset-0 bg-navy-900/70 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-navy-900/80 backdrop-blur-sm"></div>
       </div>
 
       <div className="container mx-auto px-4 z-10 py-24">
