@@ -88,7 +88,7 @@
 
 /* Fintech UI Additions */
 .glass-card {
-  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+  @apply bg-white/15 backdrop-blur-md border border-white/20 rounded-xl;
 }
 
 .text-gradient {
@@ -169,4 +169,18 @@
 
 .progress-bar-fill {
   @apply h-full bg-gradient-to-r from-teal-400 to-indigo-500 transition-all duration-1000;
+}
+
+/* Ensure text visibility */
+.text-visible-light {
+  @apply text-navy-900;
+}
+
+.text-visible-dark {
+  @apply text-white;
+}
+
+/* Enhance contrast for glass backgrounds */
+.glass-content {
+  @apply text-white font-medium;
 }

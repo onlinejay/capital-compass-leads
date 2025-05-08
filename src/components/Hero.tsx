@@ -57,15 +57,15 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4 mb-6">
               <div className="glass-card p-3 rounded-lg flex items-center reveal delay-100 shadow-lg">
                 <span className="text-3xl font-bold text-gradient mr-2">24hr</span>
-                <span className="text-sm">AI-Powered <br/>Approvals</span>
+                <span className="text-sm text-white">AI-Powered <br/>Approvals</span>
               </div>
               <div className="glass-card p-3 rounded-lg flex items-center reveal delay-200 shadow-lg">
                 <span className="text-3xl font-bold text-gradient mr-2">7-14</span>
-                <span className="text-sm">Days to<br/>Closing</span>
+                <span className="text-sm text-white">Days to<br/>Closing</span>
               </div>
               <div className="glass-card p-3 rounded-lg flex items-center reveal delay-300 shadow-lg">
                 <span className="text-3xl font-bold text-gradient mr-2">90%</span>
-                <span className="text-sm">ARV <br/>Financing</span>
+                <span className="text-sm text-white">ARV <br/>Financing</span>
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@ const Hero = () => {
                   </svg>
                 </div>
               </div>
-              <p className="text-white/80 mb-6">Complete this form for AI-powered pre-approval</p>
+              <p className="text-white mb-6">Complete this form for AI-powered pre-approval</p>
               <LeadCaptureForm variant="primary" />
             </div>
           </div>

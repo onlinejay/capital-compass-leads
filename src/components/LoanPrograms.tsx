@@ -23,7 +23,7 @@ interface LoanProgramProps {
 
 const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, popular }) => (
   <Card className={cn(
-    "transition-all duration-300 h-full hover:shadow-xl border-white/10 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm",
+    "transition-all duration-300 h-full hover:shadow-xl border-white/10 bg-gradient-to-b from-white/10 to-transparent backdrop-blur-sm",
     popular ? "border-indigo-500/50 shadow-lg shadow-indigo-500/10" : "hover:border-teal-300/30"
   )}>
     {popular && (
@@ -42,13 +42,13 @@ const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, p
         {points.map((point, index) => (
           <li key={index} className="flex items-start">
             <span className="text-teal-400 mr-2">✓</span>
-            <span className="text-sm text-white/80">{point}</span>
+            <span className="text-sm text-white font-medium">{point}</span>
           </li>
         ))}
       </ul>
-      <div className="mt-4 bg-white/10 rounded-md p-3 backdrop-blur-sm">
-        <p className="text-sm text-white/70 font-medium">Typical Terms:</p>
-        <p className="text-sm text-white/90">{terms}</p>
+      <div className="mt-4 bg-white/15 rounded-md p-3 backdrop-blur-sm">
+        <p className="text-sm text-white font-medium">Typical Terms:</p>
+        <p className="text-sm text-white">{terms}</p>
       </div>
     </CardContent>
     <CardFooter>
