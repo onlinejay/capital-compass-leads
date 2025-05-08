@@ -31,13 +31,13 @@ const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, p
         MOST POPULAR
       </div>
     )}
-    <CardHeader className="pb-4">
+    <CardHeader className="pb-4 bg-navy-50">
       <div className="w-12 h-12 bg-navy-100 rounded-full flex items-center justify-center text-navy-700 mb-4">
         {icon}
       </div>
       <CardTitle className="text-xl">{title}</CardTitle>
     </CardHeader>
-    <CardContent className="pb-4">
+    <CardContent className="pb-4 pt-6">
       <ul className="space-y-2">
         {points.map((point, index) => (
           <li key={index} className="flex items-start">
@@ -52,7 +52,7 @@ const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, p
       </div>
     </CardContent>
     <CardFooter>
-      <Button className="w-full bg-navy-700 hover:bg-navy-800">
+      <Button className="w-full bg-navy-700 hover:bg-navy-800 text-white border border-navy-600/30">
         Apply Now
       </Button>
     </CardFooter>
@@ -77,11 +77,14 @@ const LoanPrograms = () => {
   }, []);
 
   return (
-    <section id="programs" className="py-20 bg-white">
+    <section id="programs" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 reveal-on-scroll reveal">
+          <div className="inline-block bg-navy-100 text-navy-700 px-4 py-1 rounded-full text-sm font-medium mb-4">
+            Investment Solutions
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy-800">
-            Our Loan <span className="text-gold-500">Programs</span>
+            Our Lending <span className="text-gold-500">Programs</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             We offer specialized financing solutions for all types of real estate investments,
@@ -190,7 +193,7 @@ const LoanPrograms = () => {
           </div>
           
           <div className="flex items-center justify-center h-full reveal-on-scroll reveal delay-300">
-            <div className="text-center p-6 border border-dashed border-gray-300 rounded-lg h-full flex flex-col items-center justify-center">
+            <div className="text-center p-6 border border-dashed border-navy-300 rounded-lg h-full flex flex-col items-center justify-center bg-white shadow-sm">
               <DollarSign className="w-12 h-12 text-gold-500 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Custom Financing</h3>
               <p className="text-sm text-gray-600 mb-4">
