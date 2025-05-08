@@ -62,10 +62,10 @@ const Hero = () => {
               Access fast, reliable funding while traditional banks are still processing paperwork. Close on properties quickly and grow your real estate portfolio.
             </p>
             
-            <div className="flex flex-wrap gap-4 mb-6">
+            <div className="flex flex-wrap items-center gap-4 mb-6">
               <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
                 <Clock className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="font-medium">Same-Day Approval</span>
+                <span className="font-medium">24-Hour Approval</span>
               </div>
               <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
                 <CreditCard className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
