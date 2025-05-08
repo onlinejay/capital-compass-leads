@@ -20,9 +20,10 @@ interface LoanProgramProps {
   points: string[];
   terms: string;
   popular?: boolean;
+  onApplyClick: () => void;
 }
 
-const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, popular }) => (
+const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, popular, onApplyClick }) => (
   <Card className={cn(
     "transition-all duration-300 h-full hover:shadow-xl",
     popular ? "border-primary shadow-lg shadow-primary/10" : "hover:border-primary/50"
@@ -53,7 +54,10 @@ const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, p
       </div>
     </CardContent>
     <CardFooter>
-      <Button className="w-full">
+      <Button 
+        className="w-full"
+        onClick={onApplyClick}
+      >
         Apply Now
       </Button>
     </CardFooter>
@@ -76,6 +80,14 @@ const LoanPrograms = () => {
     
     return () => observer.disconnect();
   }, []);
+
+  const handleApplyNowClick = () => {
+    // Scroll to the form section
+    const formSection = document.querySelector('#quick-capital-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="programs" className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -106,6 +118,7 @@ const LoanPrograms = () => {
               ]}
               terms="6-24 month terms"
               popular={true}
+              onApplyClick={handleApplyNowClick}
             />
           </div>
           
@@ -120,6 +133,7 @@ const LoanPrograms = () => {
                 "Construction oversight services",
               ]}
               terms="12-24 month terms"
+              onApplyClick={handleApplyNowClick}
             />
           </div>
           
@@ -134,6 +148,7 @@ const LoanPrograms = () => {
                 "Portfolio loans available",
               ]}
               terms="30-year terms"
+              onApplyClick={handleApplyNowClick}
             />
           </div>
           
@@ -148,6 +163,7 @@ const LoanPrograms = () => {
                 "Scale your portfolio efficiently",
               ]}
               terms="30-year terms"
+              onApplyClick={handleApplyNowClick}
             />
           </div>
           
@@ -162,6 +178,7 @@ const LoanPrograms = () => {
                 "Flexible exit strategies",
               ]}
               terms="12-36 month terms"
+              onApplyClick={handleApplyNowClick}
             />
           </div>
           
@@ -176,6 +193,7 @@ const LoanPrograms = () => {
                 "Cash-out refinance options",
               ]}
               terms="Terms up to 30 years"
+              onApplyClick={handleApplyNowClick}
             />
           </div>
           
@@ -190,6 +208,7 @@ const LoanPrograms = () => {
                 "Flexible terms for developers",
               ]}
               terms="6-24 month terms"
+              onApplyClick={handleApplyNowClick}
             />
           </div>
           
@@ -200,7 +219,11 @@ const LoanPrograms = () => {
               <p className="text-sm text-gray-700 font-medium mb-4">
                 Don't see what you need? We create custom financing solutions for unique investment opportunities.
               </p>
-              <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10">
+              <Button 
+                variant="outline" 
+                className="border-primary/50 text-primary hover:bg-primary/10"
+                onClick={handleApplyNowClick}
+              >
                 Contact Us
               </Button>
             </div>
