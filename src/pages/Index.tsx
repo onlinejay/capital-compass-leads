@@ -37,7 +37,7 @@ const Index = () => {
       <LoanPrograms />
       <WhyChooseUs />
       <CustomApplicationProcess />
-      <div id="quick-capital-form" className="py-28 md:py-32 relative overflow-hidden">
+      <div id="quick-capital-form" className="py-24 relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-blue-600/5 z-0"></div>
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-primary/10 filter blur-3xl z-0"></div>
@@ -47,24 +47,24 @@ const Index = () => {
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/40 to-blue-500/40 z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-14 reveal-on-scroll">
+          <div className="text-center mb-12 reveal-on-scroll">
             <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-bold mb-4 text-primary shadow-sm">
               <span>Act Fast - Limited Time Financing</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-5 text-gray-800 font-heading">
+            <h2 className="text-4xl md:text-5xl font-bold mb-5 text-gray-800 font-heading">
               Fast <span className="text-gradient bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Financing</span> For Your Real Estate Goals
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-medium">
               Get quick access to capital for your next real estate investment project with our streamlined application process.
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto glass-card bg-white/90 backdrop-blur-sm rounded-xl shadow-xl border border-gray-100 p-8 md:p-10 reveal-on-scroll">
+          <div className="max-w-3xl mx-auto glass-card bg-white/80 backdrop-blur-sm rounded-xl shadow-xl border border-gray-100 p-6 md:p-8 reveal-on-scroll">
             <QuickCapitalRequestForm />
           </div>
           
           {/* Trust indicators */}
-          <div className="mt-16 flex flex-wrap justify-center gap-6 reveal-on-scroll">
+          <div className="mt-12 flex flex-wrap justify-center gap-6 reveal-on-scroll">
             <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
               <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
               <span className="text-sm font-medium text-gray-700">24-Hour Approval</span>
