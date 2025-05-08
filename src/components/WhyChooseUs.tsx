@@ -3,13 +3,13 @@ import React, { useEffect } from 'react';
 import { 
   Clock,
   Briefcase,
-  Users,
+  Rocket,
   FileText,
-  Search,
+  Target,
   DollarSign,
   Building,
-  Key,
-  Wallet
+  Zap,
+  TrendingUp
 } from 'lucide-react';
 
 interface FeatureProps {
@@ -19,13 +19,13 @@ interface FeatureProps {
 }
 
 const Feature: React.FC<FeatureProps> = ({ icon, title, description }) => (
-  <div className="flex flex-col md:flex-row items-start gap-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gold-200/50">
+  <div className="flex flex-col md:flex-row items-start gap-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gold-200/50 hover:border-gold-400 hover:-translate-y-1">
     <div className="bg-gold-100 rounded-full p-3 text-gold-600">
       {icon}
     </div>
     <div>
       <h3 className="text-xl font-semibold mb-2 text-navy-800">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <p className="text-gray-600 font-medium">{description}</p>
     </div>
   </div>
 );
@@ -52,10 +52,10 @@ const WhyChooseUs = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 reveal-on-scroll reveal">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy-800">
-            Why <span className="text-gold-500">Investors Choose Us</span>
+            Why <span className="text-gold-500">Action-Oriented Investors</span> Choose Us
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our real estate investment lending platform provides the speed, flexibility, and expertise property investors need to maximize returns and scale their portfolios.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-medium">
+            Our investment lending platform gives you the competitive edge to capitalize on opportunities faster than traditional lenders, helping you build wealth through real estate.
           </p>
         </div>
         
@@ -63,64 +63,64 @@ const WhyChooseUs = () => {
           <div className="reveal-on-scroll reveal">
             <Feature 
               icon={<Clock className="w-6 h-6" />}
-              title="Fast Closings"
-              description="Close your investment properties in as little as 7 days, giving you the competitive edge in any market."
+              title="Speed to Close"
+              description="Seize opportunities before your competition with our 7-day closing capability, giving you the edge in competitive markets."
             />
           </div>
           
           <div className="reveal-on-scroll reveal delay-100">
             <Feature 
-              icon={<Briefcase className="w-6 h-6" />}
-              title="Investor Experience"
-              description="Our team consists of active real estate investors who understand your business from the inside out."
+              icon={<Rocket className="w-6 h-6" />}
+              title="Aggressive Underwriting"
+              description="Our team looks for ways to say 'yes' when traditional lenders say 'no' – we focus on the deal potential, not just the paperwork."
+            />
+          </div>
+          
+          <div className="reveal-on-scroll reveal delay-200">
+            <Feature 
+              icon={<Target className="w-6 h-6" />}
+              title="Strategic Partner"
+              description="We're investors ourselves who understand your vision and help you execute your acquisition and exit strategies effectively."
+            />
+          </div>
+          
+          <div className="reveal-on-scroll reveal">
+            <Feature 
+              icon={<TrendingUp className="w-6 h-6" />}
+              title="Scale Your Portfolio"
+              description="Our financing solutions are designed to help you acquire multiple properties and grow your real estate empire faster."
+            />
+          </div>
+          
+          <div className="reveal-on-scroll reveal delay-100">
+            <Feature 
+              icon={<Zap className="w-6 h-6" />}
+              title="Quick Decisions"
+              description="Get loan approvals in 24 hours with minimal paperwork, allowing you to make confident offers and close deals rapidly."
             />
           </div>
           
           <div className="reveal-on-scroll reveal delay-200">
             <Feature 
               icon={<DollarSign className="w-6 h-6" />}
-              title="Competitive Rates"
-              description="We offer some of the most competitive rates in the hard money and private lending industry."
-            />
-          </div>
-          
-          <div className="reveal-on-scroll reveal">
-            <Feature 
-              icon={<Building className="w-6 h-6" />}
-              title="All Property Types"
-              description="From single-family to commercial, we finance virtually all types of real estate investment properties."
-            />
-          </div>
-          
-          <div className="reveal-on-scroll reveal delay-100">
-            <Feature 
-              icon={<FileText className="w-6 h-6" />}
-              title="Simple Documentation"
-              description="Our streamlined process requires minimal paperwork compared to conventional bank financing."
-            />
-          </div>
-          
-          <div className="reveal-on-scroll reveal delay-200">
-            <Feature 
-              icon={<Search className="w-6 h-6" />}
-              title="Asset-Based Lending"
-              description="We focus primarily on the property value and your exit strategy rather than traditional qualifying metrics."
+              title="Creative Capital Solutions"
+              description="Access innovative funding approaches from 100% financing to cross-collateralization options not available with conventional banks."
             />
           </div>
         </div>
         
         <div className="mt-16 p-8 bg-navy-800 rounded-xl text-white text-center reveal-on-scroll reveal">
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Ready to Fund Your Next Investment Property?</h3>
+            <h3 className="text-2xl font-bold mb-4">Ready to Take Action on Your Next Deal?</h3>
             <p className="mb-6 font-medium">
-              Whether you're flipping houses, building your rental portfolio, or developing commercial properties, 
-              we have the right financing solution for your real estate investment strategy.
+              Don't miss out on your next investment opportunity because of slow financing. 
+              Our streamlined process gets you funded when others can't.
             </p>
             <a 
               href="#contact" 
-              className="inline-block bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-md px-6 py-3 transition-colors"
+              className="inline-block bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-md px-6 py-3 transition-colors transform hover:scale-105"
             >
-              Apply Now
+              Get Funded Now
             </a>
           </div>
         </div>
