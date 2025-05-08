@@ -10,8 +10,8 @@ const Footer = () => {
           
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Capital Compass</h3>
-            <p className="text-white/70 mb-4">
+            <h3 className="text-xl font-bold mb-4 text-white">Capital Compass</h3>
+            <p className="text-white/90 mb-4">
               Private lending solutions for real estate investors. Fast funding for your investment opportunities.
             </p>
             <div className="flex space-x-4">
@@ -40,90 +40,90 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4 text-white">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#programs" className="text-white/70 hover:text-gold-400 transition-colors">Loan Programs</a>
+                <a href="#programs" className="text-white/90 hover:text-white transition-colors">Loan Programs</a>
               </li>
               <li>
-                <a href="#why-us" className="text-white/70 hover:text-gold-400 transition-colors">Why Choose Us</a>
+                <a href="#why-us" className="text-white/90 hover:text-white transition-colors">Why Choose Us</a>
               </li>
               <li>
-                <a href="#process" className="text-white/70 hover:text-gold-400 transition-colors">Application Process</a>
+                <a href="#process" className="text-white/90 hover:text-white transition-colors">Application Process</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-gold-400 transition-colors">Resources</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors">Resources</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-gold-400 transition-colors">FAQs</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors">FAQs</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-gold-400 transition-colors">Blog</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors">Blog</a>
               </li>
             </ul>
           </div>
           
           {/* Loan Programs */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Loan Programs</h3>
+            <h3 className="text-lg font-bold mb-4 text-white">Loan Programs</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-white/70 hover:text-gold-400 transition-colors">Fix-and-Flip</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors">Fix-and-Flip</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-gold-400 transition-colors">New Construction</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors">New Construction</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-gold-400 transition-colors">DSCR Rental</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors">DSCR Rental</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-gold-400 transition-colors">Rental Portfolio</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors">Rental Portfolio</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-gold-400 transition-colors">Commercial Bridge</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors">Commercial Bridge</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-gold-400 transition-colors">Multifamily</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors">Multifamily</a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-gold-400 transition-colors">Land & Lot Loans</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors">Land & Lot Loans</a>
               </li>
             </ul>
           </div>
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-bold mb-4 text-white">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex">
-                <MapPin className="w-5 h-5 text-gold-400 mr-3 flex-shrink-0" />
-                <span className="text-white/70">
+                <MapPin className="w-5 h-5 text-white/60 mr-3 flex-shrink-0" />
+                <span className="text-white/90">
                   123 Finance Street, Suite 400<br />
                   Los Angeles, CA 90017
                 </span>
               </li>
               <li className="flex">
-                <Phone className="w-5 h-5 text-gold-400 mr-3 flex-shrink-0" />
-                <span className="text-white/70">(800) 555-9000</span>
+                <Phone className="w-5 h-5 text-white/60 mr-3 flex-shrink-0" />
+                <span className="text-white/90">(800) 555-9000</span>
               </li>
               <li className="flex">
-                <Mail className="w-5 h-5 text-gold-400 mr-3 flex-shrink-0" />
-                <span className="text-white/70">loans@capitalcompass.com</span>
+                <Mail className="w-5 h-5 text-white/60 mr-3 flex-shrink-0" />
+                <span className="text-white/90">loans@capitalcompass.com</span>
               </li>
             </ul>
           </div>
           
         </div>
         
-        <div className="mt-12 pt-8 border-t border-white/10 text-center text-white/50 text-sm">
+        <div className="mt-12 pt-8 border-t border-white/20 text-center text-white/80 text-sm">
           <p>
             &copy; {new Date().getFullYear()} Capital Compass. All rights reserved. 
             <span className="mx-2">|</span>
-            <a href="#" className="hover:text-gold-400 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <span className="mx-2">|</span>
-            <a href="#" className="hover:text-gold-400 transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </p>
-          <p className="mt-2 text-xs">
+          <p className="mt-2 text-xs text-white/70">
             Capital Compass is a licensed private lender. NMLS #12345678. 
             Equal Housing Opportunity. Not available in all states.
           </p>
