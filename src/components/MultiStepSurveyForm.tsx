@@ -120,18 +120,18 @@ const MultiStepSurveyForm = () => {
 
   if (isComplete) {
     return (
-      <div className="text-center py-10">
-        <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="w-10 h-10 text-emerald-500" />
+      <div className="text-center py-12">
+        <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-8">
+          <CheckCircle className="w-12 h-12 text-emerald-500" />
         </div>
-        <h3 className="text-2xl font-bold text-gray-800 mb-2">Application Submitted!</h3>
-        <p className="text-gray-600 mb-8">
+        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Application Submitted!</h3>
+        <p className="text-gray-600 mb-10 text-lg max-w-2xl mx-auto">
           Thank you for your application. One of our funding specialists will review your details
           and contact you within 24 hours with personalized financing options.
         </p>
         <Button 
           variant="outline" 
-          className="mx-auto border-primary text-primary hover:bg-primary/5"
+          className="mx-auto border-primary text-primary hover:bg-primary/5 px-8 py-6 h-auto text-lg"
           onClick={() => {
             setData(INITIAL_DATA);
             setCurrentStep(0);
@@ -145,17 +145,17 @@ const MultiStepSurveyForm = () => {
   }
 
   return (
-    <div>
+    <div className="px-4 md:px-8">
       {/* Progress bar */}
-      <div className="mb-8">
-        <div className="flex justify-between text-sm font-medium text-gray-500 mb-1">
-          <span>{steps[currentStep].description}</span>
+      <div className="mb-10">
+        <div className="flex justify-between text-sm md:text-base font-medium text-gray-600 mb-2">
+          <span className="font-semibold">{steps[currentStep].description}</span>
           <span>Step {currentStep + 1} of {steps.length}</span>
         </div>
-        <Progress value={progressPercentage} className="h-2" />
+        <Progress value={progressPercentage} className="h-2.5" />
 
         {/* Step indicators */}
-        <div className="flex justify-between mt-2">
+        <div className="flex justify-between mt-4">
           {steps.map((step, index) => (
             <div 
               key={step.name} 
@@ -163,70 +163,73 @@ const MultiStepSurveyForm = () => {
               style={{ width: `${100 / steps.length}%` }}
             >
               <div 
-                className={`flex items-center justify-center w-8 h-8 rounded-full border-2 
+                className={`flex items-center justify-center w-10 h-10 rounded-full border-2 text-base
                 ${index < currentStep ? 'bg-primary border-primary text-white' : 
                   index === currentStep ? 'border-primary text-primary' : 
                   'border-gray-300 text-gray-300'}`}
               >
                 {index < currentStep ? '✓' : index + 1}
               </div>
-              <span className="text-xs mt-1 font-medium">{step.name}</span>
+              <span className="text-xs md:text-sm mt-2 font-medium">{step.name}</span>
             </div>
           ))}
         </div>
       </div>
 
-      <form onSubmit={handleSubmit}>
-        {currentStep === 0 && (
-          <PropertyInfoStep 
-            data={data.propertyInfo} 
-            updateFields={(fields) => updateFields('propertyInfo', fields)} 
-          />
-        )}
-        
-        {currentStep === 1 && (
-          <LoanDetailsStep 
-            data={data.loanDetails} 
-            updateFields={(fields) => updateFields('loanDetails', fields)} 
-          />
-        )}
-        
-        {currentStep === 2 && (
-          <PersonalInfoStep 
-            data={data.personalInfo} 
-            updateFields={(fields) => updateFields('personalInfo', fields)}
-          />
-        )}
-        
-        {currentStep === 3 && (
-          <ReviewStep 
-            data={data} 
-            updateFields={updateFields}
-          />
-        )}
+      <form onSubmit={handleSubmit} className="py-4">
+        <div className="bg-white/70 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-sm border border-gray-100">
+          {currentStep === 0 && (
+            <PropertyInfoStep 
+              data={data.propertyInfo} 
+              updateFields={(fields) => updateFields('propertyInfo', fields)} 
+            />
+          )}
+          
+          {currentStep === 1 && (
+            <LoanDetailsStep 
+              data={data.loanDetails} 
+              updateFields={(fields) => updateFields('loanDetails', fields)} 
+            />
+          )}
+          
+          {currentStep === 2 && (
+            <PersonalInfoStep 
+              data={data.personalInfo} 
+              updateFields={(fields) => updateFields('personalInfo', fields)}
+            />
+          )}
+          
+          {currentStep === 3 && (
+            <ReviewStep 
+              data={data} 
+              updateFields={updateFields}
+            />
+          )}
+        </div>
 
-        <div className="mt-8 flex justify-between">
+        <div className="mt-10 flex justify-between">
           <Button 
             type="button" 
             variant="outline" 
             onClick={prevStep}
             disabled={currentStep === 0}
+            className="h-12 px-6 text-base"
           >
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back
+            <ArrowLeft className="mr-2 h-5 w-5" /> Back
           </Button>
           
           {currentStep < steps.length - 1 ? (
             <Button 
               type="button" 
               onClick={nextStep}
-              className="bg-primary hover:bg-primary/90 text-white"
+              className="bg-primary hover:bg-primary/90 text-white h-12 px-6 text-base"
             >
-              Continue <ArrowRight className="ml-2 h-4 w-4" />
+              Continue <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           ) : (
             <Button 
               type="submit" 
-              className="bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white"
+              className="bg-gradient-to-r from-primary to-navy-600 hover:from-primary/90 hover:to-navy-700 text-white h-12 px-8 text-base"
               disabled={isSubmitting || !data.agreement}
             >
               {isSubmitting ? "Submitting..." : "Submit Application"}
