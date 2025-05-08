@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import LeadCaptureForm from './LeadCaptureForm';
 import { CreditCard, Clock, CheckCircle, Wallet, Shield, ArrowUpRight } from 'lucide-react';
@@ -81,7 +80,7 @@ const Hero = () => {
               <Button 
                 className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl px-6 py-6 shadow-md hover:shadow-lg transition-all"
                 size="lg"
-                onClick={handleApplyNowClick}
+                onClick={handleViewLoanOptionsClick}
               >
                 View Loan Options
                 <ArrowUpRight className="ml-2 h-5 w-5" />
@@ -92,8 +91,6 @@ const Hero = () => {
           {/* Right column - ADJUSTED WIDTH AND ENHANCED */}
           <div className="md:col-span-7 reveal delay-200 flex justify-center">
             <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 relative transform hover:scale-[1.01] transition-all duration-300 z-20 max-w-xl w-full">
-              {/* Remove blue dots on edges and make box larger */}
-              
               {/* Enhanced halo effect behind the form */}
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/30 to-secondary/20 rounded-3xl blur-xl -z-10 opacity-80"></div>
               
