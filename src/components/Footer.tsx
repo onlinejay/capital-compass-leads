@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
         
         {/* Main footer content - Now with logo in first column */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-8 mb-12">
           {/* Logo and description - First column */}
           <div>
             <div className="mb-6">
@@ -69,70 +69,6 @@ const Footer = () => {
                 Providing innovative financial solutions for real estate investors with speed, transparency, and expertise since 2010.
               </p>
             </div>
-            
-            <h3 className="text-lg font-bold mb-6 text-white">Quick Links</h3>
-            <ul className="space-y-3">
-              <li>
-                <a 
-                  href="#programs" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('programs');
-                  }} 
-                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
-                >
-                  Loan Programs
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#why-us" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('why-us');
-                  }} 
-                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
-                >
-                  Why Choose Us
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#process" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('process');
-                  }} 
-                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
-                >
-                  Application Process
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#contact" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('contact');
-                  }} 
-                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
-                >
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#quick-capital-form" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('quick-capital-form');
-                  }} 
-                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
-                >
-                  Get Pre-Approved
-                </a>
-              </li>
-            </ul>
           </div>
           
           {/* Loan Programs - Now second column */}
@@ -202,7 +138,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Links - Third column replacing Resources */}
+          {/* Links - Third column */}
           <div>
             <h3 className="text-lg font-bold mb-6 text-white">Links</h3>
             <ul className="space-y-3">
@@ -245,28 +181,6 @@ const Footer = () => {
                 >
                   Terms of Service
                 </a>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Contact Info - Fourth column */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-1" />
-                <span className="text-white/80">
-                  123 Finance Street, Suite 400<br />
-                  Los Angeles, CA 90017
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <a href="tel:+18005559000" className="text-white/80 hover:text-white transition-colors">(800) 555-9000</a>
-              </li>
-              <li className="flex items-center">
-                <Mail className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <a href="mailto:loans@capitalcompass.com" className="text-white/80 hover:text-white transition-colors">loans@capitalcompass.com</a>
               </li>
             </ul>
           </div>
