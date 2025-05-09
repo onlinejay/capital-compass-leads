@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import LeadCaptureForm from './LeadCaptureForm';
 import { CreditCard, Clock, CheckCircle, Wallet, Shield, ArrowUpRight } from 'lucide-react';
@@ -50,7 +51,7 @@ const Hero = () => {
           
           {/* Left column - OPTIMIZED for better balance */}
           <div className="md:col-span-5 reveal">
-            <div className="inline-flex items-center gap-2 bg-emerald-500 px-4 py-1.5 rounded-full text-sm font-bold mb-6 text-white shadow-md animate-pulse-glow hover:shadow-emerald-200/50 transition-all duration-300 border border-emerald-400">
+            <div className="inline-flex items-center gap-2 bg-emerald-500/20 px-4 py-1.5 rounded-full text-sm font-bold mb-6 text-white shadow-sm hover:shadow-emerald-200/30 transition-all duration-300 border border-emerald-400/30">
               <Wallet className="w-4 h-4" />
               <span>Fast Capital for Real Estate Investors</span>
             </div>
