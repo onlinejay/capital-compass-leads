@@ -50,10 +50,26 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Main footer content - Adjusted to 3 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-8 mb-12">
-          {/* Quick Links - Now first column */}
+        {/* Main footer content - Now with logo in first column */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-8 mb-12">
+          {/* Logo and description - First column */}
           <div>
+            <div className="mb-6">
+              <div className="flex items-center mb-4">
+                <div className="bg-white rounded-full p-2 mr-2">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#1E40AF" />
+                    <path d="M2 17L12 22L22 17" stroke="#1E40AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M2 12L12 17L22 12" stroke="#1E40AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <span className="text-xl font-bold text-white">Capital Compass</span>
+              </div>
+              <p className="text-white/70 mb-6">
+                Providing innovative financial solutions for real estate investors with speed, transparency, and expertise since 2010.
+              </p>
+            </div>
+            
             <h3 className="text-lg font-bold mb-6 text-white">Quick Links</h3>
             <ul className="space-y-3">
               <li>
@@ -186,7 +202,34 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Contact Info - Now third column */}
+          {/* Resources - Third column */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 text-white">Resources</h3>
+            <ul className="space-y-3">
+              <li>
+                <a href="/blog" className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200">
+                  Investment Blog
+                </a>
+              </li>
+              <li>
+                <a href="/guides" className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200">
+                  Market Guides
+                </a>
+              </li>
+              <li>
+                <a href="/calculator" className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200">
+                  Investment Calculator
+                </a>
+              </li>
+              <li>
+                <a href="/faq" className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Contact Info - Fourth column */}
           <div>
             <h3 className="text-lg font-bold mb-6 text-white">Contact Us</h3>
             <ul className="space-y-4">
