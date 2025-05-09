@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -110,8 +109,7 @@ const QuickCapitalRequestForm = () => {
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-8 md:p-10 w-full max-w-4xl mx-auto">
-      <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-gray-800">Quick Capital Request</h3>
-      <p className="text-center text-gray-600 mb-6">Get pre-approved in minutes, funding available as fast as 24 hours</p>
+      <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center text-gray-800">Quick Capital Request</h3>
       
       <div className="mb-8">
         <div className="flex justify-between text-sm md:text-base mb-1">
