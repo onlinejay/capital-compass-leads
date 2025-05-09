@@ -34,17 +34,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      
-      {/* Custom heading for LoanPrograms */}
-      <div id="programs" className="pt-10">
-        <div className="container mx-auto px-4 text-center mb-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 font-heading">
-            A Smarter Way to <span className="text-gradient bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Secure Investment Capital</span>
-          </h2>
-        </div>
-        <LoanPrograms />
-      </div>
-      
+      <LoanPrograms />
       <WhyChooseUs />
       <CustomApplicationProcess />
       <div id="quick-capital-form" className="py-28 md:py-32 relative overflow-hidden">
