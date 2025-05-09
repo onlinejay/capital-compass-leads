@@ -97,7 +97,7 @@ const LoanPrograms = () => {
             Investment Solutions
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Property <span className="text-gradient">Investment</span> Programs
+            A <span className="text-gradient">Smarter</span> Way to Secure Investment Capital
           </h2>
           <p className="text-lg text-gray-700 font-medium max-w-3xl mx-auto">
             Custom financing solutions for all types of real estate investments,
