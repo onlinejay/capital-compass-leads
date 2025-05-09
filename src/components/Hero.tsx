@@ -3,8 +3,11 @@ import React, { useEffect } from 'react';
 import LeadCaptureForm from './LeadCaptureForm';
 import { CreditCard, Clock, CheckCircle, Wallet, Shield, ArrowUpRight, Headphones, Lightbulb } from 'lucide-react';
 import { Button } from './ui/button';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
+  const isMobile = useIsMobile();
+  
   useEffect(() => {
     // Reveal animation for hero elements
     const revealElements = document.querySelectorAll('.reveal');
@@ -47,7 +50,7 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 z-10 py-16 md:py-24">
-        <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid md:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-center">
           
           {/* Left column - OPTIMIZED for better balance */}
           <div className="md:col-span-5 reveal">
@@ -62,40 +65,40 @@ const Hero = () => {
               Start the process to smarter funding.
             </p>
             
-            <div className="flex flex-wrap items-center gap-4 mb-6">
-              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
-                <Clock className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="font-medium">Fast Decisions</span>
+            <div className={`flex flex-wrap items-center gap-3 md:gap-4 mb-6 ${isMobile ? 'justify-center md:justify-start' : ''}`}>
+              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 md:py-3 border border-gray-100 shadow-sm">
+                <Clock className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
+                <span className="font-medium text-sm md:text-base">Fast Decisions</span>
               </div>
-              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
-                <CreditCard className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="font-medium">Flexible Terms</span>
+              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 md:py-3 border border-gray-100 shadow-sm">
+                <CreditCard className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
+                <span className="font-medium text-sm md:text-base">Flexible Terms</span>
               </div>
-              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
-                <Headphones className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="font-medium">Dedicated Support</span>
+              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 md:py-3 border border-gray-100 shadow-sm">
+                <Headphones className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
+                <span className="font-medium text-sm md:text-base">Dedicated Support</span>
               </div>
-              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
-                <Lightbulb className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="font-medium">Smarter Financing</span>
+              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 md:py-3 border border-gray-100 shadow-sm">
+                <Lightbulb className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
+                <span className="font-medium text-sm md:text-base">Smarter Financing</span>
               </div>
             </div>
             
-            <div className="mt-6 flex flex-col sm:flex-row gap-4">
+            <div className={`mt-6 flex ${isMobile ? 'justify-center md:justify-start' : ''}`}>
               <Button 
-                className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl px-6 py-6 shadow-md hover:shadow-lg transition-all"
-                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl px-5 py-5 md:px-6 md:py-6 shadow-md hover:shadow-lg transition-all"
+                size={isMobile ? "default" : "lg"}
                 onClick={handleViewLoanOptionsClick}
               >
                 View Funding Options
-                <ArrowUpRight className="ml-2 h-5 w-5" />
+                <ArrowUpRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
               </Button>
             </div>
           </div>
           
           {/* Right column - ADJUSTED WIDTH AND ENHANCED */}
-          <div className="md:col-span-7 reveal delay-200 flex justify-center">
-            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 relative transform hover:scale-[1.01] transition-all duration-300 z-20 max-w-xl w-full">
+          <div className="md:col-span-7 reveal delay-200 flex justify-center mt-8 md:mt-0">
+            <div className="bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 relative transform hover:scale-[1.01] transition-all duration-300 z-20 max-w-xl w-full">
               {/* Enhanced halo effect behind the form */}
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/30 to-secondary/20 rounded-3xl blur-xl -z-10 opacity-80"></div>
               
@@ -103,7 +106,7 @@ const Hero = () => {
                 <span className="animate-pulse">Priority Application</span>
               </div>
               <div className="mb-5 flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-gray-800 font-heading">Quick Capital Request</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-gray-800 font-heading">Quick Capital Request</h2>
                 <div className="bg-primary p-1.5 rounded-full">
                   <Shield className="w-5 h-5 text-white" />
                 </div>

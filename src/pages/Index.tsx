@@ -30,6 +30,11 @@ const Index = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Scroll to top on initial load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -37,7 +42,7 @@ const Index = () => {
       <LoanPrograms />
       <WhyChooseUs />
       <CustomApplicationProcess />
-      <div id="quick-capital-form" className="py-28 md:py-32 relative overflow-hidden">
+      <div id="quick-capital-form" className="py-20 md:py-28 lg:py-32 relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-blue-600/5 z-0"></div>
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-primary/10 filter blur-3xl z-0"></div>
@@ -47,11 +52,11 @@ const Index = () => {
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/40 to-blue-500/40 z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16 reveal-on-scroll">
+          <div className="text-center mb-12 md:mb-16 reveal-on-scroll">
             <div className="inline-flex items-center gap-2 bg-emerald-500/20 px-4 py-1.5 rounded-full text-sm font-bold mb-4 text-emerald-800 shadow-sm">
               <span>Fast Capital for Real Estate Investors</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-5 text-gray-800 font-heading">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 text-gray-800 font-heading">
               Fast <span className="text-gradient bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Financing</span> For Your Real Estate Goals
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-medium">
@@ -64,16 +69,16 @@ const Index = () => {
           </div>
           
           {/* Trust indicators */}
-          <div className="mt-12 flex flex-wrap justify-center gap-6 reveal-on-scroll">
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
+          <div className="mt-12 flex flex-wrap justify-center gap-4 md:gap-6 reveal-on-scroll">
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 md:px-4 py-2 rounded-lg shadow-sm">
               <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
               <span className="text-sm font-medium text-gray-700">Fast Decisions</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 md:px-4 py-2 rounded-lg shadow-sm">
               <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
               <span className="text-sm font-medium text-gray-700">Competitive Rates</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 md:px-4 py-2 rounded-lg shadow-sm">
               <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
               <span className="text-sm font-medium text-gray-700">Expert Support</span>
             </div>
