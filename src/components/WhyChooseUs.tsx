@@ -23,11 +23,11 @@ interface FeatureProps {
 }
 
 const Feature: React.FC<FeatureProps> = ({ icon, title, description }) => (
-  <div className="flex flex-col md:flex-row items-start gap-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gold-200/50 hover:border-gold-400 hover:-translate-y-1">
-    <div className="bg-gold-100 rounded-full p-3 text-gold-600">
+  <div className="flex flex-col h-full p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gold-200/50 hover:border-gold-400 hover:-translate-y-1">
+    <div className="bg-gold-100 rounded-full p-3 text-gold-600 w-fit mb-4">
       {icon}
     </div>
-    <div>
+    <div className="flex-grow">
       <h3 className="text-xl font-semibold mb-2 text-navy-800">{title}</h3>
       <p className="text-gray-600 font-medium">{description}</p>
     </div>
@@ -64,7 +64,7 @@ const WhyChooseUs = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="reveal-on-scroll reveal">
+          <div className="reveal-on-scroll reveal h-full">
             <Feature 
               icon={<Clock className="w-6 h-6" />}
               title="Speed to Close"
@@ -72,7 +72,7 @@ const WhyChooseUs = () => {
             />
           </div>
           
-          <div className="reveal-on-scroll reveal delay-100">
+          <div className="reveal-on-scroll reveal delay-100 h-full">
             <Feature 
               icon={<Rocket className="w-6 h-6" />}
               title="Smart Underwriting"
@@ -80,7 +80,7 @@ const WhyChooseUs = () => {
             />
           </div>
           
-          <div className="reveal-on-scroll reveal delay-200">
+          <div className="reveal-on-scroll reveal delay-200 h-full">
             <Feature 
               icon={<Users className="w-6 h-6" />}
               title="Investor-Aligned"
@@ -88,7 +88,7 @@ const WhyChooseUs = () => {
             />
           </div>
           
-          <div className="reveal-on-scroll reveal">
+          <div className="reveal-on-scroll reveal h-full">
             <Feature 
               icon={<TrendingUp className="w-6 h-6" />}
               title="Scale Your Portfolio"
@@ -96,7 +96,7 @@ const WhyChooseUs = () => {
             />
           </div>
           
-          <div className="reveal-on-scroll reveal delay-100">
+          <div className="reveal-on-scroll reveal delay-100 h-full">
             <Feature 
               icon={<Zap className="w-6 h-6" />}
               title="Quick Decisions"
@@ -104,7 +104,7 @@ const WhyChooseUs = () => {
             />
           </div>
           
-          <div className="reveal-on-scroll reveal delay-200">
+          <div className="reveal-on-scroll reveal delay-200 h-full">
             <Feature 
               icon={<DollarSign className="w-6 h-6" />}
               title="Creative Structures"
