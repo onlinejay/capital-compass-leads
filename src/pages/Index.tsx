@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -66,7 +67,7 @@ const Index = () => {
           <div className="mt-12 flex flex-wrap justify-center gap-6 reveal-on-scroll">
             <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
               <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-              <span className="text-sm font-medium text-gray-700">24-Hour Approval</span>
+              <span className="text-sm font-medium text-gray-700">Fast Decisions</span>
             </div>
             <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
               <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
