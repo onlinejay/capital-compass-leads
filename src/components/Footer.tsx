@@ -71,74 +71,7 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Loan Programs - Second column */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Loan Programs</h3>
-            <ul className="space-y-3">
-              <li>
-                <a 
-                  href="#programs" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('programs');
-                  }} 
-                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
-                >
-                  Fix-and-Flip
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#programs" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('programs');
-                  }} 
-                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
-                >
-                  New Construction
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#programs" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('programs');
-                  }} 
-                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
-                >
-                  DSCR Rental
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#programs" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('programs');
-                  }} 
-                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
-                >
-                  Commercial Bridge
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#programs" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('programs');
-                  }} 
-                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
-                >
-                  Multifamily
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Menu - Third column */}
+          {/* Menu - Second column (swapped with Loan Programs) */}
           <div>
             <h3 className="text-lg font-bold mb-6 text-white">Menu</h3>
             <ul className="space-y-3">
@@ -200,6 +133,73 @@ const Footer = () => {
                   className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
                 >
                   Get Pre-Approved
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Loan Programs - Third column (swapped with Menu) */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 text-white">Loan Programs</h3>
+            <ul className="space-y-3">
+              <li>
+                <a 
+                  href="#programs" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSmoothScroll('programs');
+                  }} 
+                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
+                >
+                  Fix-and-Flip
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#programs" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSmoothScroll('programs');
+                  }} 
+                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
+                >
+                  New Construction
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#programs" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSmoothScroll('programs');
+                  }} 
+                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
+                >
+                  DSCR Rental
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#programs" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSmoothScroll('programs');
+                  }} 
+                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
+                >
+                  Commercial Bridge
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#programs" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSmoothScroll('programs');
+                  }} 
+                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
+                >
+                  Multifamily
                 </a>
               </li>
             </ul>
