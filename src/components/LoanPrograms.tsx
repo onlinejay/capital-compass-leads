@@ -8,7 +8,8 @@ import {
   House, 
   Building2, 
   Map,
-  Wallet
+  Wallet,
+  Headphones
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -214,10 +215,10 @@ const LoanPrograms = () => {
           
           <div className="reveal-on-scroll reveal delay-300">
             <div className="bg-secondary/40 border border-secondary h-full p-6 flex flex-col items-center justify-center rounded-lg">
-              <Wallet className="w-12 h-12 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Cash Out Refinance</h3>
+              <Headphones className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Speak To An Funding Advisor</h3>
               <p className="text-sm text-gray-700 font-medium mb-4">
-                Access your property's equity with competitive rates and flexible terms designed for real estate investors.
+                Get personalized advice on the best financing options for your specific real estate investment needs.
               </p>
               <Button 
                 variant="outline" 
