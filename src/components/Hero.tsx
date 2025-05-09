@@ -65,7 +65,7 @@ const Hero = () => {
             <div className="flex flex-wrap items-center gap-4 mb-6">
               <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
                 <Clock className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="font-medium">Fast Approvals</span>
+                <span className="font-medium">Fast Decisions</span>
               </div>
               <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
                 <CreditCard className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
@@ -108,7 +108,7 @@ const Hero = () => {
                   <Shield className="w-5 h-5 text-white" />
                 </div>
               </div>
-              <p className="text-gray-700 font-medium mb-6">Get approved today for your next investment</p>
+              <p className="text-gray-700 font-medium mb-6">Get pre-approved today for your next investment</p>
               
               {/* Enhanced form styling with subtle animation */}
               <div className="transform hover:scale-[1.02] transition-all duration-300"> 
