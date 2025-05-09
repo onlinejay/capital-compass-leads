@@ -26,7 +26,7 @@ const Footer = () => {
         </svg>
       </div>
       
-      <div className="container mx-auto px-4 pb-16 pt-12">
+      <div className="container mx-auto px-4 pb-12 pt-12">
         {/* Top section with CTA - Enhanced styling */}
         <div className="mb-16">
           <div className="bg-gradient-to-r from-blue-600/30 to-primary/30 rounded-2xl p-8 border border-white/20 backdrop-blur-sm shadow-lg">
@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
         
         {/* Main footer content - Adjusted to 3 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-8 mb-12">
           {/* Quick Links - Now first column */}
           <div>
             <h3 className="text-lg font-bold mb-6 text-white">Quick Links</h3>
@@ -209,16 +209,15 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* Bottom bar - Reduced height */}
+        <div className="pt-4 border-t border-white/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2">
             <p className="text-sm text-white/60">
               &copy; {currentYear} Capital Compass. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center text-sm">
               <a href="/privacy" className="text-white/60 hover:text-white transition-colors">Privacy Policy</a>
               <a href="/terms" className="text-white/60 hover:text-white transition-colors">Terms of Service</a>
-              <p className="text-white/60">NMLS #12345678</p>
             </div>
           </div>
         </div>
