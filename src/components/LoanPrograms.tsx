@@ -111,10 +111,10 @@ const LoanPrograms = () => {
               title="Fix-and-Flip"
               icon={<Home className="w-6 h-6" />}
               points={[
-                "Speed to Close",
-                "Streamline processes gives you the edge to move fast and close on time.",
-                "Smart Underwriting",
-                "Our team looks for ways to say 'yes' when traditional lenders say 'no' – we focus on the deal potential, not just the paperwork.",
+                "Up to 90% of purchase price",
+                "100% of rehab costs",
+                "No prepayment penalties",
+                "Interest-only payments",
               ]}
               terms="6-24 month terms"
               popular={true}
@@ -127,10 +127,10 @@ const LoanPrograms = () => {
               title="New Construction"
               icon={<Building className="w-6 h-6" />}
               points={[
-                "Investor-Aligned",
-                "We're investors ourselves. We get it—and we're with you.",
-                "Scale Your Portfolio",
-                "Our financing solutions are designed to help you acquire multiple properties and grow your real estate empire faster.",
+                "Ground-up construction financing",
+                "Draws based on completion",
+                "Interest reserve available",
+                "Construction oversight services",
               ]}
               terms="12-24 month terms"
               onApplyClick={handleApplyNowClick}
@@ -142,10 +142,10 @@ const LoanPrograms = () => {
               title="DSCR Rental"
               icon={<House className="w-6 h-6" />}
               points={[
-                "Quick Decisions",
-                "Time kills deal and we move fast.",
-                "Creative Structures",
-                "Flexible capital, cross-collateral, construction solutions, and more.",
+                "No income verification",
+                "Based on property cash flow",
+                "Long-term financing options",
+                "Portfolio loans available",
               ]}
               terms="30-year terms"
               onApplyClick={handleApplyNowClick}
