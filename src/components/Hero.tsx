@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import LeadCaptureForm from './LeadCaptureForm';
-import { CreditCard, Clock, CheckCircle, Wallet, Shield, ArrowUpRight } from 'lucide-react';
+import { CreditCard, Clock, CheckCircle, Wallet, Shield, ArrowUpRight, Headphones, Bulb } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Hero = () => {
@@ -65,15 +65,19 @@ const Hero = () => {
             <div className="flex flex-wrap items-center gap-4 mb-6">
               <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
                 <Clock className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="font-medium">24-Hour Approval</span>
+                <span className="font-medium">Fast Approvals</span>
               </div>
               <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
                 <CreditCard className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
                 <span className="font-medium">Flexible Terms</span>
               </div>
               <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
-                <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="font-medium">Fast Closing</span>
+                <Headphones className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                <span className="font-medium">Dedicated Support</span>
+              </div>
+              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
+                <Bulb className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                <span className="font-medium">Smarter Financing</span>
               </div>
             </div>
             
