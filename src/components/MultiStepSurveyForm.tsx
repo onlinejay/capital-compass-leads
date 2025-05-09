@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -8,6 +7,7 @@ import PropertyInfoStep from './survey-steps/PropertyInfoStep';
 import LoanDetailsStep from './survey-steps/LoanDetailsStep';
 import PersonalInfoStep from './survey-steps/PersonalInfoStep';
 import ReviewStep from './survey-steps/ReviewStep';
+import { useNavigate } from 'react-router-dom';
 
 type SurveyData = {
   propertyInfo: {
@@ -56,6 +56,7 @@ const INITIAL_DATA: SurveyData = {
 };
 
 const MultiStepSurveyForm = () => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(0);
   const [data, setData] = useState<SurveyData>(INITIAL_DATA);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -69,18 +70,15 @@ const MultiStepSurveyForm = () => {
     { name: 'Review', description: 'Submit Application' }
   ];
 
-  // Fixed TypeScript error here by removing the conditional type
   const updateFields = (
     stepKey: keyof SurveyData, 
     fields: Partial<SurveyData[keyof SurveyData]> | { agreement: boolean }
   ) => {
     setData(prev => {
       if (stepKey === 'agreement') {
-        // Handle agreement field separately
         return { ...prev, agreement: (fields as { agreement: boolean }).agreement };
       }
       
-      // Handle object fields
       return { 
         ...prev, 
         [stepKey]: { ...prev[stepKey], ...(fields as any) }
@@ -104,14 +102,14 @@ const MultiStepSurveyForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission with a delay
     setTimeout(() => {
       setIsSubmitting(false);
-      setIsComplete(true);
-      
-      toast({
-        title: "Application Received",
-        description: "Our team is reviewing your details and will contact you shortly!",
+      navigate('/confirmation', { 
+        state: { 
+          name: data.personalInfo.name,
+          loanType: data.loanDetails.loanType,
+          loanAmount: data.loanDetails.loanAmount
+        } 
       });
     }, 1500);
   };
@@ -146,7 +144,6 @@ const MultiStepSurveyForm = () => {
 
   return (
     <div>
-      {/* Progress bar */}
       <div className="mb-8">
         <div className="flex justify-between text-sm font-medium text-gray-500 mb-1">
           <span>{steps[currentStep].description}</span>
@@ -154,7 +151,6 @@ const MultiStepSurveyForm = () => {
         </div>
         <Progress value={progressPercentage} className="h-2" />
 
-        {/* Step indicators */}
         <div className="flex justify-between mt-2">
           {steps.map((step, index) => (
             <div 

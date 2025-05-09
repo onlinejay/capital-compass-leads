@@ -11,6 +11,7 @@ import {
   SelectValue 
 } from '@/components/ui/select';
 import { toast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 
 type FormStep = 'loanAmount' | 'loanType' | 'contactInfo';
 
@@ -19,6 +20,7 @@ interface LeadCaptureFormProps {
 }
 
 const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }) => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState<FormStep>('loanAmount');
   const [formData, setFormData] = useState({
     loanAmount: '',
@@ -86,9 +88,14 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }
     // Simulate form submission with a delay
     setTimeout(() => {
       setIsSubmitting(false);
-      toast({
-        title: "Request Submitted",
-        description: "We'll be in touch with you shortly!"
+      
+      // Navigate to confirmation page with form data
+      navigate('/confirmation', { 
+        state: { 
+          name: formData.name,
+          loanType: formData.loanType,
+          loanAmount: formData.loanAmount
+        } 
       });
       
       // Reset form

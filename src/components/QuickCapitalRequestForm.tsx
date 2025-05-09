@@ -12,10 +12,12 @@ import {
 } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 
 type FormStep = 'loanAmount' | 'loanType' | 'contactInfo';
 
 const QuickCapitalRequestForm = () => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState<FormStep>('loanAmount');
   const [formData, setFormData] = useState({
     loanAmount: '',
@@ -83,9 +85,14 @@ const QuickCapitalRequestForm = () => {
     // Simulate form submission with a delay
     setTimeout(() => {
       setIsSubmitting(false);
-      toast({
-        title: "Request Submitted",
-        description: "We'll be in touch with you shortly!"
+      
+      // Navigate to the confirmation page with the form data
+      navigate('/confirmation', { 
+        state: { 
+          name: formData.name,
+          loanType: formData.loanType,
+          loanAmount: formData.loanAmount
+        } 
       });
       
       // Reset form
