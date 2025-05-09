@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import LeadCaptureForm from './LeadCaptureForm';
-import { CreditCard, Clock, CheckCircle, Wallet, Shield, ArrowUpRight, Headphones, Bulb } from 'lucide-react';
+import { CreditCard, Clock, CheckCircle, Wallet, Shield, ArrowUpRight, Headphones, Lightbulb } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Hero = () => {
@@ -76,7 +76,7 @@ const Hero = () => {
                 <span className="font-medium">Dedicated Support</span>
               </div>
               <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-100 shadow-sm">
-                <Bulb className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                <Lightbulb className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
                 <span className="font-medium">Smarter Financing</span>
               </div>
             </div>
