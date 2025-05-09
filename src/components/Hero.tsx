@@ -65,22 +65,23 @@ const Hero = () => {
               Start the process to smarter funding.
             </p>
             
-            <div className={`flex flex-wrap items-center gap-3 md:gap-4 mb-6 ${isMobile ? 'justify-center md:justify-start' : ''}`}>
-              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 md:py-3 border border-gray-100 shadow-sm">
+            {/* Updated feature cards - 2x2 grid on mobile, consistent sizing */}
+            <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="flex items-center bg-white/70 backdrop-blur-sm rounded-lg px-3 py-3 border border-gray-100 shadow-sm h-full">
                 <Clock className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
-                <span className="font-medium text-sm md:text-base">Fast Decisions</span>
+                <span className="font-medium text-sm text-gray-700">Fast Decisions</span>
               </div>
-              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 md:py-3 border border-gray-100 shadow-sm">
+              <div className="flex items-center bg-white/70 backdrop-blur-sm rounded-lg px-3 py-3 border border-gray-100 shadow-sm h-full">
                 <CreditCard className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
-                <span className="font-medium text-sm md:text-base">Flexible Terms</span>
+                <span className="font-medium text-sm text-gray-700">Flexible Terms</span>
               </div>
-              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 md:py-3 border border-gray-100 shadow-sm">
+              <div className="flex items-center bg-white/70 backdrop-blur-sm rounded-lg px-3 py-3 border border-gray-100 shadow-sm h-full">
                 <Headphones className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
-                <span className="font-medium text-sm md:text-base">Dedicated Support</span>
+                <span className="font-medium text-sm text-gray-700">Dedicated Support</span>
               </div>
-              <div className="flex items-center text-gray-700 bg-white/70 backdrop-blur-sm rounded-lg px-3 md:px-4 py-2 md:py-3 border border-gray-100 shadow-sm">
+              <div className="flex items-center bg-white/70 backdrop-blur-sm rounded-lg px-3 py-3 border border-gray-100 shadow-sm h-full">
                 <Lightbulb className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
-                <span className="font-medium text-sm md:text-base">Smarter Financing</span>
+                <span className="font-medium text-sm text-gray-700">Smarter Financing</span>
               </div>
             </div>
             
