@@ -108,7 +108,7 @@ const Hero = () => {
                   <Shield className="w-5 h-5 text-white" />
                 </div>
               </div>
-              <p className="text-gray-700 font-medium mb-6">Get approved today, funded tomorrow</p>
+              <p className="text-gray-700 font-medium mb-6">Get approved today for your next investment</p>
               
               {/* Enhanced form styling with subtle animation */}
               <div className="transform hover:scale-[1.02] transition-all duration-300"> 
