@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -202,9 +201,9 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Resources - Third column */}
+          {/* Quick Links - Third column (replacing Resources) */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Resources</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">Quick Links</h3>
             <ul className="space-y-3">
               <li>
                 <a href="/blog" className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200">
