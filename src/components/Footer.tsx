@@ -202,68 +202,48 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Resources - Third column with updated links */}
+          {/* Links - Third column replacing Resources */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Resources</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">Links</h3>
             <ul className="space-y-3">
               <li>
                 <a 
-                  href="#programs" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('programs');
-                  }} 
+                  href="/blog" 
                   className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
                 >
-                  Loan Programs
+                  Investment Blog
                 </a>
               </li>
               <li>
                 <a 
-                  href="#why-us" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('why-us');
-                  }} 
+                  href="/guides" 
                   className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
                 >
-                  Why Choose Us
+                  Market Guides
                 </a>
               </li>
               <li>
                 <a 
-                  href="#process" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('process');
-                  }} 
+                  href="/calculator" 
                   className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
                 >
-                  Application Process
+                  Investment Calculator
                 </a>
               </li>
               <li>
                 <a 
-                  href="#contact" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('contact');
-                  }} 
+                  href="/faq" 
                   className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
                 >
-                  Contact
+                  FAQ
                 </a>
               </li>
               <li>
                 <a 
-                  href="#quick-capital-form" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSmoothScroll('quick-capital-form');
-                  }} 
+                  href="/terms" 
                   className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
                 >
-                  Get Pre-Approved
+                  Terms of Service
                 </a>
               </li>
             </ul>
