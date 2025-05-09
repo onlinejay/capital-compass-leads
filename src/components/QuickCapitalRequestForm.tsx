@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -154,6 +155,13 @@ const QuickCapitalRequestForm = () => {
               >
                 Next Step <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
+              
+              <div className="text-center mt-2">
+                <span className="text-sm text-emerald-700 font-medium bg-emerald-50 px-3 py-1 rounded-full inline-flex items-center">
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+                  No hard inquiry
+                </span>
+              </div>
             </div>
           </div>
         )}
