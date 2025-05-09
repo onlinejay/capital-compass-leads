@@ -187,6 +187,13 @@ const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ variant = 'primary' }
             >
               Continue <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
+            
+            <div className="text-center mt-4 mb-2">
+              <span className="text-sm text-emerald-700 font-medium bg-emerald-50 px-3 py-1 rounded-full inline-flex items-center">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+                No hard inquiry
+              </span>
+            </div>
           </div>
         )}
         
