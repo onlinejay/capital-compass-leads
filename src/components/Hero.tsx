@@ -83,7 +83,7 @@ const Hero = () => {
                 size="lg"
                 onClick={handleViewLoanOptionsClick}
               >
-                View Loan Options
+                A Smarter Way to Secure Investment Capital
                 <ArrowUpRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
