@@ -11,7 +11,8 @@ import {
   Zap,
   TrendingUp,
   ArrowRight,
-  Home
+  Home,
+  Users
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -67,23 +68,23 @@ const WhyChooseUs = () => {
             <Feature 
               icon={<Clock className="w-6 h-6" />}
               title="Speed to Close"
-              description="Seize opportunities before your competition with our 7-day closing capability, giving you the edge in competitive markets."
+              description="Streamline processes gives you the edge to move fast and close on time."
             />
           </div>
           
           <div className="reveal-on-scroll reveal delay-100">
             <Feature 
               icon={<Rocket className="w-6 h-6" />}
-              title="Aggressive Underwriting"
+              title="Smart Underwriting"
               description="Our team looks for ways to say 'yes' when traditional lenders say 'no' – we focus on the deal potential, not just the paperwork."
             />
           </div>
           
           <div className="reveal-on-scroll reveal delay-200">
             <Feature 
-              icon={<Target className="w-6 h-6" />}
-              title="Strategic Partner"
-              description="We're investors ourselves who understand your vision and help you execute your acquisition and exit strategies effectively."
+              icon={<Users className="w-6 h-6" />}
+              title="Investor-Aligned"
+              description="We're investors ourselves. We get it—and we're with you."
             />
           </div>
           
@@ -99,15 +100,15 @@ const WhyChooseUs = () => {
             <Feature 
               icon={<Zap className="w-6 h-6" />}
               title="Quick Decisions"
-              description="Get loan approvals in 24 hours with minimal paperwork, allowing you to make confident offers and close deals rapidly."
+              description="Time kills deal and we move fast."
             />
           </div>
           
           <div className="reveal-on-scroll reveal delay-200">
             <Feature 
               icon={<DollarSign className="w-6 h-6" />}
-              title="Creative Capital Solutions"
-              description="Access innovative funding approaches from 100% financing to cross-collateralization options not available with conventional banks."
+              title="Creative Structures"
+              description="Flexible capital, cross-collateral, construction solutions, and more."
             />
           </div>
         </div>
