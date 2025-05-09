@@ -111,23 +111,15 @@ const QuickCapitalRequestForm = () => {
     <div className="bg-white rounded-xl shadow-lg p-8 md:p-10 w-full max-w-4xl mx-auto">
       <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center text-gray-800">Quick Capital Request</h3>
       
-      <div className="flex justify-between items-center mb-8">
-        <div className="flex-1">
-          <div className="flex justify-between text-sm md:text-base mb-1">
-            <span className="font-medium">
-              {currentStep === 'loanType' ? 'Loan Type' : 
+      <div className="mb-8">
+        <div className="flex justify-between text-sm md:text-base mb-1">
+          <span className="font-medium">
+            {currentStep === 'loanType' ? 'Loan Type' : 
               currentStep === 'projectDetails' ? 'Project Details' : 'Contact Information'}
-            </span>
-            <span className="text-gray-500">Step {currentStep === 'loanType' ? '1' : currentStep === 'projectDetails' ? '2' : '3'} of 3</span>
-          </div>
-          <Progress value={getProgressValue()} className="h-2.5" />
-        </div>
-        <div className="ml-4">
-          <span className="text-xs text-emerald-700 font-medium bg-emerald-50 px-3 py-1 rounded-full inline-flex items-center whitespace-nowrap">
-            <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1.5"></span>
-            No hard inquiry
           </span>
+          <span className="text-gray-500">Step {currentStep === 'loanType' ? '1' : currentStep === 'projectDetails' ? '2' : '3'} of 3</span>
         </div>
+        <Progress value={getProgressValue()} className="h-2.5" />
       </div>
       
       <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
