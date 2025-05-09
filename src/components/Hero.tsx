@@ -59,7 +59,7 @@ const Hero = () => {
               Fast, <span className="fintech-gradient-text">Flexible Funding</span> for Your Next Investment Property
             </h1>
             <p className="text-base md:text-lg text-gray-700 mb-6 max-w-xl leading-relaxed">
-              Access fast, reliable funding while traditional banks are still processing paperwork. Close on properties quickly and grow your real estate portfolio.
+              Funding solutions designed to help you move faster, scale smarter, and close with confidence.
             </p>
             
             <div className="flex flex-wrap items-center gap-4 mb-6">
