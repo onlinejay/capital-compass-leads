@@ -48,8 +48,8 @@ const Index = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16 reveal-on-scroll">
-            <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-bold mb-4 text-primary shadow-sm">
-              <span>Act Fast - Limited Time Financing</span>
+            <div className="inline-flex items-center gap-2 bg-emerald-500/20 px-4 py-1.5 rounded-full text-sm font-bold mb-4 text-emerald-800 shadow-sm">
+              <span>Fast Capital for Real Estate Investors</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-5 text-gray-800 font-heading">
               Fast <span className="text-gradient bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Financing</span> For Your Real Estate Goals
