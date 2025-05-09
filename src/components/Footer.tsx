@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -201,28 +202,68 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Quick Links - Third column (replacing Resources) */}
+          {/* Resources - Third column with updated links */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">Resources</h3>
             <ul className="space-y-3">
               <li>
-                <a href="/blog" className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200">
-                  Investment Blog
+                <a 
+                  href="#programs" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSmoothScroll('programs');
+                  }} 
+                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
+                >
+                  Loan Programs
                 </a>
               </li>
               <li>
-                <a href="/guides" className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200">
-                  Market Guides
+                <a 
+                  href="#why-us" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSmoothScroll('why-us');
+                  }} 
+                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
+                >
+                  Why Choose Us
                 </a>
               </li>
               <li>
-                <a href="/calculator" className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200">
-                  Investment Calculator
+                <a 
+                  href="#process" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSmoothScroll('process');
+                  }} 
+                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
+                >
+                  Application Process
                 </a>
               </li>
               <li>
-                <a href="/faq" className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200">
-                  FAQ
+                <a 
+                  href="#contact" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSmoothScroll('contact');
+                  }} 
+                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
+                >
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#quick-capital-form" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSmoothScroll('quick-capital-form');
+                  }} 
+                  className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
+                >
+                  Get Pre-Approved
                 </a>
               </li>
             </ul>
