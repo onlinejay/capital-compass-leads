@@ -91,7 +91,7 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-blue-300">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">Quick Links</h3>
             <ul className="space-y-3">
               <li>
                 <a 
@@ -158,7 +158,7 @@ const Footer = () => {
           
           {/* Loan Programs */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-emerald-300">Loan Programs</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">Loan Programs</h3>
             <ul className="space-y-3">
               <li>
                 <a 
@@ -225,7 +225,7 @@ const Footer = () => {
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-primary">Contact Us</h3>
+            <h3 className="text-lg font-bold mb-6 text-white">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-1" />
