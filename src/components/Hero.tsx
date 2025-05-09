@@ -52,7 +52,7 @@ const Hero = () => {
           {/* Left column - OPTIMIZED for better balance */}
           <div className="md:col-span-5 reveal">
             <div className="inline-flex items-center gap-2 bg-emerald-500/20 px-4 py-1.5 rounded-full text-sm font-bold mb-6 text-white shadow-sm hover:shadow-emerald-200/30 transition-all duration-300 border border-emerald-400/30">
-              <Wallet className="w-4 h-4" />
+              <Wallet className="w-4 h-4 text-white" />
               <span>Fast Capital for Real Estate Investors</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight text-gray-900 font-heading">
