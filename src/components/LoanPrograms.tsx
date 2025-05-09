@@ -100,9 +100,40 @@ const LoanPrograms = () => {
             A <span className="text-gradient">Smarter</span> Way to Secure Investment Capital
           </h2>
           <p className="text-lg text-gray-700 font-medium max-w-3xl mx-auto">
-            Custom financing solutions for all types of real estate investments,
-            with flexible terms designed for today's property investors.
+            Our investment lending platform gives you the competitive edge to capitalize on opportunities faster than traditional lenders, helping you build wealth through real estate.
           </p>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10 max-w-5xl mx-auto text-left">
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-primary mb-2">Speed to Close</h3>
+              <p className="text-sm text-gray-700">Streamline processes gives you the edge to move fast and close on time.</p>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-primary mb-2">Smart Underwriting</h3>
+              <p className="text-sm text-gray-700">Our team looks for ways to say 'yes' when traditional lenders say 'no' – we focus on the deal potential, not just the paperwork.</p>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-primary mb-2">Investor-Aligned</h3>
+              <p className="text-sm text-gray-700">We're investors ourselves. We get it—and we're with you.</p>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-primary mb-2">Scale Your Portfolio</h3>
+              <p className="text-sm text-gray-700">Our financing solutions are designed to help you acquire multiple properties and grow your real estate empire faster.</p>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-primary mb-2">Quick Decisions</h3>
+              <p className="text-sm text-gray-700">Time kills deal and we move fast.</p>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-primary mb-2">Creative Structures</h3>
+              <p className="text-sm text-gray-700">Flexible capital, cross-collateral, construction solutions, and more.</p>
+            </div>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
