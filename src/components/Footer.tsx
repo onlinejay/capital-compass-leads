@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
         
         {/* Main footer content - Now with logo in first column */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Logo and description - First column */}
           <div>
             <div className="mb-6">
@@ -138,7 +138,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Menu - Third column (previously Links) */}
+          {/* Menu - Third column */}
           <div>
             <h3 className="text-lg font-bold mb-6 text-white">Menu</h3>
             <ul className="space-y-3">
@@ -200,6 +200,32 @@ const Footer = () => {
                   className="inline-block text-white/80 hover:text-white transition-colors hover:translate-x-1 duration-200"
                 >
                   Get Pre-Approved
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Contact - Fourth column */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 text-white">Contact</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <MapPin className="mr-2 h-5 w-5 text-blue-300 shrink-0 mt-0.5" />
+                <span className="text-white/80">
+                  123 Finance Street<br />
+                  Investment City, IC 10101
+                </span>
+              </li>
+              <li className="flex items-center">
+                <Phone className="mr-2 h-5 w-5 text-blue-300 shrink-0" />
+                <a href="tel:+18885551234" className="text-white/80 hover:text-white transition-colors">
+                  (888) 555-1234
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Mail className="mr-2 h-5 w-5 text-blue-300 shrink-0" />
+                <a href="mailto:info@capitalcompass.com" className="text-white/80 hover:text-white transition-colors">
+                  info@capitalcompass.com
                 </a>
               </li>
             </ul>
