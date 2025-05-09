@@ -50,7 +50,7 @@ const Hero = () => {
           
           {/* Left column - OPTIMIZED for better balance */}
           <div className="md:col-span-5 reveal">
-            <div className="inline-flex items-center gap-2 bg-secondary px-4 py-1.5 rounded-full text-sm font-bold mb-6 text-primary shadow-sm">
+            <div className="inline-flex items-center gap-2 bg-secondary px-4 py-1.5 rounded-full text-sm font-bold mb-6 text-emerald-600 shadow-sm">
               <Wallet className="w-4 h-4" />
               <span>Fast Capital for Real Estate Investors</span>
             </div>
