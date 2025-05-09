@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import { 
   Select, 
   SelectContent, 
@@ -13,14 +13,13 @@ import {
 import { Input } from '@/components/ui/input';
 import { toast } from '@/hooks/use-toast';
 
-type FormStep = 'loanType' | 'projectDetails' | 'contact';
+type FormStep = 'loanAmount' | 'loanType' | 'contactInfo';
 
 const QuickCapitalRequestForm = () => {
-  const [currentStep, setCurrentStep] = useState<FormStep>('loanType');
+  const [currentStep, setCurrentStep] = useState<FormStep>('loanAmount');
   const [formData, setFormData] = useState({
-    loanType: '',
-    projectAddress: '',
     loanAmount: '',
+    loanType: '',
     name: '',
     email: '',
     phone: ''
@@ -38,7 +37,16 @@ const QuickCapitalRequestForm = () => {
   };
   
   const moveToNextStep = () => {
-    if (currentStep === 'loanType') {
+    if (currentStep === 'loanAmount') {
+      if (!formData.loanAmount) {
+        toast({
+          title: "Please enter a loan amount",
+          variant: "destructive"
+        });
+        return;
+      }
+      setCurrentStep('loanType');
+    } else if (currentStep === 'loanType') {
       if (!formData.loanType) {
         toast({
           title: "Please select a loan type",
@@ -46,24 +54,15 @@ const QuickCapitalRequestForm = () => {
         });
         return;
       }
-      setCurrentStep('projectDetails');
-    } else if (currentStep === 'projectDetails') {
-      if (!formData.projectAddress || !formData.loanAmount) {
-        toast({
-          title: "Please fill all required fields",
-          variant: "destructive"
-        });
-        return;
-      }
-      setCurrentStep('contact');
+      setCurrentStep('contactInfo');
     }
   };
   
   const moveToPreviousStep = () => {
-    if (currentStep === 'projectDetails') {
+    if (currentStep === 'loanType') {
+      setCurrentStep('loanAmount');
+    } else if (currentStep === 'contactInfo') {
       setCurrentStep('loanType');
-    } else if (currentStep === 'contact') {
-      setCurrentStep('projectDetails');
     }
   };
   
@@ -91,101 +90,83 @@ const QuickCapitalRequestForm = () => {
       
       // Reset form
       setFormData({
-        loanType: '',
-        projectAddress: '',
         loanAmount: '',
+        loanType: '',
         name: '',
         email: '',
         phone: ''
       });
-      setCurrentStep('loanType');
+      setCurrentStep('loanAmount');
     }, 1500);
   };
   
   const getProgressValue = () => {
-    if (currentStep === 'loanType') return 33;
-    if (currentStep === 'projectDetails') return 66;
+    if (currentStep === 'loanAmount') return 33;
+    if (currentStep === 'loanType') return 66;
     return 100;
+  };
+
+  // Improved step indicator display
+  const renderStepIndicator = () => {
+    return (
+      <div className="flex justify-between mb-1">
+        <div className="flex items-center space-x-1.5">
+          <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
+            currentStep === 'loanAmount' 
+              ? 'bg-primary text-white' 
+              : (currentStep === 'loanType' || currentStep === 'contactInfo')
+                ? 'bg-emerald-500 text-white' 
+                : 'bg-gray-200 text-gray-400'
+          }`}>
+            {currentStep !== 'loanAmount' ? <CheckCircle className="w-3 h-3" /> : <span className="text-xs">1</span>}
+          </div>
+          <div className={`text-xs font-medium ${
+            currentStep === 'loanAmount' 
+              ? 'text-primary' 
+              : (currentStep === 'loanType' || currentStep === 'contactInfo')
+                ? 'text-emerald-500' 
+                : 'text-gray-400'
+          }`}>
+            Amount
+          </div>
+        </div>
+        
+        <div className="flex items-center space-x-1.5">
+          <div className={`w-5 h-5 rounded-full flex items-center justify-center ${currentStep === 'loanType' ? 'bg-primary text-white' : currentStep === 'contactInfo' ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400'}`}>
+            {currentStep === 'contactInfo' ? <CheckCircle className="w-3 h-3" /> : <span className="text-xs">2</span>}
+          </div>
+          <div className={`text-xs font-medium ${currentStep === 'loanType' ? 'text-primary' : currentStep === 'contactInfo' ? 'text-emerald-500' : 'text-gray-400'}`}>
+            Type
+          </div>
+        </div>
+        
+        <div className="flex items-center space-x-1.5">
+          <div className={`w-5 h-5 rounded-full flex items-center justify-center ${currentStep === 'contactInfo' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-400'}`}>
+            <span className="text-xs">3</span>
+          </div>
+          <div className={`text-xs font-medium ${currentStep === 'contactInfo' ? 'text-primary' : 'text-gray-400'}`}>
+            Contact
+          </div>
+        </div>
+      </div>
+    );
   };
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-8 md:p-10 w-full max-w-4xl mx-auto">
       <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center text-gray-800">Quick Capital Request</h3>
       
-      <div className="mb-8">
-        <div className="flex justify-between text-sm md:text-base mb-1">
-          <span className="font-medium">
-            {currentStep === 'loanType' ? 'Loan Type' : 
-              currentStep === 'projectDetails' ? 'Project Details' : 'Contact Information'}
-          </span>
-          <span className="text-gray-500">Step {currentStep === 'loanType' ? '1' : currentStep === 'projectDetails' ? '2' : '3'} of 3</span>
-        </div>
-        <Progress value={getProgressValue()} className="h-2.5" />
+      <div className="mb-6">
+        {renderStepIndicator()}
+        <Progress value={getProgressValue()} className="h-1.5 mt-2" />
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
-        {currentStep === 'loanType' && (
-          <div className="space-y-6">
-            <label className="block text-lg font-medium text-gray-700">
-              Select Loan Type
-            </label>
-            <Select 
-              value={formData.loanType} 
-              onValueChange={handleLoanTypeChange}
-            >
-              <SelectTrigger className="w-full h-14 text-base">
-                <SelectValue placeholder="Choose loan type" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="fix-and-flip">Fix and Flip</SelectItem>
-                <SelectItem value="new-construction">New Construction</SelectItem>
-                <SelectItem value="dscr-rental">DSCR Rental</SelectItem>
-                <SelectItem value="rental-portfolio">Rental Portfolio</SelectItem>
-                <SelectItem value="commercial-bridge">Commercial Bridge</SelectItem>
-                <SelectItem value="multifamily">Multifamily</SelectItem>
-                <SelectItem value="land-lot">Land and Lot Loans</SelectItem>
-              </SelectContent>
-            </Select>
-            
-            <div className="pt-6">
-              <Button 
-                type="button" 
-                onClick={moveToNextStep}
-                className="w-full h-12 text-lg bg-primary hover:bg-primary/90 text-white"
-              >
-                Next Step <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              
-              <div className="text-center mt-6 mb-4">
-                <span className="text-sm text-emerald-700 font-medium bg-emerald-50 px-3 py-1 rounded-full inline-flex items-center">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
-                  No hard inquiry
-                </span>
-              </div>
-            </div>
-          </div>
-        )}
-        
-        {currentStep === 'projectDetails' && (
-          <div className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-5">
+        {currentStep === 'loanAmount' && (
+          <div className="space-y-5">
             <div>
-              <label htmlFor="projectAddress" className="block text-lg font-medium text-gray-700">
-                Property Address
-              </label>
-              <Input
-                id="projectAddress"
-                name="projectAddress"
-                value={formData.projectAddress}
-                onChange={handleInputChange}
-                placeholder="Enter property address"
-                className="mt-2 h-14 text-base"
-                required
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="loanAmount" className="block text-lg font-medium text-gray-700">
-                Loan Amount
+              <label htmlFor="loanAmount" className="block text-lg font-medium text-gray-700 mb-1.5">
+                How much funding do you need?
               </label>
               <Input
                 id="loanAmount"
@@ -196,6 +177,48 @@ const QuickCapitalRequestForm = () => {
                 className="mt-2 h-14 text-base"
                 required
               />
+            </div>
+            
+            <Button 
+              type="button" 
+              onClick={moveToNextStep}
+              className="w-full h-12 text-lg bg-primary hover:bg-primary/90 text-white"
+            >
+              Continue <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            
+            <div className="text-center mt-6 mb-4">
+              <span className="text-sm text-emerald-700 font-medium bg-emerald-50 px-3 py-1 rounded-full inline-flex items-center">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+                No hard inquiry
+              </span>
+            </div>
+          </div>
+        )}
+        
+        {currentStep === 'loanType' && (
+          <div className="space-y-5">
+            <div>
+              <label className="block text-lg font-medium text-gray-700 mb-1.5">
+                What type of loan are you looking for?
+              </label>
+              <Select 
+                value={formData.loanType} 
+                onValueChange={handleLoanTypeChange}
+              >
+                <SelectTrigger className="w-full h-14 text-base">
+                  <SelectValue placeholder="Choose loan type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="fix-and-flip">Fix and Flip</SelectItem>
+                  <SelectItem value="new-construction">New Construction</SelectItem>
+                  <SelectItem value="dscr-rental">DSCR Rental</SelectItem>
+                  <SelectItem value="rental-portfolio">Rental Portfolio</SelectItem>
+                  <SelectItem value="commercial-bridge">Commercial Bridge</SelectItem>
+                  <SelectItem value="multifamily">Multifamily</SelectItem>
+                  <SelectItem value="land-lot">Land and Lot Loans</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             
             <div className="flex justify-between pt-6">
@@ -212,16 +235,16 @@ const QuickCapitalRequestForm = () => {
                 onClick={moveToNextStep}
                 className="flex-1 ml-3 h-12 text-base bg-primary hover:bg-primary/90 text-white"
               >
-                Next <ArrowRight className="ml-2 h-5 w-5" />
+                Continue <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>
         )}
         
-        {currentStep === 'contact' && (
-          <div className="space-y-6">
+        {currentStep === 'contactInfo' && (
+          <div className="space-y-5">
             <div>
-              <label htmlFor="name" className="block text-lg font-medium text-gray-700">
+              <label htmlFor="name" className="block text-lg font-medium text-gray-700 mb-1.5">
                 Full Name
               </label>
               <Input
@@ -236,7 +259,7 @@ const QuickCapitalRequestForm = () => {
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-lg font-medium text-gray-700">
+              <label htmlFor="email" className="block text-lg font-medium text-gray-700 mb-1.5">
                 Email
               </label>
               <Input
@@ -252,7 +275,7 @@ const QuickCapitalRequestForm = () => {
             </div>
             
             <div>
-              <label htmlFor="phone" className="block text-lg font-medium text-gray-700">
+              <label htmlFor="phone" className="block text-lg font-medium text-gray-700 mb-1.5">
                 Phone
               </label>
               <Input
