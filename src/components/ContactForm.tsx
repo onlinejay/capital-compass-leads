@@ -41,7 +41,7 @@ const ContactForm = () => {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="p-5 bg-secondary rounded-xl flex flex-col items-center">
+            <div className="p-5 bg-blue-50 rounded-xl flex flex-col items-center">
               <div className="rounded-full bg-primary/10 p-3 mb-3">
                 <Calendar className="w-6 h-6 text-primary" />
               </div>
@@ -49,7 +49,7 @@ const ContactForm = () => {
               <p className="text-gray-600 text-sm">Get approved today, funded tomorrow</p>
             </div>
             
-            <div className="p-5 bg-secondary rounded-xl flex flex-col items-center">
+            <div className="p-5 bg-blue-50 rounded-xl flex flex-col items-center">
               <div className="rounded-full bg-primary/10 p-3 mb-3">
                 <FileCheck className="w-6 h-6 text-primary" />
               </div>
@@ -57,7 +57,7 @@ const ContactForm = () => {
               <p className="text-gray-600 text-sm">Free consultation with our experts</p>
             </div>
             
-            <div className="p-5 bg-secondary rounded-xl flex flex-col items-center">
+            <div className="p-5 bg-blue-50 rounded-xl flex flex-col items-center">
               <div className="rounded-full bg-primary/10 p-3 mb-3">
                 <Phone className="w-6 h-6 text-primary" />
               </div>

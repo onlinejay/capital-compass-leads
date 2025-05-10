@@ -49,7 +49,7 @@ const LoanProgram: React.FC<LoanProgramProps> = ({ title, icon, points, terms, p
           </li>
         ))}
       </ul>
-      <div className="mt-4 bg-secondary/80 rounded-md p-3">
+      <div className="mt-4 bg-blue-50 rounded-md p-3">
         <p className="text-sm text-primary font-medium mb-1">Typical Terms:</p>
         <p className="text-sm text-gray-800 font-bold">{terms}</p>
       </div>
@@ -214,7 +214,7 @@ const LoanPrograms = () => {
           </div>
           
           <div className="reveal-on-scroll reveal delay-300">
-            <div className="bg-secondary/40 border border-secondary h-full p-6 flex flex-col items-center justify-center rounded-lg">
+            <div className="bg-blue-50 border border-blue-100 h-full p-6 flex flex-col items-center justify-center rounded-lg">
               <Headphones className="w-12 h-12 text-primary mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-gray-800">Speak To An Funding Advisor</h3>
               <p className="text-sm text-gray-700 font-medium mb-4">

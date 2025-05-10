@@ -19,7 +19,7 @@
     --primary: 210 84% 48%; /* BlueMint blue */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 178 70% 41%; /* BlueMint teal */
+    --secondary: 210 100% 97%; /* Changed from teal to light blue */
     --secondary-foreground: 224 76% 48%;
 
     --muted: 210 40% 96.1%;
@@ -162,7 +162,7 @@
 }
 
 .button-secondary {
-  @apply bg-secondary hover:bg-secondary/90 text-primary font-semibold shadow-sm;
+  @apply bg-blue-50 hover:bg-blue-100 text-primary font-semibold shadow-sm; /* Changed from teal to light blue */
 }
 
 /* Button gradient style */
@@ -180,7 +180,7 @@
   @apply border-2 border-white text-white hover:bg-white/10 font-bold transition-all duration-300;
 }
 
-/* Loan program styling - Lightened backgrounds */
+/* Loan program styling - Updated backgrounds to blue tones */
 .loan-program-card {
   @apply bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all;
 }
