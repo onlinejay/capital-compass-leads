@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { 
   Clock,
@@ -24,7 +23,7 @@ interface FeatureProps {
 
 const Feature: React.FC<FeatureProps> = ({ icon, title, description }) => (
   <div className="flex flex-col h-full p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gold-200/50 hover:border-gold-400 hover:-translate-y-1">
-    <div className="bg-gold-100 rounded-full p-3 text-gold-600 w-fit mb-4">
+    <div className="bg-blue-50 rounded-full p-3 text-blue-600 w-fit mb-4">
       {icon}
     </div>
     <div className="flex-grow">
@@ -56,7 +55,7 @@ const WhyChooseUs = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 reveal-on-scroll reveal">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy-800">
-            Why <span className="text-gold-500">Action-Oriented Investors</span> Choose Us
+            Why <span className="text-blue-500">Action-Oriented Investors</span> Choose Us
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto font-medium">
             Our investment lending platform gives you the competitive edge to capitalize on opportunities faster than traditional lenders, helping you build wealth through real estate.
@@ -113,7 +112,7 @@ const WhyChooseUs = () => {
           </div>
         </div>
         
-        {/* Redesigned "Ready to Take Action" section */}
+        {/* Redesigned "Ready to Take Action" section with lighter backgrounds */}
         <div className="mt-16 reveal-on-scroll reveal">
           <div className="bg-gradient-to-r from-primary to-blue-600 rounded-2xl overflow-hidden shadow-xl">
             <div className="flex flex-col md:flex-row">

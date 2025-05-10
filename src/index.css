@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 @tailwind base;
@@ -179,13 +180,13 @@
   @apply border-2 border-white text-white hover:bg-white/10 font-bold transition-all duration-300;
 }
 
-/* Loan program styling */
+/* Loan program styling - Lightened green backgrounds */
 .loan-program-card {
   @apply bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all;
 }
 
 .loan-program-header {
-  @apply bg-secondary px-4 py-3;
+  @apply bg-emerald-100 px-4 py-3;
 }
 
 .loan-program-content {
@@ -197,7 +198,7 @@
 }
 
 .loan-point-icon {
-  @apply text-primary;
+  @apply text-emerald-500;
 }
 
 /* Fintech UI Elements with improved visibility */
@@ -267,7 +268,7 @@
 }
 
 .step-circle.completed {
-  @apply bg-emerald-500 text-white;
+  @apply bg-emerald-400 text-white;
 }
 
 .step-circle.inactive {

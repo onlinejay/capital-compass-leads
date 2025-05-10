@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import LeadCaptureForm from './LeadCaptureForm';
 import { CreditCard, Clock, CheckCircle, Wallet, Shield, ArrowUpRight, Headphones, Lightbulb } from 'lucide-react';
@@ -36,17 +35,17 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[calc(100vh-80px)] flex items-center bg-white overflow-hidden">
-      {/* Enhanced Background Elements */}
+      {/* Enhanced Background Elements - Lightened green backgrounds */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/10 to-teal-500/10"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/10 to-emerald-200/20"></div>
         </div>
-        <div className="absolute -top-64 -right-64 w-[500px] h-[500px] rounded-full bg-teal-500/30 filter blur-3xl"></div>
+        <div className="absolute -top-64 -right-64 w-[500px] h-[500px] rounded-full bg-emerald-100/50 filter blur-3xl"></div>
         <div className="absolute -bottom-64 -left-64 w-[500px] h-[500px] rounded-full bg-blue-500/20 filter blur-3xl"></div>
         
-        {/* Added decorative elements */}
+        {/* Added decorative elements with lighter green */}
         <div className="absolute top-1/3 left-1/4 w-8 h-8 bg-blue-600/10 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-12 h-12 bg-teal-500/30 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-12 h-12 bg-emerald-100/50 rounded-full animate-pulse"></div>
       </div>
 
       <div className="container mx-auto px-4 z-10 py-16 md:py-24">
@@ -54,8 +53,8 @@ const Hero = () => {
           
           {/* Left column - OPTIMIZED for better balance */}
           <div className="md:col-span-5 reveal">
-            <div className="inline-flex items-center gap-2 bg-teal-500/20 px-4 py-1.5 rounded-full text-sm font-bold mb-6 text-teal-800 shadow-sm hover:shadow-teal-200/30 transition-all duration-300 border border-teal-400/30">
-              <Wallet className="w-4 h-4 text-teal-700" />
+            <div className="inline-flex items-center gap-2 bg-emerald-100/70 px-4 py-1.5 rounded-full text-sm font-bold mb-6 text-emerald-700 shadow-sm hover:shadow-emerald-100/30 transition-all duration-300 border border-emerald-200/50">
+              <Wallet className="w-4 h-4 text-emerald-600" />
               <span>Fast Capital for Real Estate Investors</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight text-gray-900 font-heading">
@@ -100,10 +99,10 @@ const Hero = () => {
           {/* Right column - ADJUSTED WIDTH AND ENHANCED */}
           <div className="md:col-span-7 reveal delay-200 flex justify-center mt-8 md:mt-0">
             <div className="bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 relative transform hover:scale-[1.01] transition-all duration-300 z-20 max-w-xl w-full">
-              {/* Enhanced halo effect behind the form */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-teal-500/30 to-blue-400/20 rounded-3xl blur-xl -z-10 opacity-80"></div>
+              {/* Enhanced halo effect behind the form - Lightened green */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-emerald-100/40 to-blue-400/20 rounded-3xl blur-xl -z-10 opacity-80"></div>
               
-              <div className="absolute -top-3 left-6 bg-teal-100 px-4 py-1 rounded-full text-xs font-medium text-teal-700 shadow-sm">
+              <div className="absolute -top-3 left-6 bg-emerald-50 px-4 py-1 rounded-full text-xs font-medium text-emerald-600 shadow-sm">
                 <span className="animate-pulse">Priority Application</span>
               </div>
               <div className="mb-5 flex items-center justify-between">
