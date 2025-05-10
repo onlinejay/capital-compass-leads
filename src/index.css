@@ -15,10 +15,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
     
-    --primary: 224 76% 48%;
+    --primary: 210 84% 48%; /* BlueMint blue */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 224 30% 95%;
+    --secondary: 178 70% 41%; /* BlueMint teal */
     --secondary-foreground: 224 76% 48%;
 
     --muted: 210 40% 96.1%;

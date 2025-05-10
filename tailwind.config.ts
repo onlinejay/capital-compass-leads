@@ -63,6 +63,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				// BlueMint specific brand colors - providing specific hex values for consistency
+				bluemint: {
+					blue: {
+						DEFAULT: '#1E88E5', // Primary blue
+						light: '#64B5F6',
+						dark: '#0D47A1',
+					},
+					teal: {
+						DEFAULT: '#20B2AA', // Primary teal/mint
+						light: '#5FCCC5',
+						dark: '#00756F',
+					}
+				},
 				blue: {
 					50: '#f0f7ff',
 					100: '#e0eefe',

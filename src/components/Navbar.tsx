@@ -45,9 +45,17 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold font-heading">
-              <span className="text-blue-600">Blue</span>
-              <span className="text-teal-500">Mint</span>
+            <a href="/" className="text-2xl font-bold font-heading flex items-center">
+              {/* Updated logo with more consistent branding and styling */}
+              <div className="mr-2">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#1E88E5" />
+                  <path d="M2 17L12 22L22 17" stroke="#20B2AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M2 12L12 17L22 12" stroke="#20B2AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <span className="text-bluemint-blue">Blue</span>
+              <span className="text-bluemint-teal">Mint</span>
               <span className="text-gray-800"> Financial</span>
             </a>
           </div>
@@ -56,30 +64,30 @@ const Navbar = () => {
           <nav className="hidden md:flex items-center space-x-6">
             <button 
               onClick={() => handleNavClick('#programs')}
-              className="text-gray-700 hover:text-primary font-medium transition-colors"
+              className="text-gray-700 hover:text-bluemint-blue font-medium transition-colors"
             >
               Loan Programs
             </button>
             <button 
               onClick={() => handleNavClick('#why-us')}
-              className="text-gray-700 hover:text-primary font-medium transition-colors"
+              className="text-gray-700 hover:text-bluemint-blue font-medium transition-colors"
             >
               Why Choose Us
             </button>
             <button 
               onClick={() => handleNavClick('#process')}
-              className="text-gray-700 hover:text-primary font-medium transition-colors"
+              className="text-gray-700 hover:text-bluemint-blue font-medium transition-colors"
             >
               Process
             </button>
             <button 
               onClick={() => handleNavClick('#contact')}
-              className="text-gray-700 hover:text-primary font-medium transition-colors"
+              className="text-gray-700 hover:text-bluemint-blue font-medium transition-colors"
             >
               Contact
             </button>
             <Button 
-              className="bg-primary hover:bg-primary/90 text-white ml-4"
+              className="bg-bluemint-blue hover:bg-bluemint-blue/90 text-white ml-4"
               onClick={handleApplyNowClick}
             >
               Get Pre-Approved
@@ -108,31 +116,31 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <nav className="md:hidden pt-4 pb-4 space-y-3 bg-white/95 backdrop-blur-sm border-t mt-2 animate-fade-in">
             <button 
-              className="block w-full text-left text-gray-700 hover:text-primary font-medium transition-colors py-2 px-2"
+              className="block w-full text-left text-gray-700 hover:text-bluemint-blue font-medium transition-colors py-2 px-2"
               onClick={() => handleNavClick('#programs')}
             >
               Loan Programs
             </button>
             <button 
-              className="block w-full text-left text-gray-700 hover:text-primary font-medium transition-colors py-2 px-2"
+              className="block w-full text-left text-gray-700 hover:text-bluemint-blue font-medium transition-colors py-2 px-2"
               onClick={() => handleNavClick('#why-us')}
             >
               Why Choose Us
             </button>
             <button 
-              className="block w-full text-left text-gray-700 hover:text-primary font-medium transition-colors py-2 px-2"
+              className="block w-full text-left text-gray-700 hover:text-bluemint-blue font-medium transition-colors py-2 px-2"
               onClick={() => handleNavClick('#process')}
             >
               Process
             </button>
             <button 
-              className="block w-full text-left text-gray-700 hover:text-primary font-medium transition-colors py-2 px-2"
+              className="block w-full text-left text-gray-700 hover:text-bluemint-blue font-medium transition-colors py-2 px-2"
               onClick={() => handleNavClick('#contact')}
             >
               Contact
             </button>
             <Button 
-              className="bg-primary hover:bg-primary/90 text-white w-full mt-2"
+              className="bg-bluemint-blue hover:bg-bluemint-blue/90 text-white w-full mt-2"
               onClick={handleApplyNowClick}
             >
               Get Pre-Approved
