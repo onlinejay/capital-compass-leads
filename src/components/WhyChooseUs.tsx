@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { 
   Clock,
@@ -114,7 +115,7 @@ const WhyChooseUs = () => {
         
         {/* Redesigned "Ready to Take Action" section with lighter backgrounds */}
         <div className="mt-16 reveal-on-scroll reveal">
-          <div className="bg-gradient-to-r from-primary to-blue-600 rounded-2xl overflow-hidden shadow-xl">
+          <div className="bg-gradient-to-r from-blue-500/90 to-blue-600/90 rounded-2xl overflow-hidden shadow-xl">
             <div className="flex flex-col md:flex-row">
               {/* Left content */}
               <div className="md:w-2/3 p-8 md:p-10">
@@ -131,7 +132,7 @@ const WhyChooseUs = () => {
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="border-2 border-white text-white bg-blue-600/40 hover:bg-white/20 font-bold rounded-lg px-8"
+                    className="border-2 border-white text-white bg-blue-500/30 hover:bg-white/20 font-bold rounded-lg px-8"
                   >
                     Schedule Consultation
                   </Button>
@@ -139,7 +140,7 @@ const WhyChooseUs = () => {
               </div>
               
               {/* Right content - visual element with house outline added */}
-              <div className="hidden md:block md:w-1/3 bg-gradient-to-br from-blue-400/20 to-primary/10 relative overflow-hidden">
+              <div className="hidden md:block md:w-1/3 bg-gradient-to-br from-blue-400/20 to-blue-500/10 relative overflow-hidden">
                 <div className="absolute inset-0">
                   <div className="absolute top-10 right-10 w-32 h-32 rounded-full border-4 border-white/60"></div>
                   <div className="absolute bottom-10 left-10 w-20 h-20 rounded-full border-4 border-white/50"></div>

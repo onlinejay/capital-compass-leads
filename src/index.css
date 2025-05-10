@@ -135,7 +135,7 @@
 
 /* Enhanced value indicators with better contrast */
 .value-positive {
-  @apply text-emerald-600 font-bold;
+  @apply text-blue-600 font-bold;
 }
 
 .value-negative {
@@ -180,13 +180,13 @@
   @apply border-2 border-white text-white hover:bg-white/10 font-bold transition-all duration-300;
 }
 
-/* Loan program styling - Lightened green backgrounds */
+/* Loan program styling - Lightened backgrounds */
 .loan-program-card {
   @apply bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all;
 }
 
 .loan-program-header {
-  @apply bg-emerald-100 px-4 py-3;
+  @apply bg-blue-50 px-4 py-3;
 }
 
 .loan-program-content {
@@ -198,7 +198,7 @@
 }
 
 .loan-point-icon {
-  @apply text-emerald-500;
+  @apply text-blue-500;
 }
 
 /* Fintech UI Elements with improved visibility */
@@ -268,7 +268,7 @@
 }
 
 .step-circle.completed {
-  @apply bg-emerald-400 text-white;
+  @apply bg-blue-400 text-white;
 }
 
 .step-circle.inactive {
@@ -284,7 +284,7 @@
 }
 
 .step-text.completed {
-  @apply text-emerald-500;
+  @apply text-blue-500;
 }
 
 .step-text.inactive {
