@@ -29,7 +29,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 pb-12 pt-12">
         {/* Top section with CTA - Enhanced styling */}
         <div className="mb-16">
-          <div className="bg-gradient-to-r from-blue-600/30 to-primary/30 rounded-2xl p-8 border border-white/20 backdrop-blur-sm shadow-lg">
+          <div className="bg-gradient-to-r from-blue-600/30 to-teal-500/30 rounded-2xl p-8 border border-white/20 backdrop-blur-sm shadow-lg">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="text-center md:text-left">
                 <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white drop-shadow-md">
@@ -41,7 +41,7 @@ const Footer = () => {
               </div>
               <Button 
                 onClick={() => handleSmoothScroll('quick-capital-form')}
-                className="bg-white hover:bg-white/90 text-primary rounded-full px-8 py-6 group shadow-md transform hover:scale-105 transition-all duration-300"
+                className="bg-white hover:bg-white/90 text-blue-600 rounded-full px-8 py-6 group shadow-md transform hover:scale-105 transition-all duration-300"
               >
                 Apply Now 
                 <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" />
@@ -58,12 +58,16 @@ const Footer = () => {
               <div className="flex items-center mb-4">
                 <div className="bg-white rounded-full p-2 mr-2">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#1E40AF" />
-                    <path d="M2 17L12 22L22 17" stroke="#1E40AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M2 12L12 17L22 12" stroke="#1E40AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#1E88E5" />
+                    <path d="M2 17L12 22L22 17" stroke="#20B2AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M2 12L12 17L22 12" stroke="#20B2AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <span className="text-xl font-bold text-white">Capital Compass</span>
+                <span className="text-xl font-bold text-white">
+                  <span className="text-blue-400">Blue</span>
+                  <span className="text-teal-400">Mint</span>
+                  <span className="text-white"> Financial</span>
+                </span>
               </div>
               <p className="text-white/70 mb-6">
                 Providing innovative financial solutions for real estate investors with speed, transparency, and expertise since 2010.
@@ -236,7 +240,7 @@ const Footer = () => {
         <div className="pt-4 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-2">
             <p className="text-sm text-white/60">
-              &copy; {currentYear} Capital Compass. All rights reserved.
+              &copy; {currentYear} Blue Mint Financial. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center text-sm">
               <a href="/privacy" className="text-white/60 hover:text-white transition-colors">Privacy Policy</a>

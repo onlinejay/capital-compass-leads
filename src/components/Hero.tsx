@@ -39,14 +39,14 @@ const Hero = () => {
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 to-navy-400/10"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/10 to-teal-500/10"></div>
         </div>
-        <div className="absolute -top-64 -right-64 w-[500px] h-[500px] rounded-full bg-secondary/80 filter blur-3xl"></div>
-        <div className="absolute -bottom-64 -left-64 w-[500px] h-[500px] rounded-full bg-accent/50 filter blur-3xl"></div>
+        <div className="absolute -top-64 -right-64 w-[500px] h-[500px] rounded-full bg-teal-500/30 filter blur-3xl"></div>
+        <div className="absolute -bottom-64 -left-64 w-[500px] h-[500px] rounded-full bg-blue-500/20 filter blur-3xl"></div>
         
         {/* Added decorative elements */}
-        <div className="absolute top-1/3 left-1/4 w-8 h-8 bg-primary/10 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-12 h-12 bg-secondary/30 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 left-1/4 w-8 h-8 bg-blue-600/10 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-12 h-12 bg-teal-500/30 rounded-full animate-pulse"></div>
       </div>
 
       <div className="container mx-auto px-4 z-10 py-16 md:py-24">
@@ -54,40 +54,40 @@ const Hero = () => {
           
           {/* Left column - OPTIMIZED for better balance */}
           <div className="md:col-span-5 reveal">
-            <div className="inline-flex items-center gap-2 bg-emerald-500/20 px-4 py-1.5 rounded-full text-sm font-bold mb-6 text-emerald-800 shadow-sm hover:shadow-emerald-200/30 transition-all duration-300 border border-emerald-400/30">
-              <Wallet className="w-4 h-4 text-emerald-700" />
+            <div className="inline-flex items-center gap-2 bg-teal-500/20 px-4 py-1.5 rounded-full text-sm font-bold mb-6 text-teal-800 shadow-sm hover:shadow-teal-200/30 transition-all duration-300 border border-teal-400/30">
+              <Wallet className="w-4 h-4 text-teal-700" />
               <span>Fast Capital for Real Estate Investors</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight text-gray-900 font-heading">
-              Fast, <span className="fintech-gradient-text">Flexible Funding</span> for Your Next Investment Property
+              Fast, <span className="fintech-gradient-text bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent">Flexible Funding</span> for Your Next Investment Property
             </h1>
             <p className="text-base md:text-lg text-gray-700 mb-6 max-w-xl leading-relaxed">
-              Start the process to smarter funding.
+              Start the process to smarter funding with Blue Mint Financial.
             </p>
             
             {/* Updated feature cards - 2x2 grid on mobile, consistent sizing */}
             <div className="grid grid-cols-2 gap-3 mb-6">
               <div className="flex items-center bg-white/70 backdrop-blur-sm rounded-lg px-3 py-3 border border-gray-100 shadow-sm h-full">
-                <Clock className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
+                <Clock className="w-4 h-4 md:w-5 md:h-5 text-blue-600 mr-2 md:mr-3 flex-shrink-0" />
                 <span className="font-medium text-sm text-gray-700">Fast Decisions</span>
               </div>
               <div className="flex items-center bg-white/70 backdrop-blur-sm rounded-lg px-3 py-3 border border-gray-100 shadow-sm h-full">
-                <CreditCard className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
+                <CreditCard className="w-4 h-4 md:w-5 md:h-5 text-blue-600 mr-2 md:mr-3 flex-shrink-0" />
                 <span className="font-medium text-sm text-gray-700">Flexible Terms</span>
               </div>
               <div className="flex items-center bg-white/70 backdrop-blur-sm rounded-lg px-3 py-3 border border-gray-100 shadow-sm h-full">
-                <Headphones className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
+                <Headphones className="w-4 h-4 md:w-5 md:h-5 text-blue-600 mr-2 md:mr-3 flex-shrink-0" />
                 <span className="font-medium text-sm text-gray-700">Dedicated Support</span>
               </div>
               <div className="flex items-center bg-white/70 backdrop-blur-sm rounded-lg px-3 py-3 border border-gray-100 shadow-sm h-full">
-                <Lightbulb className="w-4 h-4 md:w-5 md:h-5 text-primary mr-2 md:mr-3 flex-shrink-0" />
+                <Lightbulb className="w-4 h-4 md:w-5 md:h-5 text-blue-600 mr-2 md:mr-3 flex-shrink-0" />
                 <span className="font-medium text-sm text-gray-700">Smarter Financing</span>
               </div>
             </div>
             
             <div className={`mt-6 flex ${isMobile ? 'justify-center md:justify-start' : ''}`}>
               <Button 
-                className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl px-5 py-5 md:px-6 md:py-6 shadow-md hover:shadow-lg transition-all"
+                className="bg-blue-600 hover:bg-blue-600/90 text-white font-semibold rounded-xl px-5 py-5 md:px-6 md:py-6 shadow-md hover:shadow-lg transition-all"
                 size={isMobile ? "default" : "lg"}
                 onClick={handleViewLoanOptionsClick}
               >
@@ -101,14 +101,14 @@ const Hero = () => {
           <div className="md:col-span-7 reveal delay-200 flex justify-center mt-8 md:mt-0">
             <div className="bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 relative transform hover:scale-[1.01] transition-all duration-300 z-20 max-w-xl w-full">
               {/* Enhanced halo effect behind the form */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/30 to-secondary/20 rounded-3xl blur-xl -z-10 opacity-80"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-teal-500/30 to-blue-400/20 rounded-3xl blur-xl -z-10 opacity-80"></div>
               
-              <div className="absolute -top-3 left-6 bg-accent px-4 py-1 rounded-full text-xs font-medium text-primary shadow-sm">
+              <div className="absolute -top-3 left-6 bg-teal-100 px-4 py-1 rounded-full text-xs font-medium text-teal-700 shadow-sm">
                 <span className="animate-pulse">Priority Application</span>
               </div>
               <div className="mb-5 flex items-center justify-between">
                 <h2 className="text-xl md:text-2xl font-bold text-gray-800 font-heading">Quick Capital Request</h2>
-                <div className="bg-primary p-1.5 rounded-full">
+                <div className="bg-blue-600 p-1.5 rounded-full">
                   <Shield className="w-5 h-5 text-white" />
                 </div>
               </div>
