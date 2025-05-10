@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -80,6 +81,12 @@ const Navbar = () => {
             >
               Process
             </button>
+            <Link 
+              to="/hero-options" 
+              className="text-gray-700 hover:text-bluemint-blue font-medium transition-colors"
+            >
+              Hero Options
+            </Link>
             <button 
               onClick={() => handleNavClick('#contact')}
               className="text-gray-700 hover:text-bluemint-blue font-medium transition-colors"
@@ -133,6 +140,12 @@ const Navbar = () => {
             >
               Process
             </button>
+            <Link 
+              to="/hero-options"
+              className="block w-full text-left text-gray-700 hover:text-bluemint-blue font-medium transition-colors py-2 px-2"
+            >
+              Hero Options
+            </Link>
             <button 
               className="block w-full text-left text-gray-700 hover:text-bluemint-blue font-medium transition-colors py-2 px-2"
               onClick={() => handleNavClick('#contact')}
