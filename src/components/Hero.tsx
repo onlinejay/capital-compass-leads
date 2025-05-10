@@ -52,7 +52,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10 py-16 md:py-24">
         <div className="grid md:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-center">
           
-          {/* Left column - OPTIMIZED for better balance */}
+          {/* Left column */}
           <div className="md:col-span-5 reveal">
             <div className="inline-flex items-center gap-2 bg-blue-50/70 px-4 py-1.5 rounded-full text-sm font-bold mb-6 text-blue-700 shadow-sm hover:shadow-blue-100/30 transition-all duration-300 border border-blue-100/50">
               <Wallet className="w-4 h-4 text-blue-600" />
@@ -97,30 +97,42 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Right column - ADJUSTED WIDTH AND ENHANCED */}
-          <div className="md:col-span-7 reveal delay-200 flex justify-center mt-8 md:mt-0">
-            <div className="bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 relative transform hover:scale-[1.01] transition-all duration-300 z-20 max-w-xl w-full">
-              {/* Enhanced halo effect behind the form - Lightened */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-200/20 via-blue-50/40 to-blue-100/20 rounded-3xl blur-xl -z-10 opacity-80"></div>
+          {/* Right column - Enhanced CTA */}
+          <div className="md:col-span-7 reveal delay-200 flex justify-center mt-8 md:mt-0 relative">
+            {/* Attention-grabbing pulse animation around the form */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-200 via-blue-400/30 to-blue-300/20 rounded-3xl blur-xl opacity-70 animate-pulse"></div>
+            
+            {/* Enlarged, more prominent form container */}
+            <div className="bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl border border-blue-200 relative transform hover:scale-[1.01] transition-all duration-300 z-20 max-w-xl w-full">
+              {/* Enhanced visual highlight for the form */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-300/30 via-blue-100/40 to-blue-200/30 rounded-3xl blur-md -z-10"></div>
               
-              <div className="absolute -top-3 left-6 bg-blue-50 px-4 py-1 rounded-full text-xs font-medium text-blue-600 shadow-sm">
-                <span className="animate-pulse">Priority Application</span>
+              {/* Priority label with animated attention-grabber */}
+              <div className="absolute -top-4 left-6 right-6 bg-blue-600 px-6 py-2 rounded-full text-sm font-bold text-white shadow-lg flex items-center justify-center">
+                <span className="animate-pulse mr-2">●</span>
+                <span>PRIORITY FUNDING REQUEST</span>
+                <span className="animate-pulse ml-2">●</span>
               </div>
-              <div className="mb-5 flex items-center justify-between">
+              
+              <div className="mb-8 mt-4 flex items-center justify-between">
                 <h2 className="text-xl md:text-2xl font-bold text-gray-800 font-heading">Quick Capital Request</h2>
-                <div className="bg-blue-600 p-1.5 rounded-full">
-                  <Shield className="w-5 h-5 text-white" />
+                <div className="bg-blue-600 p-2 rounded-full">
+                  <Shield className="w-6 h-6 text-white" />
                 </div>
               </div>
-              <p className="text-gray-700 font-medium mb-6">Get pre-approved today for your next investment</p>
               
-              {/* Enhanced form styling with subtle animation */}
+              {/* Enhanced form description */}
+              <div className="bg-blue-50 border border-blue-100 p-3 rounded-lg mb-6">
+                <p className="text-gray-800 font-semibold">Get pre-approved today in as little as 1 hour</p>
+                <p className="text-sm text-gray-600">No impact to credit score • Competitive rates • Fast closing</p>
+              </div>
+              
+              {/* Form with enhanced styling */}
               <div className="transform hover:scale-[1.02] transition-all duration-300"> 
                 <LeadCaptureForm variant="secondary" />
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </section>
